@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
 import Dropdown from '../Dropdown';
 import DropdownS from '../DropdownS';
-import DropdownC from '../DropdownC'
+import DropdownC from '../DropdownC' 
+import { menuItems } from '../../menuItems';
+import Menu from '../Menu';
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
@@ -72,7 +74,7 @@ function Navbar() {
         </Link> 
           <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-        </div>
+        </div> 
         <ul className="nav-menu">
           
           <li className='nav-item'>
@@ -81,20 +83,20 @@ function Navbar() {
             </Link>
           </li>
 
-          <li
-            className='nav-item'
-            onMouseEnter={handleServicesHover}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Link
-              to='/'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Services <i className='fas fa-caret-down' />
-            </Link>
-            {servicesDropdown && <DropdownS />} 
-          </li>
+          <li className="menus">
+        {menuItems.map((menu, index) => {
+          const depthLevel = 0;
+          return (
+            <Menu 
+              items={menu}
+              key={index}
+              depthLevel={depthLevel}
+            />
+          );
+        })}
+      </li>
+
+         
           
           <li
             className='nav-item'
@@ -106,7 +108,7 @@ function Navbar() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Solutions <i className='fas fa-caret-down' />
+              Solutions  <i className='fas fa-caret-down' />
             </Link>
             {techDropdown && <Dropdown />} {/* Display Technologies dropdown */}
           </li> 

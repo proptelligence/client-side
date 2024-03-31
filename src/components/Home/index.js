@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     // Create script element
     const script = document.createElement('script');
-    script.src = 'https://static.elfsight.com/platform/platform.js';
+    script.src = 'https://www.googletagmanager.com/ns.html?id=GTM-WH9TSZ5B';
     script.dataset.useServiceCore = true;
     script.defer = true;
 
@@ -22,13 +22,35 @@ const Home = () => {
     return () => {
       document.body.removeChild(script);
     };
+  }, []); 
+  useEffect(() => {
+    // Google Tag Manager (gtag.js)
+    const script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-MPNXW889Q5';
+    script.async = true;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-MPNXW889Q5');
+
+    // Cleanup function
+    return () => {
+      // Remove the script when unmounting the component
+      document.head.removeChild(script);
+    };
   }, []);
+
 
   
 
     return(
       <>
-    <Navbar /> 
+    <Navbar />  
+    
     <div className="home-container">
       <div className="home-content">
         <h1 className="home-heading">

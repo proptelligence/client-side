@@ -25,7 +25,7 @@ const blogData = [
     datetime: "March 03, 2024",
   },
   {
-    title: "Get 24-Hour Legal Advice Easily with Proptelligence",
+    title: "Get Legal Advice Easily with Proptelligence",
     imageUrl: "https://res.cloudinary.com/ajaymedidhi7/image/upload/v1710069093/blog-4_hkn9cf.png",
     content: "In today's fast-paced world, navigating the intricacies of the legal system can be a daunting task, especially when challenges arise outside of traditional business hours.",
     path: "/legaladvice",
