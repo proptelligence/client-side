@@ -12,12 +12,28 @@ export const menuItems = [
             title: 'India',
             submenu: [
               {
-                title: 'Buy',
+                title: 'Top Cities in India',
                 url: '/',
               },
               {
-                title: 'Sell',
-                url: '/',
+                title: 'Hyderabad',
+                url: '/prop',
+              },
+              {
+                title: 'Mumbai',
+                url: '/prop',
+              },
+              {
+                title: 'Bangalore',
+                url: '/prop',
+              },
+              {
+                title: 'Kolkata',
+                url: '/prop',
+              },
+              {
+                title: 'Chennai',
+                url: '/prop',
               },
             ],
             url: '/',
@@ -27,13 +43,29 @@ export const menuItems = [
             title: 'USA',
             submenu: [
               {
-                title: 'Buy',
+                title: 'Top states in USA',
                 url: '/',
               },
               {
-                title: 'Sell',
+                title: 'North Dakota',
+                url: '/',
+              },{
+                title: 'Texas',
                 url: '/',
               },
+              {
+                title: 'Massachusetts',
+                url: '/',
+              },
+              {
+                title: 'Colorado',
+                url: '/',
+              },
+              {
+                title: 'Washington',
+                url: '/',
+              },
+              
             ],
           },
         ],

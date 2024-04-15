@@ -30,6 +30,22 @@ function Navbottom() {
           {/* Add more cities as needed */}
         </ul>
         </div> 
+        
+        <div className='footer-section contact'>
+          <ul className='ui'> 
+          <h3>Legal</h3>
+          <li className='li-item'>
+            <Link to='/proptelligence-terms&conditions'>Terms & Condition</Link>
+          </li>
+          <li className='li-item'>
+            <Link to='/privacypolicy'>Privacy Policy</Link>
+          </li>
+          <li className='li-item'> 
+            <Link to='/proptelligence-refund-policy'>Refund & Cancellation Policy</Link>
+          </li>
+          {/* Add more cities as needed */}
+        </ul>
+        </div>   
 
         <div className='footer-section follow'>
           <h3>Follow Us</h3>
@@ -72,22 +88,7 @@ function Navbottom() {
           </ul>
           <h3>connect@proptelligence.net</h3>
         </div>
-       
-        
-        <div className='footer-section contact'>
-          <ul className='ui'>
-          <li className='li-item'>
-            <Link to='/proptelligence-terms&conditions'>Terms & Condition</Link>
-          </li>
-          <li className='li-item'>
-            <Link to='/privacypolicy'>Privacy Policy</Link>
-          </li>
-          <li className='li-item'> 
-            <Link to='/proptelligence-refund-policy'>Refund & Cancellation Policy</Link>
-          </li>
-          {/* Add more cities as needed */}
-        </ul>
-        </div>  
+
       </div>
       <div className="copyright1">
         &copy; {new Date().getFullYear()} Proptelligence. All rights reserved.

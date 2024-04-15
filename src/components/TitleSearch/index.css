@@ -1,88 +1,29 @@
 /* Title Search Container */
 .title-search-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    color: #333;
-  }
-  
-  /* Main Heading Style */
-  .title-search-container h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #0066ff;
-  }
-  
-  /* Paragraph Style */
-  .title-search-container p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    text-align: justify;
-  }
-  
-  /* Container Wrapper Style */
-  .ts-containers-wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  /* Half Container Style */
-  .ts-half-container {
-    width: calc(50% - 10px);
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-  }
-  
-  /* Image Style */
-  .ts-half-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px 8px 0 0;
-  }
-  
-  /* Heading Style */
-  .ts-half-container h2 {
-    font-size: 1.5rem;
-    margin: 15px 0;
-    color: #333;
-  }
-  
-  /* Paragraph Style within Half Container */
-  .ts-half-container p {
-    color: #666;
-  }
-  
-
-  /* index.css */
-/* ... (existing styles) ... */
-
-/* New styles for TitleSearch component */
-
-.title-search-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
-}
-
-.title-search-container h1 {
+  font-family: Arial, sans-serif;
   color: #333;
+}
+
+/* Main Heading Style */
+.title-search-container h1 {
   font-size: 2rem;
+  text-align: center;
   margin-bottom: 20px;
+  color: #333;
 }
 
+/* Paragraph Style */
 .title-search-container p {
-  color: #666;
+  font-size: 1.1rem;
   line-height: 1.6;
+  text-align: justify;
+  color: #666;
 }
 
+/* Container Wrapper Style */
 .ts-containers-wrapper {
   display: flex;
   justify-content: space-around;
@@ -90,6 +31,7 @@
   margin-top: 10px;
 }
 
+/* Half Container Style */
 .ts-half-container {
   width: 40%; /* Adjust width for smaller screens */
   margin-bottom: 20px;
@@ -99,6 +41,7 @@
   overflow: hidden; /* Hide overflowing content */
 }
 
+/* Image Style */
 .ts-half-container img {
   width: 85%;
   height: auto;
@@ -106,12 +49,14 @@
   border-top-right-radius: 8px;
 }
 
+/* Heading Style */
 .ts-half-container h2 {
   color: royalblue;
   font-size: 1.2rem;
   margin: 15px;
 }
 
+/* Paragraph Style within Half Container */
 .ts-half-container p {
   color: #444;
   font-size: 1rem;

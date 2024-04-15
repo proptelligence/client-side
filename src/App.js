@@ -27,6 +27,7 @@ import Blog4 from './components/Blog4'
 import Insights from './components/Insights' 
 import Careers from './components/Careers'
 import Team from './components/Team' 
+import Cart from './components/Cart'
 import { Helmet } from 'react-helmet';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -162,6 +163,7 @@ function App() {
       <Route exact path="/insights" element={<Insights/>} /> 
       <Route exact path="/careers" element={<Careers/>} />
       <Route exact path="/team" element={<Team/>} /> 
+      <Route exact path="/cart" element={<Cart/>} /> 
       </Routes>
     </BrowserRouter>
   );
