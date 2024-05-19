@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Dropdown from '../Dropdown';
-import DropdownS from '../DropdownS';
-import './index.css'; // Import updated styles
+import './index.css'; 
 
 function Navbottom() {
   
@@ -12,6 +10,7 @@ function Navbottom() {
       <div className='footer-container'> 
       <div className='footer-section contact'>
           <ul className='ui'>
+          <h3>Company</h3>
           <li className='li-item'>
             <Link to='/'>Home</Link>
           </li>
@@ -27,13 +26,12 @@ function Navbottom() {
           <li className='li-item'> 
             <Link to='/contact'>Contact Us</Link>
           </li>
-          {/* Add more cities as needed */}
         </ul>
         </div> 
         
         <div className='footer-section contact'>
-          <ul className='ui'> 
-          <h3>Legal</h3>
+        <h3>Legal</h3>
+          <ul className='ui-legal'> 
           <li className='li-item'>
             <Link to='/proptelligence-terms&conditions'>Terms & Condition</Link>
           </li>
@@ -43,12 +41,15 @@ function Navbottom() {
           <li className='li-item'> 
             <Link to='/proptelligence-refund-policy'>Refund & Cancellation Policy</Link>
           </li>
-          {/* Add more cities as needed */}
         </ul>
         </div>   
 
         <div className='footer-section follow'>
-          <h3>Follow Us</h3>
+        <div>
+          <h3>Our Presence </h3>
+            <p>We Work, Roshini Tech Hub, Anand Nagar, Aswath Nagar, Chinnapanna Halli, Bengaluru, Karnataka 560037</p> 
+          </div>
+          <h3 className='follow-heading'>Follow Us</h3>
           <ul className="social-media-cont">
             <li>
               <a href='https://www.facebook.com/proptelligence' >

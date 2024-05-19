@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import Dropdown from '../Dropdown';
 import DropdownS from '../DropdownS';
 import DropdownC from '../DropdownC' 
-import { menuItems } from '../../menuItems';
+import { menuItems } from '../../menuItems'; 
+import { menuItems1 } from '../../menuItems1';
 import Menu from '../Menu';
+
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
@@ -96,22 +98,19 @@ function Navbar() {
         })}
       </li>
 
-         
-          
-          <li
-            className='nav-item'
-            onMouseEnter={handleTechHover}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Link
-              to='/'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Solutions  <i className='fas fa-caret-down' />
-            </Link>
-            {techDropdown && <Dropdown />} {/* Display Technologies dropdown */}
-          </li> 
+      <li className="menus">
+            {menuItems1.map((menu, index) => {
+              const depthLevel = 0;
+              return (
+                <Menu 
+                  items={menu}
+                  key={index}
+                  depthLevel={depthLevel}
+                />
+              );
+            })}
+          </li>
+
 
           <li
             className='nav-item'
@@ -123,7 +122,7 @@ function Navbar() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-             Our Company <i className='fas fa-caret-down' />
+             Company <i className='fas fa-caret-down' />
             </Link>
             {companyDropdown && <DropdownC />} {/* Display Services dropdown */}
           </li>

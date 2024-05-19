@@ -15,7 +15,6 @@ const Insights = () => {
         </div>
 
         <div className="services-cont">
-          {/* Service block 1 */}
           <div className="service-1">
             <Link to="/blogdetails">
               <img
@@ -31,8 +30,6 @@ const Insights = () => {
             Our blogs cover a wide array of topics, from industry trends and market analysis to practical tips and expert advice.......<Link to="/blogdetails"><span>Read More</span></Link>
             </p>
           </div>
-
-          {/* Service block 2 */}
           <div className="service-1">
             <Link to="/">
               <img
@@ -42,10 +39,26 @@ const Insights = () => {
               />
             </Link>
             <h2 className='sub'>
-              Reports & Insights.
+              Property
             </h2>
             <p className='slide-des'>
             Our Reports & Insights section serves as a hub for in-depth analysis, comprehensive research, and actionable intelligence tailored to property owners, managers, investors, and industry professionals.<Link to="/blogdetails"><span>Read More</span></Link>
+            </p>
+          </div> 
+
+          <div className="service-1">
+            <Link to="/">
+              <img
+                className="img1"
+                src="https://img.freepik.com/premium-photo/busy-analyst-team-office-analyzing-financial-data-analysis-by-tablet-entity_31965-151090.jpg"
+                alt="Service 1"
+              />
+            </Link>
+            <h2 className='sub'>
+              Reports
+            </h2>
+            <p className='slide-des'>
+              Our Reports & Insights section provides tailored analysis and actionable intelligence for property stakeholders.....<Link to="/blogdetails"><span>Read More</span></Link>
             </p>
           </div>
    

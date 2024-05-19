@@ -151,10 +151,6 @@
     color: #1888ff;
     transition: 250ms;
   }
-
-  button {
-    display: none;
-  }
 }
 
 .desktop-img {
@@ -245,9 +241,9 @@
 
 
 .menu-icon-nav i {
-  color: #fff; /* Icon color */
-  font-size: 1.8rem; /* Icon size */
-  transition: transform 0.3s ease; /* Smooth transform transition */
+  color: #fff; 
+  font-size: 1.8rem; 
+  transition: transform 0.3s ease; 
 }
 
 .menu-icon-nav:hover {

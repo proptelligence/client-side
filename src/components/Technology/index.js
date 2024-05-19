@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../Navbar'; 
-import Footer from '../Footer';
+import Navbottom from '../Navbottom';
 import './index.css';
 
 const Technology = () => {
@@ -48,18 +48,6 @@ const Technology = () => {
               </p>           
             </div>        
           </div>
-          <div classNmae="animated-list-container">
-                  
-                  <ul className='cont-101'>
-                      <li className='list-item'>Property Valuation and Predictive Analytics</li>
-                      <li className='list-item'>Automated Property Management</li>
-                      <li className='list-item'>Personalized Property Recommendations</li>
-                      <li className='list-item'>Risk Management and Fraud Detection</li>
-                      <li className='list-item'>Market Analysis and Investment Strategies</li>
-                      <li className='list-item'>Legal and Compliance Automation</li>
-                      <li className='list-item'>Data Visualization and Analytics</li>
-               </ul>
-          </div>
           </div>
           
           <div className='aj'>
@@ -78,19 +66,6 @@ const Technology = () => {
               </p>
             </div>
           </div> 
-          <div classNmae="animated-list-container">
-                  
-                  <ul  className='cont-101'>
-                  <li className='list-item'> Virtual Property Tours</li>
-                    <li className='list-item'>Property Visualization and Design</li>
-                    <li className='list-item'>Interactive Property Marketing</li>
-                    <li className='list-item'>Remote Collaboration and Design Review</li>
-                    <li className='list-item'>Training and Simulations</li> 
-                    <li className='list-item'>Tenant Onboarding and Orientation</li>
-                    <li className='list-item'>Data Visualization and Analytics</li> 
-                
-                  </ul>
-            </div>
           </div>
  
 
@@ -110,24 +85,10 @@ const Technology = () => {
               </p>
             </div>
           </div> 
-          <div classNmae="animated-list-container">
-                  
-                  <ul  className='cont-101'>
-                  <li  className='list-item'>Smart Building Management</li>
-                    <li className='list-item'>Security and Access Control</li>
-                    <li className='list-item'>Energy Efficiency</li>
-                    <li className='list-item'>Predictive Maintenance</li> 
-                    <li className='list-item'>Smart Home Automation</li>
-                    <li className='list-item'>Occupancy Management</li> 
-                    <li className='list-item'>Environmental Monitoring</li>
-                   
-                
-                  </ul>
-           </div>
           </div>
         </div>
       </div>
-      <Footer/>
+      <Navbottom/>
     </>
   );
 };

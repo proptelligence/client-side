@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '../Footer'
+import Navbottom from '../Navbottom'
 
 import './index.css'
 import Navbar from '../Navbar';
@@ -29,18 +29,11 @@ const Industries = () =>
               <img src="https://static.wixstatic.com/media/11062b_ddb09609a7b04f8f9a9c7cf1ee5d126c~mv2.jpeg/v1/crop/x_816,y_0,w_3264,h_3264/fill/w_121,h_121,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Reviewing%20Legal%20Agreement.jpeg" alt="Legal" />
               <p>Legal</p>
             </div>
-            <div className="industry-item">
-              <img src="https://static.wixstatic.com/media/11062b_be6d973aaa1748aca87d52fbd1af37f0~mv2.jpg/v1/crop/x_1216,y_0,w_3126,h_3126/fill/w_121,h_121,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Building%20Robot.jpg" alt="Education" />
-              <p>Edu Tech</p>
-            </div>
-            <div className="industry-item">
-              <img src="https://static.wixstatic.com/media/11062b_89d64fe6a4e346ee80847d38a9e4c991~mv2.jpg/v1/crop/x_834,y_0,w_3333,h_3333/fill/w_121,h_121,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Agriculture%20Drone.jpg" alt="Agri Tech" />
-              <p>Agri Tech</p>
-            </div>
+    
           </div>
         </div>
       </div> 
-      <Footer/>
+      <Navbottom/>
     </>
   );
 

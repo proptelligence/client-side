@@ -228,3 +228,99 @@ body {
   text-decoration: underline;
   color: #0056b3;
 }
+
+.advocate-container {
+  max-width: 300px;
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.advocate-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.advocate-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.advocate-container p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+.container-legal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(to right, #257CA3, #e2ebf0);
+}
+
+.left-container {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.right-container {
+  flex: 1;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.right-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.right-container p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.left-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.consultant-cont {
+  list-style-type: disc; /* Use disc bullets */
+  padding-left: 30px; /* Add left padding to align bullets */
+}
+
+.consultant-cont li {
+  margin-bottom: 10px; /* Add spacing between list items */
+  color: #333;
+}
+
+.consultant-cont p {
+  margin-top: 20px; /* Add space between the list and the paragraph */
+  font-weight: bold; /* Make the text bold */
+}
+.consultant-fee {
+  margin-top: 20px; /* Add space between the list and the paragraph */
+  font-weight: bold; /* Make the text bold */
+  background-color:  #4CAF50; /* Background color */
+  padding: 10px; /* Add padding */
+  color: white;
+  border-width: 0px;
+  border-radius: 5px; /* Add border radius */
+}

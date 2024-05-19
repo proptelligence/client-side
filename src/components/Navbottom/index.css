@@ -39,11 +39,7 @@
     margin-top: 20px;
     /* Other footer-container styles */
   }
-  
-  .footer-section {
-    /* Add styles for footer sections */
-  }
-  
+
   .social-links {
     list-style: none;
     padding: 0;
@@ -293,4 +289,11 @@ body {
   display: flex; 
   justify-content: center;
   align-items: center;
+}
+.ui-legal{
+  display: flex;
+}
+.follow-heading{
+  padding-bottom: 5px;
+  padding-top: 20px;
 }

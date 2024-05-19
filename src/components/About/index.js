@@ -1,6 +1,6 @@
 import './index.css'
 import Navbar from '../Navbar'
-import Footer from '../Footer'
+import Navbottom from '../Navbottom'
 
 const About = () => (
   <> 
@@ -35,7 +35,7 @@ const About = () => (
         </p>
       </div>
     </div> 
-    <Footer/>
+    <Navbottom/>
   </>
 )
 

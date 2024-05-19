@@ -1,4 +1,4 @@
-import Footer from '../Footer'
+import Navbottom from '../Navbottom'
 import Navbar from '../Navbar'
 import { useEffect } from 'react'
 import './index.css'
@@ -69,7 +69,7 @@ const Blog = () => {
             </div>  
 
         </div>
-        <Footer/>
+        <Navbottom/>
         </>
     )
 }

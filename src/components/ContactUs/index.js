@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; 
-import Footer from '../Footer';
+import Navbottom from '../Navbottom';
 import Navbar from '../Navbar';
 import './index.css';
 
@@ -26,7 +26,7 @@ const ContactUs = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch('https://biha7udegc.execute-api.ap-south-1.amazonaws.com/prod/send-email', {
+      const response = await fetch('http://localhost:3000/contact/send-email', { // Using relative URL
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -161,7 +161,7 @@ const ContactUs = () => {
       
     </div> 
    
-    <Footer/>
+    <Navbottom/>
     </>
   );
 };

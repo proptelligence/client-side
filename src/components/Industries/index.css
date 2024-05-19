@@ -1,6 +1,6 @@
-/* Styles for the industries container */
+
 .industries-container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px; 
     padding-top: 20px;
@@ -23,7 +23,6 @@
     margin-bottom: 15px;
   }
   
-  /* Styles for the industries row */
   .industries-row-tech {
     display: flex; 
     flex-direction: row;
@@ -31,7 +30,7 @@
   }
   
   .industry-item {
-    width: calc(48% - 10px); /* Adjust this as needed */
+    width: calc(48% - 10px); 
     margin-bottom: 20px;
     box-sizing: border-box;
   }
@@ -50,10 +49,10 @@
     
   }
   
-  /* Media query for smaller screens */
+  
   @media screen and (max-width: 765px) {
     .industry-item {
-      width: calc(100% - 10px); /* Full width on smaller screens */
+      width: calc(100% - 10px); 
     }
   }
   

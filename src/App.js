@@ -24,10 +24,15 @@ import Blog from './components/Blog'
 import Blog2 from './components/Blog2'
 import Blog3 from './components/Blog3'
 import Blog4 from './components/Blog4'
+import Blog5 from './components/Blog5'
+import Blog6 from './components/Blog6'
+import Blog7 from './components/Blog7'
 import Insights from './components/Insights' 
-import Careers from './components/Careers'
+import CareerPage from './components/CareerPage'
 import Team from './components/Team' 
 import Cart from './components/Cart'
+import Soon from './components/Soon' 
+import HouseDetailsForm from './components/HouseDetailsForm'
 import { Helmet } from 'react-helmet';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -160,10 +165,14 @@ function App() {
       <Route exact path="/indiarealstate2023" element={<Blog2/>}/> 
       <Route exact path="/buyahome" element={<Blog3/>}/> 
       <Route exact path="/legaladvice" element={<Blog4/>}/> 
+      <Route exact path="/mumbai" element={<Blog5/>}/> 
+      <Route exact path="/pune" element={<Blog6/>}/> 
+      <Route exact path="/chennai" element={<Blog7/>}/> 
       <Route exact path="/insights" element={<Insights/>} /> 
-      <Route exact path="/careers" element={<Careers/>} />
+      <Route exact path="/careers" element={<CareerPage/>} />
       <Route exact path="/team" element={<Team/>} /> 
       <Route exact path="/cart" element={<Cart/>} /> 
+      <Route exact path="/new" element={<HouseDetailsForm/>} /> 
       </Routes>
     </BrowserRouter>
   );

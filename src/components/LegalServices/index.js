@@ -1,14 +1,16 @@
 import React, { useState, useRef } from 'react';
 import './index.css';
-import {Link} from'react-router-dom'
+import {Link,useNavigate} from'react-router-dom'
 import TitleSearch from '../TitleSearch'; // Import TitleSearch component
 import Drafting from '../Drafting'; // Import Drafting component
 import SignUp from '../SignUp'; // Import RegistrationSupport component
 import { auth } from '../../firebase'; // Import auth from your Firebase configuration 
 import Navbar from '../Navbar'
 
+
 const LegalServices = () => {
   const [user, setUser] = useState(auth.currentUser); // Get current user
+  const navigate = useNavigate();
   const [selectedService, setSelectedService] = useState(null); // State to track selected service
   const serviceRef = useRef(null); // Ref for the service section
 
@@ -20,6 +22,13 @@ const LegalServices = () => {
     }, 100);
   };
 
+  const handleLinkClick = (e) => {
+    if (!user) { // Check if user is not logged in
+      e.preventDefault();
+      navigate('/login'); // Redirect to login page
+    }
+  }
+
   return (
     <>
     <Navbar/> 
@@ -30,9 +39,32 @@ const LegalServices = () => {
           Welcome to Legal Services, your trusted destination for comprehensive legal solutions.
           From intricate business contracts to personal legal matters, our team of seasoned attorneys is here to navigate the complex terrain of law on your behalf.
         </p>
+      </div> 
+    
+      <div class="container-legal">
+  <div class="left-container">
+    <img src="https://img.freepik.com/free-vector/legal-advisers-concept-illustration_114360-20398.jpg" alt="consultancy"/>
+  </div>
+  <div class="right-container">
+    <h2>Advocates Consultancy</h2>
+     <ul className='consultant-cont'>
+     <li>Your tailored legal partner</li>
+      <li>Offering litigation support</li>
+      <li>Advisory services</li>
+      <li>Contract drafting</li>
+      <li>Corporate law</li>
+      <li>Real estate transactions</li>
+      <li>IP protection</li>
+     </ul>
+    <button className='consultant-fee' onClick={handleLinkClick}>Consultant Fee: ₹500</button>
+  </div>
+
+
       </div>
+      
       <div className="services-cont">
         {/* Service block 1 */}
+        
         <div className="service-1" onClick={() => handleServiceSelect('titleSearch')}>
           <img
             className="img1"

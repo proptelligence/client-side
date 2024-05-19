@@ -9,7 +9,8 @@
 }
 
 .register__container {
-  width: 300px;
+  width: 90%;
+  max-width: 400px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -40,31 +41,11 @@
   background-color: #0056b3;
 }
 
-.register__google {
-  background-color: #db4437;
-}
-
-.register__google:hover {
-  background-color: #c13505;
-}
-
-.register__link {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.register__link:hover {
-  text-decoration: underline;
-}
-
-
 .social-buttons {
   margin-top: 10px;
 }
 
-.google-button,
-.facebook-button,
-.linkedin-button {
+.google-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,21 +56,14 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 100%;
+  background-color: #db4437;
+  color: #fff;
 }
 
-.google-button:hover,
-.facebook-button:hover,
-.linkedin-button:hover {
-  background-color: #f0f0f0;
+.google-button:hover {
+  background-color: #c13505;
 }
 
-.google-button img,
-.facebook-button img,
-.linkedin-button img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
 .row-lines {
   display: flex;
   justify-content: center;
@@ -107,3 +81,7 @@
   text-align: center;/* Add some margin to the bottom */
   /* Add any additional styling you want */
 }
+
+
+
+
