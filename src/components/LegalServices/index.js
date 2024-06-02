@@ -1,19 +1,18 @@
 import React, { useState, useRef } from 'react';
 import './index.css';
 import {Link,useNavigate} from'react-router-dom'
-import TitleSearch from '../TitleSearch'; // Import TitleSearch component
-import Drafting from '../Drafting'; // Import Drafting component
-import SignUp from '../SignUp'; // Import RegistrationSupport component
-import { auth } from '../../firebase'; // Import auth from your Firebase configuration 
+import TitleSearch from '../TitleSearch'; 
+import Drafting from '../Drafting'; 
+import SignUp from '../SignUp'; 
+import { auth } from '../../firebase'; 
 import Navbar from '../Navbar'
 
 
 const LegalServices = () => {
-  const [user, setUser] = useState(auth.currentUser); // Get current user
+  const [user, setUser] = useState(auth.currentUser); 
   const navigate = useNavigate();
-  const [selectedService, setSelectedService] = useState(null); // State to track selected service
-  const serviceRef = useRef(null); // Ref for the service section
-
+  const [selectedService, setSelectedService] = useState(null);
+  const serviceRef = useRef(null); 
   const handleServiceSelect = (serviceName) => {
     setSelectedService(serviceName);
     // Scroll to the service section with a slight delay
@@ -21,22 +20,20 @@ const LegalServices = () => {
       serviceRef.current.scrollIntoView({ behavior: 'smooth' });
     }, 100);
   };
-
   const handleLinkClick = (e) => {
-    if (!user) { // Check if user is not logged in
+    if (!user) { 
       e.preventDefault();
-      navigate('/login'); // Redirect to login page
+      navigate('/login'); 
     }
   }
-
   return (
-    <>
+    <> 
     <Navbar/> 
     <div className="legal-services-container">
       <h1 className='main-heading'>Legal Services</h1>
       <div className="intro">
         <p className='legal-sub-heading'>
-          Welcome to Legal Services, your trusted destination for comprehensive legal solutions.
+          Welcome to Proptelligence Legal Services, your trusted destination for comprehensive legal solutions.
           From intricate business contracts to personal legal matters, our team of seasoned attorneys is here to navigate the complex terrain of law on your behalf.
         </p>
       </div> 
@@ -46,7 +43,7 @@ const LegalServices = () => {
     <img src="https://img.freepik.com/free-vector/legal-advisers-concept-illustration_114360-20398.jpg" alt="consultancy"/>
   </div>
   <div class="right-container">
-    <h2>Advocates Consultancy</h2>
+    <h2>Advocates consultation</h2>
      <ul className='consultant-cont'>
      <li>Your tailored legal partner</li>
       <li>Offering litigation support</li>
@@ -58,13 +55,8 @@ const LegalServices = () => {
      </ul>
     <button className='consultant-fee' onClick={handleLinkClick}>Consultant Fee: ₹500</button>
   </div>
-
-
-      </div>
-      
-      <div className="services-cont">
-        {/* Service block 1 */}
-        
+      </div> 
+      <div className="services-cont">        
         <div className="service-1" onClick={() => handleServiceSelect('titleSearch')}>
           <img
             className="img1"
@@ -127,14 +119,10 @@ const LegalServices = () => {
           </p>
         </div>
       </div>
-
-      {/* Render selected service component */}
       {selectedService === 'titleSearch' && <TitleSearch />}
       {selectedService === 'drafting' && <Drafting />}
       {selectedService === 'affidavits' && <SignUp />}
       {selectedService === 'registrationSupport' && <SignUp />}
-
-      {/* Service section ref */}
       <div ref={serviceRef}></div>
     </div>
     </>

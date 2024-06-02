@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './index.css'
+import './index.css';
 import Navbar from '../Navbar';
 import Navbottom from '../Navbottom';
+
 const CareerPage = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('All');
 
@@ -16,45 +17,48 @@ const CareerPage = () => {
     // Add more jobs here...
   ];
 
-  const filteredJobs = selectedDepartment === 'All' ? jobs : jobs.filter(job => job.department === selectedDepartment);
+  const filteredJobs =
+    selectedDepartment === 'All'
+      ? jobs
+      : jobs.filter((job) => job.department === selectedDepartment);
 
   const handleApplyNow = (jobId) => {
     // Logic to handle applying for the job, e.g., redirect to application form
+    window.location.href = 'https://airtable.com/appzzver0yiVZ86fQ/shrOIu8c4Cm6JFgGx'; // Replace this with your desired link
     console.log(`Applying for job with ID: ${jobId}`);
   };
 
   return (
     <>
-    <Navbar/> 
-    <div className='carrer-main-cont'>
-    <div className="career-page">
-      <h1>Join Our Team</h1>
-      <div className="filter-tabs">
-        {departments.map(department => (
-          <button
-            key={department}
-            className={selectedDepartment === department ? 'active' : ''}
-            onClick={() => setSelectedDepartment(department)}
-          >
-            {department}
-          </button>
-        ))}
-      </div>
-      <div className="job-list">
-        {filteredJobs.map(job => (
-          <div key={job.id} className="job">
-            <div>
-            <h3>{job.title}</h3>
-            <p>Department: {job.department}</p>
-            </div>
-            <button onClick={() => handleApplyNow(job.id)}>Apply Now</button>
+      <Navbar />
+      <div className="carrer-main-cont">
+        <div className="career-page">
+          <h1>Join Our Team</h1>
+          <div className="filter-tabs">
+            {departments.map((department) => (
+              <button
+                key={department}
+                className={selectedDepartment === department ? 'active' : ''}
+                onClick={() => setSelectedDepartment(department)}
+              >
+                {department}
+              </button>
+            ))}
           </div>
-        ))}
+          <div className="job-list">
+            {filteredJobs.map((job) => (
+              <div key={job.id} className="job">
+                <div>
+                  <h3>{job.title}</h3>
+                  <p>Department: {job.department}</p>
+                </div>
+                <button onClick={() => handleApplyNow(job.id)}>Apply Now</button>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
-    <Navbottom/>
-    
+      <Navbottom />
     </>
   );
 };

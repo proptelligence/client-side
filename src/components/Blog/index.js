@@ -1,4 +1,4 @@
-import Footer from '../Footer'
+import Navbottom from '../Navbottom'
 import Navbar from '../Navbar'
 import './index.css'
 const Blog = () => {
@@ -67,7 +67,7 @@ const Blog = () => {
             </div>  
 
         </div>
-        <Footer/>
+        <Navbottom/>
         </>
     )
 }

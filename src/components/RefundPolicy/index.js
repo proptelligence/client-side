@@ -1,17 +1,12 @@
 import React, { useEffect } from 'react';
 import './index.css'
-
-import Footer from '../Footer'
-
+import Navbottom from '../Navbottom'
 const RefundPolicy = () =>{
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to the top of the page when component mounts
+    window.scrollTo(0, 0); 
   }, []);
-
-
 return(
   <> 
- 
     <div className="privacy-cont">
       <div className="privacy-policy">
         <div className='privacy-cont-1'>
@@ -74,13 +69,8 @@ themselves to give it to you later, We will send the refund to the gift giver.</
         <h3>Contact Us</h3>
         <p>If you have any questions about our Returns and Refunds Policy, please contact us by e-mail 
 info@proptelligence.net</p>
-        
-      
-        
-
-      </div>
+        </div>
     </div> 
-   
   </>
 ) }
 

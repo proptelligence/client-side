@@ -1,79 +1,6 @@
-/* Navbottom.css */
-.navbottom-container {
-    background-color: #333; 
-    padding: 20px;
-    /* Add other container styles */
-  }
-  
-  .nav-menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    /* Add other navbar styles */
-  }
-  
   .nav-item {
     position: relative;
     margin: 0 15px;
-    text-align: center;
-    /* Other nav-item styling */
-  }
-  
-  .nav-links {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    /* Other nav-links styling */
-  }
-  
-  /* Dropdown Styles */
-  /* Add styles for dropdown and dropdownS components */
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    /* Other footer-container styles */
-  }
-
-  .social-links {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    /* Other styles for social links */
-  }
-  
-  .social-links li {
-    margin-right: 10px;
-    /* Other styles for social link items */
-  }
-  
-
-  /* Navbottom.css */
-.navbottom-container {
-    background-color: #333;
-    padding: 20px;
-    /* Add other container styles */
-  }
-  
-  .nav-menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    /* Add other navbar styles */
-  }
-  
-  .nav-item {
-    position: relative;
-    margin: 0 15px;
-    /* Other nav-item styling */
     transition: transform 0.3s ease-in-out;
   }
   
@@ -82,7 +9,6 @@
     color: #333;
     font-weight: bold;
     position: relative;
-    /* Other nav-links styling */
   }
   
   .nav-links:before {
@@ -106,31 +32,16 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-    /* Other footer-container styles */
   }
-  
-  .footer-section {
-    /* Add styles for footer sections */
-  }
-  
   .social-links {
     list-style: none;
     padding: 0;
     display: flex;
-    /* Other styles for social links */
   }
   
   .social-links li {
     margin-right: 10px;
-    /* Other styles for social link items */
   }
-  
-
-
-
-  /* index.css */
-
-/* General styling */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -190,13 +101,8 @@ body {
 .nav-links:hover {
   color: #f5671a;
 }
-
-/* Dropdown Styles */
-/* Add styles for dropdown and dropdownS components */
-
 .footer-container {
   display: flex;
- 
   width: 100%;
   max-width: 600px;
 }
@@ -222,18 +128,6 @@ body {
   
 }
 
-.social-links a {
-  color: #f5671a;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: #f5671a;
-}
-
-
-
 .dropdown,
 .dropdownS {
   display: none;
@@ -245,17 +139,13 @@ body {
   display: block;
   animation-fill-mode: forwards;
 }
-
-/* Navbottom.css or your CSS file */
 .footer-container {
   display: flex;
-  justify-content: space-around; /* Adjust alignment as needed */
-  /* Other styles as required */
+  justify-content: space-around;
 }
 
 .footer-section {
-  flex: 1; /* This will make both footer sections take equal space */
-  /* Additional styling for the footer sections */
+  flex: 1;
 }
 
 

@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import './index.css';
 import Navbar from '../Navbar';
-import Footer from '../Footer';
+import Navbottom from '../Navbottom';
 
 const PrivacyPolicy = () => {
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to the top of the page when component mounts
+    window.scrollTo(0, 0); 
   }, []);
 
   return (
-    <>
+    <> 
+    <Navbar/>
       <div className="privacy-cont">
       <div className="privacy-policy">
         <div className='privacy-cont-1'>

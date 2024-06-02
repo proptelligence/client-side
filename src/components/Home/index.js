@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,Navigate } from 'react-router-dom'; 
+import Cookies from 'js-cookie'
 import Navbottom from '../Navbottom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Navbar from '../Navbar';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 import {
   auth,
   registerWithEmailAndPassword,
   signInWithGoogle,
 } from "../../firebase";
 import './index.css';
-import Popup from 'reactjs-popup';
+import Popup from 'reactjs-popup'; 
+import Services from '../Services';
 
 const Home = () => {
+
   
   const [showPopup, setShowPopup] = useState(false); 
   const [signupSuccess, setSignupSuccess] = useState(false); 
@@ -28,9 +34,13 @@ const Home = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [user, loading, error] = useAuthState(auth);
-  const navigate = useNavigate();
-
+  
+  const [user, loading] = useAuthState(auth);
+  
+  const [isLoading, setIsLoading] = useState(true); 
+  const [ error] = useAuthState(auth);
+  const navigate = useNavigate(); 
+  
   const register = () => {
     if (!name) {
       alert("Please enter name");
@@ -46,10 +56,6 @@ const Home = () => {
         setSignupError(error.message); 
       });
   }; 
-
-  const handleFacebookLogin = () => {
-    // Implement Facebook login logic if needed
-  }
   const blogData = [
     {
       title: "Free Property Listing Sites in India",
@@ -116,6 +122,8 @@ const Home = () => {
     autoplay: true,
     autoplaySpeed: 1200,
     pauseOnHover: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -147,12 +155,50 @@ const Home = () => {
     if (signupSuccess) {
       setShowPopup(true); 
     }
-  }, [signupSuccess]);
+  }, [signupSuccess]);  
+
+const [jwtToken, setJwtToken] = useState(null);
+
+useEffect(() => {
+  const token = Cookies.get('jwt_token'); 
+  console.log(token)
+  setJwtToken(token);
+}, []);
+
+if (!user && !jwtToken) {
+  return <Navigate to="/login" />;
+}
+
+function NextArrow(props) {
+  const { className, onClick } = props;
+  return (
+    <div className={className} onClick={onClick}>
+      <FontAwesomeIcon icon={faChevronRight} />
+    </div>
+  );
+}
+
+function PrevArrow(props) {
+  const { className, onClick } = props;
+  return (
+    <div className={className} onClick={onClick}>
+      <FontAwesomeIcon icon={faChevronLeft} />
+    </div>
+  );
+}
 
   return (
     <>
+    <Helmet> 
+        <title>Proptelligence | PropTech Company in India & USA | Online Legal Services</title>
+        <meta name="Legal Services" content="Proptelligence is an AI-powered real estate and legal platform that helps agents, attorneys, and other real estate professionals find and procure properties." /> 
+        <meta name="Property Services" content="Navigating the legal complexities of real estate transactions can be daunting. Proptelligence simplifies this process by offering tailored legal services to meet your needs." /> 
+        <meta name="Industries" content="Property Technologies has worked with a range of industries including commercial real estate, residential real estate, hospitality, and healthcare." />
+        <meta name="About us" content="At Proptelligence, we recognize the challenges faced by property owners and strive to provide innovative solutions tailored to their needs." />
+        <meta name="msvalidate.01" content="D2A150396A7BEE21CE9769C5C3479F1C" />
+        <meta name="google-site-verification" content="google154aa1c8bf93db82.html" />
+      </Helmet>
       <Navbar />
-
       <div className="home-container">
         <div className="home-content">
           <h1 className="home-heading">Unlock Our Free Property Service</h1>
@@ -252,50 +298,18 @@ const Home = () => {
         </div>
         <img
           src="https://img.freepik.com/premium-photo/house-growth-chart-real-estate-market-concept-generative-ai_609002-980.jpg"
-          alt="dresses to be noticed"
+          alt="Property Image"
           className="home-desktop-img"
         />
-      </div> 
+      </div>   
+      <h1 className="service-heading">Trending Services</h1>
+      <Services/>
       <div className='content-section'>
         <h1>Get Free Real Estate Guidance & Secure 24/7 Legal Support</h1> 
         <p>Get expert guidance throughout your real estate journey, with a FREE consultation and access to our optional 24/7 legal support. Don't let legal worries slow you down.  Proptelligence empowers you with the resources
            and expertise you need to make informed decisions and navigate the real estate market with confidence.</p>
       </div>
-      <div className="service-section">
-        <h2 className="service-heading">Our Services</h2>
-        <div className="services-container">
-          <div className="service-item">
-            <Link to="/prop">
-              <img
-                src="https://img.freepik.com/premium-vector/security-infests-house-agrees-isometric-illustration_18660-608.jpg"
-                alt="Service 1"
-                className="service-image"
-              />
-            </Link>
-            <h2 className="heading-2">Property Management Services</h2>
-            <p className="prop-text-service-description">
-              At Proptelligence, we recognize the challenges faced by property
-              owners and strive to provide innovative solutions tailored to
-              their needs.
-            </p>
-          </div>
-          <div className="service-item">
-            <Link to="/legalservices">
-              <img
-                src="https://img.freepik.com/premium-photo/consultation-male-lawyer-business-woman-customer_28283-887.jpg"
-                alt="Service 2"
-                className="service-image"
-              />
-            </Link>
-
-            <h2 className="heading-2">Legal Services</h2>
-            <p className="prop-text-service-description">
-              Navigating the legal complexities of real estate transactions can
-              be daunting.
-            </p>
-          </div>
-        </div>
-      </div> 
+     
       <h2 className="service-heading">Blogs</h2>
       <Slider {...settings} className='blog-section-home'>
         {blogData.map((blog, index) => (
@@ -311,8 +325,7 @@ const Home = () => {
             </div>
           </div>
         ))}
-      </Slider>
-      
+      </Slider> 
       <footer>
         <Navbottom />
       </footer>

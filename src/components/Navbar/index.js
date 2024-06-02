@@ -6,8 +6,6 @@ import DropdownC from '../DropdownC'
 import { menuItems } from '../../menuItems'; 
 import { menuItems1 } from '../../menuItems1';
 import Menu from '../Menu';
-
-
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
@@ -21,9 +19,8 @@ function Navbar() {
   const [servicesDropdown, setServicesDropdown,] = useState(false);
   const [techDropdown, setTechDropdown] = useState(false); 
   const [companyDropdown, setcompanyDropdown] = useState(false); 
-  // Determine user authentication status
   const [user, loading, error] = useAuthState(auth);
-  const isLoggedIn = !!user; // This will be true if a user is logged in, otherwise false
+  const isLoggedIn = !!user;
   const [name, setName] = useState("");
   const navigate = useNavigate();
   const [click, setClick] = useState(false); // State for menu click
@@ -124,7 +121,7 @@ function Navbar() {
             >
              Company <i className='fas fa-caret-down' />
             </Link>
-            {companyDropdown && <DropdownC />} {/* Display Services dropdown */}
+            {companyDropdown && <DropdownC />} 
           </li>
 
        

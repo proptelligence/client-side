@@ -8,7 +8,7 @@ const About = () => (
     <div className="cont-1">
       <div className="about-us">
         <div className='about-cont'>
-        <h2>About Us</h2>
+        <h1>About Us</h1>
         </div>
         <p>
           Proptelligence is an AI-powered real estate and legal platform that

@@ -3,13 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth, signInWithGoogle } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import axios from "axios";
+import Cookies from 'js-cookie'; 
 import "./index.css";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState(""); 
-  const [showSubmitError,setShowSubmitError] = useState(false)
-  const [error,setError] = useState("")
+  const [showSubmitError, setShowSubmitError] = useState(false);
+  const [error, setError] = useState("");
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
@@ -26,18 +27,25 @@ function Login() {
           password: password
         }
       );
-      console.log(response.data);
-      navigate("/"); // Redirect to home page after successful login
+      const { data } = response; 
+      Cookies.set('jwt_token', data.token, {
+        expires: 30,
+        path: '/',
+      }); 
+      navigate("/"); 
     } catch (error) {
       console.error("Login error:", error);
-      // Handle login error here, maybe set an error state to display error message to the user
+      setShowSubmitError(true);
+      setError(error.message);
     }
   };
 
   return (
-    <div className="login">
+       <div className="login"> 
+       <div className="cont2"> 
+        <h2 className="login-heading-1">Post Property For Free</h2>
       <div className="login__container">
-        <h1 className="login-heading">Login</h1>
+        <h2 className="login-heading">Login</h2>
         <input
           type="text"
           className="login__textBox"
@@ -55,6 +63,7 @@ function Login() {
         <button className="login__btn" onClick={loginWithApi}>
           Login
         </button>
+        {showSubmitError && <p className="error-message">*{error}</p>}
         <div className="row-lines">
           <hr width="120px" size="2"></hr>
           <p>OR</p>
@@ -70,11 +79,12 @@ function Login() {
           </button>
         </div>
         <div>
-          <Link to="/reset">Forgot Password</Link>
+          <Link to="/login">Forgot Password</Link>
         </div>
         <p>
           Don't have an account? <Link to="/signup">Sign up </Link> now.
         </p>
+      </div>
       </div>
     </div>
   );

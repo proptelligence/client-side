@@ -1,12 +1,12 @@
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
 import Navbottom from '../Navbottom';
 import Navbar from '../Navbar';
 import './index.css';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    mobile: '',
+    name: '',
+    mobileNumber: '',
     email: '',
     message: '',
   });
@@ -24,25 +24,23 @@ const ContactUs = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
-      const response = await fetch('http://localhost:3000/contact/send-email', { // Using relative URL
+      const response = await fetch('https://property-backend-1.onrender.com/contact/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
-  
+
       if (response.ok) {
         setSubmitStatus('success');
         setShowSuccessMessage(true);
         console.log('Email sent successfully!');
-  
-        // Clear form fields after successful submission
         setFormData({
-          firstName: '',
-          mobile: '',
+          name: '',
+          mobileNumber: '',
           email: '',
           message: '',
         });
@@ -73,7 +71,6 @@ const ContactUs = () => {
     <div className="cont1"> 
       <div className="contact-us-container">
         <div className="contact-info"> 
-          {/* Replace the image with Google Map embed */}
           <iframe
             title="Google Map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.133122814258!2d77.699657!3d12.963731299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13ab1884f719%3A0xd72102ad7e3b3947!2sWeWork!5e0!3m2!1sen!2sin!4v1648895132407!5m2!1sen!2sin"
@@ -97,23 +94,23 @@ const ContactUs = () => {
           <h3>Send us a message</h3>
           <form onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="firstName">Name</label>
+              <label htmlFor="name">Name</label>
               <input
                 type="text"
-                id="firstName"
-                name="firstName"
-                value={formData.firstName}
+                id="name"
+                name="name"
+                value={formData.name}
                 onChange={handleChange}
                 required
               />
             </div>
             <div>
-              <label htmlFor="mobile">Mobile Number</label>
+              <label htmlFor="mobileNumber">Mobile Number</label>
               <input
                 type="text"
-                id="mobile"
-                name="mobile"
-                value={formData.mobile}
+                id="mobileNumber"
+                name="mobileNumber"
+                value={formData.mobileNumber}
                 onChange={handleChange}
                 required
               />

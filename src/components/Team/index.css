@@ -56,6 +56,14 @@ h2 {
   color: #666;
 }
 
+#social-img-team{
+  width: 40px;
+  height: auto; 
+  margin-right: 5px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
 @media screen and (max-width: 768px) {
   .team-members {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

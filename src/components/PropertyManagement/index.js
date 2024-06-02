@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaShoppingCart, FaHandshake } from 'react-icons/fa'; 
 import Navbar from '../Navbar';
 import RenderServices from '../RenderServices';
 import './index.css';

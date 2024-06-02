@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './index.css';
 import Navbar from '../Navbar';
-import Footer from '../Footer';
+import Navbottom from '../Navbottom';
 
 const TermsAndConditions = () => {
   useEffect(() => {
@@ -10,7 +10,7 @@ const TermsAndConditions = () => {
 
   return (
     <>
-     
+     <Navbar/>
       <div className="privacy-cont">
         <div className="privacy-policy">
           <div className='privacy-cont-1'>
@@ -119,7 +119,6 @@ const TermsAndConditions = () => {
           </p>
         </div>
       </div>
-     
     </>
   );
 };

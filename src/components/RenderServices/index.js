@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaShoppingCart, FaHandshake, FaRegBuilding } from 'react-icons/fa';
-import PropertyForm from '../PropertyForm';
 import './index.css';
 
 const RenderServices = ({ selectedOption, selectedCity }) => {
@@ -139,9 +138,9 @@ const RenderServices = ({ selectedOption, selectedCity }) => {
               <button>3 BHK</button>
               <button>4+ BHK</button>
             </div> 
-              <Link to="/propertyForm">
+            
               <button type="button">Find Property                                                                                                                                       </button>
-              </Link>
+          
             
             </div>
           )}

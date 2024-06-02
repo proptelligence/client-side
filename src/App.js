@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'; 
+import React, { useEffect,useState,Navigate } from 'react'; 
 import './App.css';
 import Home from './components/Home';
 import About from './components/About';
@@ -13,8 +13,6 @@ import TitleSearch from './components/TitleSearch';
 import Drafting from './components/Drafting';
 import PaymentGateway from './components/PaymentGateway';
 import PostProperty from './components/PostProperty';
-import PropertyForm from './components/PropertyForm';
-import Tech from './components/Tech';
 import Categories from './components/Categories'; 
 import BlogItemDetails from './components/BlogItemDetails' 
 import PrivacyPolicy from './components/PrivacyPolicy' 
@@ -31,12 +29,12 @@ import Insights from './components/Insights'
 import CareerPage from './components/CareerPage'
 import Team from './components/Team' 
 import Cart from './components/Cart'
-import Soon from './components/Soon' 
-import HouseDetailsForm from './components/HouseDetailsForm'
+import HouseDetailsForm from './components/HouseDetailsForm' 
+import Services from './components/Services'
 import { Helmet } from 'react-helmet';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function App() {
+function App() { 
 
   useEffect(() => {
     // Google Tag Manager (gtag.js)
@@ -132,7 +130,8 @@ function App() {
   return (
     <BrowserRouter>  
 
-      <Helmet>
+      <Helmet> 
+        <title>Proptelligence | PropTech Company in India & USA | Online Legal Services</title>
         <meta name="Legal Services" content="Proptelligence is an AI-powered real estate and legal platform that helps agents, attorneys, and other real estate professionals find and procure properties." /> 
         <meta name="Property Services" content="Navigating the legal complexities of real estate transactions can be daunting. Proptelligence simplifies this process by offering tailored legal services to meet your needs." /> 
         <meta name="Industries" content="Property Technologies has worked with a range of industries including commercial real estate, residential real estate, hospitality, and healthcare." />
@@ -141,8 +140,9 @@ function App() {
         <meta name="google-site-verification" content="google154aa1c8bf93db82.html" />
       </Helmet>
       <Routes>
-      <Route exact path="/" element={<Home />} /> 
+      <Route exact path="/" element={<Home/>} /> 
       <Route exact path="/aboutus" element={<About/>}/>
+      <Route exact path="/s" element={<Services/>}/>
       <Route exact path="/contact" element={<ContactUs/>}/>  
       <Route exact path="/tech" element={< Technology/>}/> 
       <Route exact path="/industries" element={< Industries/>}/> 
@@ -154,8 +154,6 @@ function App() {
       <Route exact path="/post" element={< PostProperty/>} />
       <Route exact path="/signup" element={<SignUp/>} />
       <Route exact path='/login' element={<Login/>} /> 
-      <Route exact path='/techno' element = {<Tech/>}/>
-      <Route exact path= '/propertyForm' element={<PropertyForm/>}/> 
       <Route exact path="/categories" element={<Categories/>} />  
       <Route exact path="/blogdetails" element={<BlogItemDetails/>} /> 
       <Route exact path="/privacypolicy" element={<PrivacyPolicy/>} /> 

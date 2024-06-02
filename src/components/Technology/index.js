@@ -6,7 +6,7 @@ import './index.css';
 const Technology = () => {
   const initialContent = "Harnessing the power of AI, Proptelligence offers an innovative platform that transforms real estate  decision-making.Our advanced algorithms analyze vast datasets to identify market trends, investment opportunities, and potential risks.With Proptelligence's AI platform, you can make informed decisions confidently,";
   const initialContentAR = "Experience properties like never before with Proptelligence's AR and VR technology. Our augmented   reality enhances property tours, while virtual reality offers immersive virtual tours. From visualizing renovations to exploring every corner, our solutions provide invaluable insights for buyers, sellers, and investors.";
-  const initialContentIoT = "Proptelligence leverages the Internet of Things to optimize property management and enhance security. With IoT sensors and smart devices, property owners can remotely monitor key metrics such as temperature, humidity, and security status.Our integrated IoT solutions ensure that properties are operating efficiently and securely, providing clients with peace of mind.";
+  const initialContentIoT = "Proptelligence leverages the Internet of Things to optimize property management and enhance security. With IoT sensors and smart devices, property owners can remotely monitor key metrics such as temperature, humidity, and security status.Our integrated IoT solutions ensure that properties are operating efficiently.";
   
   const [showFullContent, setShowFullContent] = useState(false);
   const [showFullContentAR, setShowFullContentAR] = useState(false);

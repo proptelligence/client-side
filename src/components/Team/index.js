@@ -3,14 +3,10 @@ import Navbar from '../Navbar';
 import './index.css'
 
 const Team = () => {
-  // Array containing team member data
   const teamMembers = [
-    { name: 'Mahesh S Reddy', role: 'Co-Founder & CEO', profile: 'CEO Profile Description', photo: 'https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg' },
-    { name: 'Sr Advocate', role: 'Chief Legal Officer', profile: 'Legal Advisor Profile Description', photo: 'https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg' },
-    // Add more team members as needed
- 
+    { name: 'MaheswaraReddy', role: 'CEO', profile: 'CEO Profile Description', photo: 'https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg' },
+    { name: 'Sr Advocate', role: 'Chief Legal Officer', profile: 'Legal Advisor Profile Description', photo: 'https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg' }, 
   ];
-
   return (
       <> 
       <Navbar/>
@@ -20,10 +16,13 @@ const Team = () => {
       <div className="team-members">
         {teamMembers.map((member, index) => (
           <div className="team-member" key={index}>
-            <img src={member.photo} alt={member.name} className="team-member-photo" />
+            <img src={member.photo} alt={member.name} className="team-member-photo" /> 
             <h3>{member.name}</h3>
             <p>{member.role}</p>
-            <p>{member.profile}</p> {/* Display profile description */}
+            <a href="https://www.linkedin.com/in/mahesh-sm/" target="_blank" rel="noopener noreferrer"> <img
+                src="https://img.freepik.com/premium-vector/linkedin-app-icon-world-s-largest-professional-network-social-networking-jobs-careers_277909-476.jpg" 
+                alt="LinkedIn" id='social-img-team'
+              /> </a>
           </div>
         ))}
       </div>
