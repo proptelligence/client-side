@@ -305,8 +305,8 @@ function PrevArrow(props) {
       <h1 className="service-heading">Trending Services</h1>
       <Services/>
       <div className='content-section'>
-        <h1>Get Free Real Estate Guidance & Secure 24/7 Legal Support</h1> 
-        <p>Get expert guidance throughout your real estate journey, with a FREE consultation and access to our optional 24/7 legal support. Don't let legal worries slow you down.  Proptelligence empowers you with the resources
+        <h1>Get Free Real Estate Guidance & Secure Legal Support</h1> 
+        <p>Get expert guidance throughout your real estate journey, with a FREE consultation and access to our optional legal support. Don't let legal worries slow you down.  Proptelligence empowers you with the resources
            and expertise you need to make informed decisions and navigate the real estate market with confidence.</p>
       </div>
      

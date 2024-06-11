@@ -5,18 +5,14 @@ import Navbottom from '../Navbottom';
 
 const CareerPage = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('All');
-
   const departments = ['All', 'Engineering', 'Design', 'Marketing', 'Sales'];
-
   const jobs = [
     { id: 1, title: 'Software Engineer', department: 'Engineering' },
     { id: 2, title: 'UI/UX Designer', department: 'Design' },
     { id: 3, title: 'Digital Marketer', department: 'Marketing' },
     { id: 4, title: 'Sales Representative', department: 'Sales' },
-    { id: 5, title: 'Full stack Developer', department: 'Engineering' },
-    // Add more jobs here...
+    { id: 5, title: 'Full stack Developer', department: 'Engineering' }
   ];
-
   const filteredJobs =
     selectedDepartment === 'All'
       ? jobs
@@ -24,7 +20,7 @@ const CareerPage = () => {
 
   const handleApplyNow = (jobId) => {
     // Logic to handle applying for the job, e.g., redirect to application form
-    window.location.href = 'https://airtable.com/appzzver0yiVZ86fQ/shrOIu8c4Cm6JFgGx'; // Replace this with your desired link
+    window.location.href = 'https://airtable.com/appI0aCpyCDLLVP5b/shrzPDYswmhXO6Epm'; // Replace this with your desired link
     console.log(`Applying for job with ID: ${jobId}`);
   };
 

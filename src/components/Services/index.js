@@ -45,17 +45,21 @@ const Services = () => {
 
   return (
     <Slider {...settings} className='services-slider'> 
-        <div className="service-info">
-          <Link to="/prop">
-            <img
-              src="https://img.freepik.com/premium-vector/security-infests-house-agrees-isometric-illustration_18660-608.jpg"
-              alt="Service 1"
-              className="service-image"
-            />
-          </Link>
-          <h2 className="service-details-title-home">Property Services</h2>
-          <p className="service-content">At Proptelligence, we recognize the challenges faced by property owners and strive to provide innovative solutions tailored to their needs.</p>
-        </div>
+       <div className="service-info-container">
+  <div className="free-banner">FREE</div>
+  <div className="service-info">
+    <Link to="/prop">
+      <img
+        src="https://img.freepik.com/premium-vector/security-infests-house-agrees-isometric-illustration_18660-608.jpg"
+        alt="Service 1"
+        className="service-image"
+      />
+    </Link>
+    <h2 className="service-details-title-home">Property Services</h2>
+    <p className="service-content">At Proptelligence, we recognize the challenges faced by property owners and strive to provide innovative solutions tailored to their needs.</p>
+  </div>
+</div>
+
         <div className="service-info">
           <Link to="/legalservices">
             <img
@@ -82,7 +86,7 @@ const Services = () => {
         <div className="service-info">
           <Link to="/legalservices">
             <img
-              src="https://img.freepik.com/free-vector/copyright-patent-law-illustration_23-2148711109.jpg"
+              src="https://www.lefoll.com/wp-content/uploads/2022/06/title-search-scaled.jpeg"
               alt="Service 2"
               className="service-image"
             />

@@ -55,7 +55,7 @@ const Blog4 = () => {
 
             </p>  
             <p className='blog-des'>Visit the Proptelligence website or app today to learn more about our legal advice service. We offer a free initial consultation (limited time only) to discuss your specific needs and how we can assist you. Don't hesitate to take control of your legal matters  Proptelligence is here to guide you every step of the way.
-</p>
+            </p>
                 
 
             </div> 

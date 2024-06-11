@@ -1,9 +1,100 @@
+.city-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.city-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #fff; 
+  border-radius: 6px;
+}
+.city {
+  margin: 10px;
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'PT Sans', sans-serif;
+}
+.select-city-heading{
+  font-size: 28px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 800;
+}
+
+.city:hover {
+  background-color: #f0f0f0;
+}
+
+.login__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-heading-1 {
+  margin-bottom: 20px; 
+  font-family: 'PT Sans', sans-serif;
+}
+
+.login-heading {
+  margin-bottom: 10px;
+}
+
+.login__textBox {
+  margin: 10px 0;
+}
+
+.login__btn {
+  margin: 20px 0;
+}
+
+.error-message {
+  color: red;
+}
+
+.row-lines {
+  display: flex;
+  align-items: center;
+}
+
+.row-lines p {
+  margin: 0;
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.google-button img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+
+
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("https://img.freepik.com/free-vector/cityscape-cartoon-background-panorama-modern-city-with-high-skyscrapers-park-downtown_1441-1982.jpg"); 
+  padding-top: 20px;
+  background-color: #007bff;
   background-size: cover;
 }
 
@@ -95,42 +186,6 @@ animation: shine 2s infinite linear;
   margin-top: 10px;
 }
 
-.google-button,
-.facebook-button,
-.linkedin-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%;
-}
-
-.google-button:hover,
-.facebook-button:hover,
-.linkedin-button:hover {
-  background-color: #f0f0f0;
-}
-
-.google-button img,
-.facebook-button img,
-.linkedin-button img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
-.row-lines {
-  display: flex;
-  justify-content: center;
-  padding-top: 5px;
-  margin-right: 10px;
-  align-items: center;
-  gap: 10px; 
-}
 
 .login-heading {
   font-size: 2em; 
@@ -154,7 +209,31 @@ animation: shine 2s infinite linear;
 .logo-login {
   width: 110px;
   text-align: center;
+} 
+
+.post-cont{
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  padding-bottom: 10px;
 }
+.post-btn{
+ background-color: #fff;
+ color: #333;
+ margin-left: 50px;
+ font-family: 'PT Sans', sans-serif;
+}
+.free-btn-login{
+ font-family:sans-serif;
+ background-color: #2ecc71;
+ border-radius: 6px;
+ padding: 5px;
+ transition: transform 0.3s ease-in-out; 
+ transform: translateX(-100%); 
+ font-family: 'PT Sans', sans-serif;
+}
+
+
 
 @media screen and (min-width: 768px) {
   .logo-login {
@@ -165,3 +244,117 @@ animation: shine 2s infinite linear;
    
   }
 }
+.city-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.city-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+.city {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px; 
+  font-family: 'PT Sans', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.city:hover {
+  background-color: #FFF5EE;
+}
+
+.city-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
+@media (min-width:723px) {
+  .post-container-none{
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .city-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .city-list {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    max-width: 660px;
+    padding-top: 30px;
+    
+  } 
+  
+  .city-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50px;
+    margin-bottom: 5px; 
+   
+  } 
+  .city-mobile-name{
+    font-size: 18px;
+    padding-right: 10px;
+  }
+  .city{
+    width: 90px;
+  }
+  
+  .post-container-none{
+    display: flex;
+  }
+  .post-cont {
+    flex-direction: column; 
+    align-items: center; 
+  }
+  .select-city-heading {
+    font-size: 24px; 
+  }
+
+  .free-btn-mo {
+    padding: 10px; 
+    transform: translateX(0);
+  }
+
+  .post-btn {
+    margin-left: 0;
+    margin-top: 10px; 
+    width: 100%; 
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .city-list {
+    grid-template-columns: 5fr;
+  }
+}
+
+
+.free-btn-mo{
+  font-family: 'PT Sans', sans-serif;
+  background-color: #2ecc71;
+  border-radius: 6px;
+  padding: 5px;
+  transition: transform 0.3s ease-in-out; 
+  transform: translateX(-100%);
+ }

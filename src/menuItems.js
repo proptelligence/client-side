@@ -39,35 +39,6 @@ export const menuItems = [
             url: '/',
             
           },
-          {
-            title: 'USA',
-            submenu: [
-              {
-                title: 'Top states in USA',
-                url: '/',
-              },
-              {
-                title: 'North Dakota',
-                url: '/',
-              },{
-                title: 'Texas',
-                url: '/',
-              },
-              {
-                title: 'Massachusetts',
-                url: '/',
-              },
-              {
-                title: 'Colorado',
-                url: '/',
-              },
-              {
-                title: 'Washington',
-                url: '/',
-              },
-              
-            ],
-          },
         ],
       },
       {

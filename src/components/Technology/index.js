@@ -44,7 +44,6 @@ const Technology = () => {
               <h2>Artificial Intelligence</h2> 
               <p className={`prop-text-service-description ${showFullContent ? 'expand' : ''}`}>
                 {showFullContent ? initialContent : initialContent.slice(0, 100)}
-                <span className='btn-ai' onClick={toggleContent}>{showFullContent ? 'Read Less' : 'Read More'}</span>
               </p>           
             </div>        
           </div>
@@ -62,7 +61,6 @@ const Technology = () => {
               <h2>AR & VR</h2> 
               <p className={`prop-text-service-description ${showFullContentAR ? 'expand' : ''}`}>
                 {showFullContentAR ? initialContentAR : initialContentAR.slice(0, 100)}
-                <span className='btn-ai' onClick={toggleContentAR}>{showFullContentAR ? 'Read Less' : 'Read More'}</span>
               </p>
             </div>
           </div> 
@@ -81,7 +79,6 @@ const Technology = () => {
               <h2>Internet of Things (IoT)</h2> 
               <p className={`prop-text-service-description ${showFullContentIoT ? 'expand' : ''}`}>
                 {showFullContentIoT ? initialContentIoT : initialContentIoT.slice(0, 100)}
-                <span className='btn-ai' onClick={toggleContentIoT}>{showFullContentIoT ? 'Read Less' : 'Read More'}</span>
               </p>
             </div>
           </div> 

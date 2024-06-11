@@ -10,9 +10,10 @@ const Team = () => {
   return (
       <> 
       <Navbar/>
+      <div className='cont-team'>
         <div className="team-container">
       <h2>Meet Our Team</h2>
-      <p>Our dedicated team of professionals is here to revolutionize the real estate and legal industry.</p>
+      <p className='team-sub'>Our dedicated team of professionals is here to revolutionize the real estate and legal industry.</p>
       <div className="team-members">
         {teamMembers.map((member, index) => (
           <div className="team-member" key={index}>
@@ -26,7 +27,8 @@ const Team = () => {
           </div>
         ))}
       </div>
-    </div>
+        </div> 
+      </div>
       </>
   );
 };
