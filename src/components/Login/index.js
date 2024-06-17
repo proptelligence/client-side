@@ -16,6 +16,16 @@ const cityImages = {
   Pune: 'https://www.tourmyindia.com/images/trimbakeshwar-shiva-temple-nashik1.jpg',
   Ahmedabad: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Sheth_Hutheesinh_Temple.jpg/800px-Sheth_Hutheesinh_Temple.jpg',
 };
+const stateImages = {
+  Telangana: 'https://www.euroschoolindia.com/wp-content/uploads/2023/07/telangana-formation-day-significance.jpg',
+  Maharastra: 'https://as2.ftcdn.net/v2/jpg/05/00/41/27/1000_F_500412750_1TPS73JprcwKPr2aI9D55M8DJ1hOtiKy.jpg',
+  Karnataka: 'https://www.karnatakatourism.org/wp-content/uploads/2022/02/Photos-Banner.jpg',
+  Andrapradesh: 'https://i.pinimg.com/736x/1b/16/5e/1b165e9eeee66996b4d8e637b7e6cc4b.jpg',
+  Tamilnadu: 'https://procaffenation.com/wp-content/uploads/2017/04/beautiful-view-of-howrah-bridge-at-evening-compressor.jpg',
+  Kerala: 'https://img.freepik.com/premium-vector/chennai-skyline-detailed-silhouette-trendy-vector-illustration_668947-1201.jpg',
+  Madyapradesh: 'https://www.tourmyindia.com/images/trimbakeshwar-shiva-temple-nashik1.jpg',
+  Goa: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Sheth_Hutheesinh_Temple.jpg/800px-Sheth_Hutheesinh_Temple.jpg',
+};
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -53,7 +63,7 @@ function Login() {
   };
 
   const cities = ["Mumbai", "Delhi", "Bangalore", "Hyderabad", "Ahmedabad", "Chennai", "Kolkata", "Pune"];
-
+  const states = ["Telangana", "Maharastra", "Karnataka", "Andrapradesh", "Tamilnadu", "Kerala", "Madyapradesh", "Goa"];
   return (
     <div className="login">
       {!showLoginContainer ? (
@@ -66,6 +76,15 @@ function Login() {
             {cities.map((city, index) => (
               <div key={index} className="city" onClick={() => setShowLoginContainer(true)}>
                 <img src={cityImages[city]} alt={city} className="city-image" />
+                <p className="city-name">{city}</p>
+              </div>
+            ))}
+          </div>
+          <h2 className="select-city-heading">Select Your State</h2> 
+          <div className="city-list">
+            {states.map((city, index) => (
+              <div key={index} className="city" onClick={() => setShowLoginContainer(true)}>
+                <img src={stateImages[city]} alt={city} className="state-image" />
                 <p className="city-name">{city}</p>
               </div>
             ))}

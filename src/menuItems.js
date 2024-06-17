@@ -1,5 +1,4 @@
 export const menuItems = [
-
   {
     title: 'Services',
     url: '/',
@@ -17,27 +16,26 @@ export const menuItems = [
               },
               {
                 title: 'Hyderabad',
-                url: '/prop',
+                url: '/prop/Hyderabad',
               },
               {
                 title: 'Mumbai',
-                url: '/prop',
+                url: '/prop/Mumbai',
               },
               {
                 title: 'Bangalore',
-                url: '/prop',
+                url: '/prop/Bangalore',
               },
               {
                 title: 'Kolkata',
-                url: '/prop',
+                url: '/prop/Kolkata',
               },
               {
                 title: 'Chennai',
-                url: '/prop',
+                url: '/prop/Chennai',
               },
             ],
             url: '/',
-            
           },
         ],
       },
@@ -47,5 +45,4 @@ export const menuItems = [
       },
     ],
   },
- 
 ];

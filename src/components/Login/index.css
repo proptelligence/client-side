@@ -1,3 +1,4 @@
+
 .city-container {
   display: flex;
   flex-direction: column;
@@ -86,16 +87,14 @@
   margin-right: 10px;
 }
 
-
-
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding-top: 20px;
   background-color: #007bff;
-  background-size: cover;
+  background-size: cover; 
+  padding-top: 60px;
 }
 
 .login__container {
@@ -106,15 +105,10 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.cont2 {
-
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  padding-top: 20px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.4), transparent, rgba(255,255,255,0.4)); 
-  background-color: #007bff;
-background-size: 300% 100%;
-animation: shine 2s infinite linear;
+.cont1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 @keyframes shine {
   0% {
@@ -253,7 +247,7 @@ animation: shine 2s infinite linear;
 
 .city-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 10px;
   padding: 20px;
 }
@@ -275,13 +269,19 @@ animation: shine 2s infinite linear;
 }
 
 .city-image {
-  width: 100px;
-  height: 100px;
+  width: 65px;
+  height: 65px;
   object-fit: cover;
   border-radius: 50px;
   margin-bottom: 10px;
 }
-
+.state-image {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
 @media (min-width:723px) {
   .post-container-none{
     display: none;
@@ -341,11 +341,18 @@ animation: shine 2s infinite linear;
     width: 100%; 
     text-align: center;
   }
+
 }
 
 @media (max-width: 480px) {
   .city-list {
-    grid-template-columns: 5fr;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding: 10px;
+  }
+  .login {
+    height: 130vh;
   }
 }
 

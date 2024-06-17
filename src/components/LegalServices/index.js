@@ -4,6 +4,7 @@ import {Link,useNavigate} from'react-router-dom'
 import TitleSearch from '../TitleSearch'; 
 import Drafting from '../Drafting'; 
 import SignUp from '../SignUp'; 
+import CashFree from '../CashFree'
 import { auth } from '../../firebase'; 
 import Navbar from '../Navbar'
 
@@ -53,7 +54,7 @@ const LegalServices = () => {
       <li>Real estate transactions</li>
       <li>IP protection</li>
      </ul>
-    <button className='consultant-fee' onClick={handleLinkClick}>Consultant Fee: ₹500</button>
+   <CashFree/>
   </div>
       </div> 
       <div className="services-cont">        

@@ -24,7 +24,8 @@ import Blog3 from './components/Blog3';
 import Blog4 from './components/Blog4';
 import Blog5 from './components/Blog5';
 import Blog6 from './components/Blog6';
-import Blog7 from './components/Blog7';
+import Blog7 from './components/Blog7'; 
+import CityPropertyList from './components/CityPropertyList'
 import Insights from './components/Insights';
 import CareerPage from './components/CareerPage';
 import Team from './components/Team';
@@ -168,7 +169,8 @@ function App() {
         <Route exact path="/careers" element={<CareerPage />} />
         <Route exact path="/team" element={<Team />} />
         <Route exact path="/cart" element={<Cart />} />
-        <Route exact path="/new" element={<HouseDetailsForm />} />
+        <Route exact path="/new" element={<HouseDetailsForm />} /> 
+        <Route exact path="/prop/:city" element={<CityPropertyList />} />
         <Route path="*" element={<Navigate to="/not-found" />} />
         <Route path="/not-found" element={<NotFound />} />
       </Routes>
