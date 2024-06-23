@@ -244,6 +244,7 @@
   align-items: center;
   justify-content: space-between;
   max-width: 600px;
+  max-height: 350px;
   margin: 0 auto;
   margin-bottom: 10px;
   border: 1px solid #ddd;
@@ -277,7 +278,7 @@
 }
 
 .left-container img {
-  width: 100%;
+  width: 250px;
   height: auto;
   border-radius: 8px;
 }

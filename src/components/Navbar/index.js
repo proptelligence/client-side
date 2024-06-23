@@ -136,27 +136,27 @@ function Navbar() {
          
          
         </ul>
-        {isLoggedIn ? (
-            <>
-              <p className="user-name">Welcome {name} 👋 </p>
-              <button type="button" className="logout-desktop-btn" onClick={logout}>
-                Logout
-              </button>
-            </>
-          ) : (
+        {
             <nav className='navbar'>
             <div className='menu-icon-nav' onClick={handleClick}>
               <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
             </div>
             {click && (
               <div className='dropdown-menu-ham'>
-                 <p >Welcome {name} 👋 </p>
-               <Link to="/login"> <button>Login</button></Link>
+                <p>Welcome {name} 👋 </p>
                 <p>Your Services</p>
+               {isLoggedIn? (
+                <>
+                <button type="button" className="logout-desktop-btn" onClick={logout}>
+                Logout
+               </button>
+                </>):(<> 
+                  <Link to="/login"> <button>Login</button></Link>
+                </>)}
               </div>
             )}
           </nav>
-          )}
+          }
       </nav>
     </>
   );

@@ -1,3 +1,5 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
 .industries-container {
     max-width: 1000px;
@@ -61,4 +63,7 @@
     background-color: #02797f;
     height: 100vh;
     padding: 10px;
+  }
+  .indus-heading{
+    color: black;
   }

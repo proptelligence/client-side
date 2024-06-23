@@ -102,8 +102,6 @@ const LegalServices = () => {
             An affidavit is a sworn statement made voluntarily under oath or affirmation before a qualified authority.
           </p>
         </div>
-
-        {/* Service block 4 */}
         <div className="service-1" onClick={() => handleServiceSelect('registrationSupport')}>
           <img
             className="img1"
