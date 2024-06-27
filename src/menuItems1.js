@@ -35,11 +35,11 @@ export const menuItems1 = [
         submenu: [
           {
             title: 'Prop360 VirtualTour',
-            url:"/new"
+            url:"/"
             
           },{
             title: 'Prop Virtual Design',
-            url: '/new',
+            url: '/',
           }
   
         ],
@@ -50,15 +50,15 @@ export const menuItems1 = [
         submenu: [
           {
             title: 'PropSmart Building Management',
-            url: '/new',
+            url: '/',
             
           },{
             title: 'Prop SmartHome',
-            url: '/new',
+            url: '/',
           },
           {
             title: 'Prop EnergyEfficeny',
-            url: '/new',
+            url: '/',
           },
   
         ],

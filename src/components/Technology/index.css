@@ -18,6 +18,7 @@
 .main-heading {
   margin-top: 30px;
   font-size: 2em;
+  padding-bottom: 5x;
 }
 
 .sub-heading {
@@ -196,10 +197,9 @@
 }
 
 .prop-text-service-description.expand {
-  max-height: none; /* Expand to full height */
+  max-height: none; 
 }
 
-/* Additional styles for buttons */
 .btn-ai {
   background-color: #666;
   border-radius: 5px;
@@ -208,15 +208,14 @@
   cursor: pointer;
 }
 
-/* List container */
 .animated-list-container {
   margin-top: 20px;
-  text-align: center; /* Center list items */
+  text-align: center; 
 }
 
 .cont-101 {
   margin-top: 20px;
-  text-align: left; /* Adjust text alignment */
+  text-align: left; 
 }
 
 .list-item {
@@ -246,17 +245,17 @@
 
 @media screen and (max-width: 768px) {
   .tech-sections {
-    width: 90%; /* Adjust width for responsiveness */
-    max-width: 500px; /* Maximum width for larger screens */
+    width: 90%; 
+    max-width: 500px;
   }
 }
 
 .tech-sections {
-  width: 50%; /* Adjust width as needed */
-  margin-bottom: 5px; /* Spacing between sections */
-  min-width: 380px; /* Set minimum width for responsiveness */
-  height: 400px; /* Set a fixed height for each section */
-  overflow: hidden; /* Hide overflow content */
+  width: 50%; 
+  margin-bottom: 5px; 
+  min-width: 380px; 
+  height: 400px; 
+  overflow: hidden; 
 }
 
 .prop-text-service-description {
@@ -284,4 +283,8 @@
   width: 45%; 
   margin-bottom: 5px; 
   min-width: 300px;
+}
+
+.tech-heading{
+  color: #333;
 }

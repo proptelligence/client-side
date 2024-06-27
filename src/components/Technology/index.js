@@ -41,7 +41,7 @@ const Technology = () => {
               />
             </div> 
             <div className="centered-content">
-              <h2>Artificial Intelligence</h2> 
+              <h2 className='tech-heading'>Artificial Intelligence</h2> 
               <p className={`prop-text-service-description ${showFullContent ? 'expand' : ''}`}>
                 {showFullContent ? initialContent : initialContent.slice(0, 100)}
               </p>           
@@ -58,7 +58,7 @@ const Technology = () => {
               /> 
             </div> 
             <div className="centered-content">
-              <h2>AR & VR</h2> 
+              <h2 className='tech-heading'>AR & VR</h2> 
               <p className={`prop-text-service-description ${showFullContentAR ? 'expand' : ''}`}>
                 {showFullContentAR ? initialContentAR : initialContentAR.slice(0, 100)}
               </p>
@@ -76,7 +76,7 @@ const Technology = () => {
               />
             </div> 
             <div className="centered-content">
-              <h2>Internet of Things (IoT)</h2> 
+              <h2 className='tech-heading'>Internet of Things</h2> 
               <p className={`prop-text-service-description ${showFullContentIoT ? 'expand' : ''}`}>
                 {showFullContentIoT ? initialContentIoT : initialContentIoT.slice(0, 100)}
               </p>

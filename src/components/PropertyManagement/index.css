@@ -134,15 +134,15 @@
   
   .category-options {
     display: flex;
+    margin-left: 20px;
   }
   
   .category-options button {
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding: 8px 12px;
+    width: 150px;
+    height: 50px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f0f0f0;
+    margin-top: 30px;
     
   }
   
@@ -225,4 +225,83 @@
 .selected-city {
   background-color: #f0f0f0; /* Change this color as per your preference */
   border: 2px solid #000; /* Change border style if needed */
+}
+
+
+.properties-list-prop {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+.property-card-prop {
+ 
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.property-photo-prop{
+  max-width: 350px;
+  margin-right: 20px;
+  padding-bottom: 10px;
+}
+
+.property-details {
+  flex: 1;
+}
+
+.property-price {
+  font-weight: bold;
+  color: #f60;
+}
+
+.cities-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.city-button {
+  cursor: pointer;
+  width: 45%;
+  margin: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.city-image img {
+  max-width: 100px;
+  height: auto;
+}
+
+.selected-city {
+  border-color: #f60;
+}
+
+.properties-list-prop{
+  display: flex;
+  flex-wrap: wrap;
+}
+.property-card-prop{
+  margin: 10px;
+  padding: 10px;
+  
+}
+.filters{
+  display: flex;
+}
+.locality-filter{
+  margin-top: 10px;
+}
+
+
+.property-card-prop {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: calc(33.333% - 20px); /* Adjust the width as per your design */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
 }

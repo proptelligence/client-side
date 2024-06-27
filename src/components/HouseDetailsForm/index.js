@@ -48,8 +48,6 @@ function HouseDetailsForm() {
             window.alert('Error submitting data: ' + error.message);
         }
     };
-    
-
     return (
         <>
             <Navbar />
@@ -69,10 +67,14 @@ function HouseDetailsForm() {
                     </div>
                     <div>
                         <label htmlFor="squareFeet">Square Feet:</label>
-                        <input type="number" id="squareFeet" name="squareFeet" value={formData.squareFeet} onChange={handleChange} required />
-                    </div>
+                        <input type="number" id="squareFeet" name="squareFeet" value={formData.squareFeet} onChange={handleChange} required /> 
+                        
+                        <label htmlFor="Area">Area:</label>
+                        <input type="number" id="Area" name="Area" value={formData.squareFeet} onChange={handleChange} required />
+                    
+                    </div> 
                     <div>
-                        <label htmlFor="houseType">Type of House:</label>
+                        <label htmlFor="houseType">Type of Property:</label>
                         <select id="houseType" name="houseType" value={formData.houseType} onChange={handleChange} required>
                             <option value="2BHK">2BHK</option>
                             <option value="3BHK">3BHK</option>

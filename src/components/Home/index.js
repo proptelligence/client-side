@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link,Navigate } from 'react-router-dom'; 
+import { Link, Navigate } from 'react-router-dom'; 
 import Cookies from 'js-cookie'
 import Navbottom from '../Navbottom';
 import Slider from 'react-slick';
@@ -21,12 +21,9 @@ import Popup from 'reactjs-popup';
 import Services from '../Services';
 
 const Home = () => {
-
-  
   const [showPopup, setShowPopup] = useState(false); 
   const [signupSuccess, setSignupSuccess] = useState(false); 
   const [signupError, setSignupError] = useState(null); 
-
   const closePopup = () => {
     setShowPopup(false);
   };
@@ -36,11 +33,23 @@ const Home = () => {
   const [name, setName] = useState("");
   
   const [user, loading] = useAuthState(auth);
-  
   const [isLoading, setIsLoading] = useState(true); 
   const [ error] = useAuthState(auth);
   const navigate = useNavigate(); 
-  
+  const [selectedCity, setSelectedCity] = useState('Bengaluru');
+
+  const cityImages = {
+    Bengaluru: 'https://res.cloudinary.com/ajaymedidhi7/image/upload/v1719286332/Bangalore_heatmap_nd32b0.png',
+    Hyderabad: 'https://res.cloudinary.com/ajaymedidhi7/image/upload/v1719247247/HyderabadHeatmap_ft5rlf.png',
+    Ahemadabad: 'https://res.cloudinary.com/ajaymedidhi7/image/upload/v1719285890/MicrosoftTeams-image_9_sgmb5u.png',
+    Delhi : 'https://res.cloudinary.com/ajaymedidhi7/image/upload/v1719286002/MicrosoftTeams-image_11_jvudbu.png',
+    kolkotha : 'https://res.cloudinary.com/ajaymedidhi7/image/upload/v1719286000/MicrosoftTeams-image_13_uqjmfm.png'
+  };
+
+  const handleCityChange = (event) => {
+    setSelectedCity(event.target.value);
+  };
+
   const register = () => {
     if (!name) {
       alert("Please enter name");
@@ -56,6 +65,7 @@ const Home = () => {
         setSignupError(error.message); 
       });
   }; 
+
   const blogData = [
     {
       title: "Free Property Listing Sites in India",
@@ -142,7 +152,6 @@ const Home = () => {
     ]
   };
 
-
   useEffect(() => {
     if (loading) return;
     if (user) {
@@ -157,40 +166,40 @@ const Home = () => {
     }
   }, [signupSuccess]);  
 
-const [jwtToken, setJwtToken] = useState(null);
+  const [jwtToken, setJwtToken] = useState(null);
 
-useEffect(() => {
-  const token = Cookies.get('jwt_token'); 
-  console.log(token)
-  setJwtToken(token);
-}, []);
+  useEffect(() => {
+    const token = Cookies.get('jwt_token'); 
+    console.log(token)
+    setJwtToken(token);
+  }, []);
 
-if (!user && !jwtToken) {
-  return <Navigate to="/login" />;
-}
+  if (!user && !jwtToken) {
+    return <Navigate to="/login" />;
+  }
 
-function NextArrow(props) {
-  const { className, onClick } = props;
-  return (
-    <div className={className} onClick={onClick}>
-      <FontAwesomeIcon icon={faChevronRight} />
-    </div>
-  );
-}
+  function NextArrow(props) {
+    const { className, onClick } = props;
+    return (
+      <div className={className} onClick={onClick}>
+        <FontAwesomeIcon icon={faChevronRight} />
+      </div>
+    );
+  }
 
-function PrevArrow(props) {
-  const { className, onClick } = props;
-  return (
-    <div className={className} onClick={onClick}>
-      <FontAwesomeIcon icon={faChevronLeft} />
-    </div>
-  );
-}
+  function PrevArrow(props) {
+    const { className, onClick } = props;
+    return (
+      <div className={className} onClick={onClick}>
+        <FontAwesomeIcon icon={faChevronLeft} />
+      </div>
+    );
+  }
 
   return (
     <>
-    <Helmet> 
-        <title>Proptelligence | PropTech Company in India & USA | Online Legal Services</title>
+      <Helmet> 
+        <title>Proptelligence | PropTech Company in India | Online Legal Services</title>
         <meta name="Legal Services" content="Proptelligence is an AI-powered real estate and legal platform that helps agents, attorneys, and other real estate professionals find and procure properties." /> 
         <meta name="Property Services" content="Navigating the legal complexities of real estate transactions can be daunting. Proptelligence simplifies this process by offering tailored legal services to meet your needs." /> 
         <meta name="Industries" content="Property Technologies has worked with a range of industries including commercial real estate, residential real estate, hospitality, and healthcare." />
@@ -283,7 +292,6 @@ function PrevArrow(props) {
                             />
                             Continue with Google
                           </button>
-                         
                         </div>
                         <div>
                           Already have an account? <Link to="/login">Login</Link> now.
@@ -295,7 +303,7 @@ function PrevArrow(props) {
               )}
             </Popup>
           </div>
-        </div>
+        </div> 
         <img
           src="https://img.freepik.com/premium-photo/house-growth-chart-real-estate-market-concept-generative-ai_609002-980.jpg"
           alt="Property Image"
@@ -303,20 +311,41 @@ function PrevArrow(props) {
         />
       </div>   
       <h1 className="service-heading">Trending Services</h1>
-      <Services/>
+      <div className='services-container'>
+        <div className="service-info-home">
+          <Link to="/prop">
+            <img
+              src="https://img.freepik.com/premium-vector/security-infests-house-agrees-isometric-illustration_18660-608.jpg"
+              alt="Service 1"
+              className="service-image"
+            />
+          </Link>
+          <h1 className="service-details-title-home">Property Services</h1>
+          <p className="service-content">At Proptelligence, we recognize the challenges faced by property owners and strive to provide innovative solutions tailored to their needs.</p>
+        </div> 
+        <div className="service-info-home">
+          <Link to="/legalservices">
+            <img
+              src="https://img.freepik.com/free-vector/legal-advisers-concept-illustration_114360-20398.jpg"
+              alt="Service 1"
+              className="service-image"
+            />
+          </Link>
+          <h1 className="service-details-title-home">Legal Services</h1>
+          <p className="service-content">Navigating the legal complexities of real estate transactions can be daunting.</p>
+        </div>
+      </div>
       <div className='content-section'>
         <h1>Get Free Real Estate Guidance & Secure Legal Support</h1> 
         <p>Get expert guidance throughout your real estate journey, with a FREE consultation and access to our optional legal support. Don't let legal worries slow you down.  Proptelligence empowers you with the resources
            and expertise you need to make informed decisions and navigate the real estate market with confidence.</p>
       </div>
-     
       <h2 className="service-heading">Blogs</h2>
       <Slider {...settings} className='blog-section-home'>
         {blogData.map((blog, index) => (
           <div key={index} className='blogs-card-home'>
             <div className="blog-info">
-              <div className="author-details">
-              </div>
+              <div className="author-details"></div>
               <Link to={blog.path}>
                 <img className="blog-image" src={blog.imageUrl} alt={blog.title} />
               </Link>

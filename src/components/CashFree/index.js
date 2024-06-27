@@ -7,7 +7,7 @@ function App() {
   const [orderId, setOrderId] = useState('');
 
   const initializeSDK = async () => {
-    const cashfreeInstance = await load({ mode: 'prod' });
+    const cashfreeInstance = await load({ mode: 'production' });
     setCashfree(cashfreeInstance);
   };
 
@@ -17,7 +17,7 @@ function App() {
 
   const getSessionId = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/payment');
+      const res = await axios.get('https://property-backend-9abo.onrender.com/payment');
       if (res.data && res.data.payment_session_id) {
         console.log(res.data);
         setOrderId(res.data.order_id);
@@ -33,7 +33,7 @@ function App() {
 
   const verifyPayment = async (orderId) => {
     try {
-      const res = await axios.post('http://localhost:8000/verify', { orderId });
+      const res = await axios.post('https://property-backend-9abo.onrender.com/verify', { orderId });
       if (res && res.data) {
         alert('Payment verified');
       } else {

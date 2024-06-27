@@ -58,9 +58,8 @@ const Services = () => {
     <h2 className="service-details-title-home">Property Services</h2>
     <p className="service-content">At Proptelligence, we recognize the challenges faced by property owners and strive to provide innovative solutions tailored to their needs.</p>
   </div>
-</div>
-
-        <div className="service-info">
+      </div>
+      <div className="service-info">
           <Link to="/legalservices">
             <img
               src="https://img.freepik.com/premium-photo/consultation-male-lawyer-business-woman-customer_28283-887.jpg"
@@ -82,8 +81,8 @@ const Services = () => {
           </Link>
           <h2 className="service-details-title-home">Advocates consultation</h2>
           <p className="service-content">Expert legal guidance tailored to your needs. Advocating for your rights and providing strategic counsel</p>
-        </div>
-        <div className="service-info">
+      </div>
+      <div className="service-info">
           <Link to="/legalservices">
             <img
               src="https://www.lefoll.com/wp-content/uploads/2022/06/title-search-scaled.jpeg"
@@ -107,7 +106,6 @@ const Services = () => {
           <p className="service-content">Our team creates clear and concise agreements tailored to your specific requirements.</p>
         
       </div>  
-
     </Slider>
   );
 };

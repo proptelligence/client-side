@@ -68,7 +68,7 @@ const LegalServices = () => {
             Title Search OR Legal Opinion
           </h2>
           <p className='slide-des'>
-            A Property Title Opinion is a legal document that provides an opinion on the legal status of a piece of real estate. ......<Link to="/titlesearch"><span>Read More</span></Link>
+            A Property Title Opinion is a legal document that provides an opinion on the legal status of a piece of real estate.
           </p>
         </div>
 

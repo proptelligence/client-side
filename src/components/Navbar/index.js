@@ -144,7 +144,7 @@ function Navbar() {
             {click && (
               <div className='dropdown-menu-ham'>
                 <p>Welcome {name} 👋 </p>
-                <p>Your Services</p>
+                <p>My Services</p>
                {isLoggedIn? (
                 <>
                 <button type="button" className="logout-desktop-btn" onClick={logout}>
