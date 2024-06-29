@@ -588,15 +588,19 @@ font-weight: bold;
 .blog-details-title-home {
   font-size: 18px;
   color: #333;
+  font-family: 'PT Sans', sans-serif;
   margin: 10px 0;
 }
 .blog-content {
   font-size: 14px;
-  color: #666;
+  font-family: 'PT Sans', sans-serif;
+  color: #05141f;
+  font-weight: 500;
 }
 .blog-datetime {
   color: #999;
   font-size: 14px;
+  font-family: 'PT Sans', sans-serif;
 }
 @media (max-width: 768px) {
   .blog-section-home {
@@ -609,10 +613,12 @@ font-weight: bold;
 
   .blog-details-title-home {
     font-size: 16px;
+    font-family: 'PT Sans', sans-serif;
   }
 
   .blog-content {
     font-size: 12px;
+    font-family: 'PT Sans', sans-serif;
   }
 }
 .slick-next,.slick-prev {
@@ -659,8 +665,9 @@ font-weight: bold;
 }
 
 .service-heading{
-  padding-bottom: 20px; 
-  padding-top: 10px;
+  padding-top: 15px;
+  color: white;
+  font-size: 32px;
 }
  .service-info-home {
   margin: 0 auto;
@@ -685,4 +692,7 @@ font-weight: bold;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
+}
+.service-heading-container{
+  background-image:  linear-gradient(70deg, #fc466b 0%, #3f5efb 100%);
 }

@@ -1,54 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Navbar from '../Navbar';
+import CashFree from '../CashFree';
+import './index.css'; 
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cart, setCart] = useState([]);
 
-  const addToCart = (service) => {
-    // Check if the service is already in the cart
-    const isServiceInCart = cartItems.some(item => item.id === service.id);
+  useEffect(() => {
+    const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    setCart(savedCart);
+  }, []);
 
-    if (isServiceInCart) {
-      // If service is already in cart, update quantity
-      const updatedCartItems = cartItems.map(item =>
-        item.id === service.id ? { ...item, quantity: item.quantity + 1 } : item
-      );
-      setCartItems(updatedCartItems);
-    } else {
-      // If service is not in cart, add it
-      setCartItems([...cartItems, { ...service, quantity: 1 }]);
-    }
+  const removeFromCart = (index) => {
+    const newCart = cart.filter((_, i) => i !== index);
+    setCart(newCart);
+    localStorage.setItem('cart', JSON.stringify(newCart));
   };
 
-  const removeFromCart = (serviceId) => {
-    const updatedCartItems = cartItems.filter(item => item.id !== serviceId);
-    setCartItems(updatedCartItems);
-  };
-
-  const getTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
-  };
+  const total = cart.reduce((acc, item) => acc + item.price, 0);
 
   return (
-    <div className="cart">
-      <h2>Cart</h2>
-      {cartItems.length === 0 ? (
-        <p>Your cart is empty</p>
-      ) : (
-        <>
-          <ul>
-            {cartItems.map(item => (
-              <li key={item.id}>
-                <span>{item.name}</span>
-                <span>Quantity: {item.quantity}</span>
-                <span>Price: ${item.price * item.quantity}</span>
-                <button onClick={() => removeFromCart(item.id)}>Remove</button>
-              </li>
-            ))}
-          </ul>
-          <p>Total: ${getTotalPrice()}</p>
-        </>
-      )}
-    </div>
+    <>
+      <Navbar />
+      <div className="cart-container">
+        <h1>Cart</h1>
+        {cart.length > 0 ? (
+          <>
+            <ul className="cart-list">
+              {cart.map((item, index) => (
+                <li key={index} className="cart-item">
+                  <span>{item.name} - ₹{item.price}</span>
+                  <button onClick={() => removeFromCart(index)} className="remove-button">
+                    Remove
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <h2 className='indus-heading'>Total: ₹{total}</h2>
+            <CashFree />
+          </>
+        ) : (
+          <div className='empty-container'>
+            <div>
+          <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-empty-cart-img.png"/> 
+          <p>Your cart is empty</p> 
+          <Link to="/legalservices"><button>Add Services</button></Link>
+          </div>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 

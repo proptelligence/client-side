@@ -18,7 +18,6 @@ import {
 } from "../../firebase";
 import './index.css';
 import Popup from 'reactjs-popup'; 
-import Services from '../Services';
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false); 
@@ -309,8 +308,10 @@ const Home = () => {
           alt="Property Image"
           className="home-desktop-img"
         />
-      </div>   
+      </div> 
+      <div className='service-heading-container'>
       <h1 className="service-heading">Trending Services</h1>
+      </div>  
       <div className='services-container'>
         <div className="service-info-home">
           <Link to="/prop">

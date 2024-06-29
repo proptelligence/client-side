@@ -76,9 +76,12 @@ function HouseDetailsForm() {
                     <div>
                         <label htmlFor="houseType">Type of Property:</label>
                         <select id="houseType" name="houseType" value={formData.houseType} onChange={handleChange} required>
-                            <option value="2BHK">2BHK</option>
-                            <option value="3BHK">3BHK</option>
-                            <option value="4BHK">4BHK</option>
+                            <option value="agri">Agricultural Land</option>
+                            <option value="flat">Flat like Apartment</option>
+                            <option value="commerical">Commercial Properties</option>
+                            <option value="project">Project Land</option>
+                            <option value="house">Individual House</option>
+                            <option value="sites">Sites/Plots/Villas</option>
                         </select>
                     </div>
                     <button type="submit">Submit</button>
