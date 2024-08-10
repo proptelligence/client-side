@@ -1,6 +1,7 @@
 import './index.css'
 import Navbar from '../Navbar'
 import Navbottom from '../Navbottom'
+import Logo from '../../components/Assets/logo.jpg'
 
 const About = () => (
   <> 
@@ -8,7 +9,8 @@ const About = () => (
     <div className="cont-1">
       <div className="about-us">
         <div className='about-cont'>
-        <h1>About Us</h1>
+          <img src={Logo} alt="logo"/>
+          <h1>About Us</h1>
         </div>
         <p>
           Proptelligence is an AI-powered real estate and legal platform that

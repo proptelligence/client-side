@@ -1,17 +1,205 @@
+/* Popup container styling */
+.popup-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: none; /* Remove any max-width limitations */
+  width: 90% !important; /* Force the popup to take 90% of the viewport width */
+  max-width: 900px !important; /* Set a new max-width to limit it on larger screens */
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+/* Image inside the popup */
+.popup-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Close button styling */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Heading inside the popup */
+.popup-content h2 {
+  font-size: 28px;
+  margin: 20px 0;
+  color: #333;
+}
+
+/* Paragraph inside the popup */
+.popup-content p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 25px;
+}
 .home-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../Assets/homebackground.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.home-content {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5); 
+  border-radius: 10px;
+  max-width: 60vh;
+  margin-left: 75vh;
+  margin-bottom: 20vh;
+}
+
+.home-content p{
+  color: white;
+  margin-bottom: 20px;
+}
+
+.home-heading {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+}
+
+.home-button {
+  background-color: #007bff; /* Blue color for the button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition effects */
+}
+
+.home-button:hover,
+.home-button:focus {
+  background-color: #0056b3; /* Darker blue color on hover/focus */
+  transform: scale(1.05); /* Slightly increase the button size on hover/focus */
+}
+
+.home-button:active {
+  transform: scale(0.95); /* Slightly decrease the button size when clicked */
+}
+
+
+.home-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.content-wrapper {
+  text-align: center;
+  color: white;
+  animation: fadeIn 2s ease-in-out;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: auto;
-  padding-top: 0px;
-  padding-bottom: 40px;
-  width: 90%;
-  max-width: 1110px;
-  height: 90vh;
-  background-color: #ffff; 
-  
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 130px;
 }
+
+.home-heading {
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 5);
+}
+
+.service-heading {
+  font-family: 'PT Sans', sans-serif;
+  color: #ffffff; /* White text color */
+  font-size: 2rem; /* Reduced size for formality */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  background-color: #0a1a4b; 
+}
+
+.service-info-home {
+  text-align: center;
+  background-color: #ffffff; /* White background for contrast */
+  border-radius: 6px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.service-info-home:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+}
+
+.service-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.service-details-title-home {
+  color: #1e293b; /* Darker text color for contrast */
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.service-content {
+  color: #333; /* Darker text color for better readability */
+  font-size: 1em;
+}
+
+.blog-section-home {
+  margin: 20px auto;
+}
+
+.blogs-card-home {
+  padding: 10px;
+}
+
+.blog-info {
+  text-align: center;
+}
+
+.blog-image {
+  border-radius: 8px;
+}
+
+.blog-details-title-home {
+  font-size: 1.3em;
+  margin: 10px 0;
+}
+
+.blog-content {
+  font-size: 0.9em;
+}
+
 
 @media screen and (min-width: 768px) {
   .home-container {
@@ -663,6 +851,36 @@ font-weight: bold;
     font-size: 1rem;
   }
 }
+@media screen and (max-width: 350px) {
+  .home-container {
+    height: auto; /* Allow height to adjust based on content */
+    background-image: url('../Assets/smallbackground.jpg'); /* Optional: Use a different background image for smaller screens */
+    background-size: cover; /* Ensure the background image covers the container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    padding: 20px; /* Add padding to ensure content is not too close to edges */
+  }
+
+  .home-content {
+    max-width: 100%; /* Ensure content takes up full width */
+    padding: 10px; /* Adjust padding for smaller screens */
+    margin-left: 0; /* Remove left margin */
+    margin-bottom: 10px; /* Reduce bottom margin */
+  }
+
+  .home-heading {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .home-description {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .home-button {
+    font-size: 0.9rem; /* Adjust button font size for smaller screens */
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+  }
+}
 
 .service-heading{
   padding-top: 15px;
@@ -680,7 +898,7 @@ font-weight: bold;
   border-radius: 6px;
 }
 .services-container{
-  background-image:  linear-gradient(70deg, #fc466b 0%, #3f5efb 100%);
+  background-color: #27307e;
   display: flex;
 }
 
@@ -694,5 +912,5 @@ font-weight: bold;
   transition: transform 0.3s ease-in-out;
 }
 .service-heading-container{
-  background-image:  linear-gradient(70deg, #fc466b 0%, #3f5efb 100%);
+  background-color: #27307e;
 }

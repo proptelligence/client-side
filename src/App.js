@@ -140,6 +140,7 @@ function App() {
       </Helmet>
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
         <Route exact path="/aboutus" element={<About />} />
         <Route exact path="/s" element={<Services />} />
         <Route exact path="/contact" element={<ContactUs />} />

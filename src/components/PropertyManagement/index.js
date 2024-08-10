@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Navbar from '../Navbar';
 import RenderServices from '../RenderServices';
 import './index.css';
+import Patna from '../../components/Assets/Patna.jpg';
+import Gurugram from '../../components/Assets/Gurugram.jpg';
 
 const cityImages = {
   Mumbai: 'https://img.freepik.com/premium-photo/taj-mahal-hotel_78361-4512.jpg',
@@ -13,6 +15,8 @@ const cityImages = {
   Chennai: 'https://img.freepik.com/premium-vector/chennai-skyline-detailed-silhouette-trendy-vector-illustration_668947-1201.jpg',
   Pune: 'https://www.tourmyindia.com/images/trimbakeshwar-shiva-temple-nashik1.jpg',
   Ahmedabad: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Sheth_Hutheesinh_Temple.jpg/800px-Sheth_Hutheesinh_Temple.jpg',
+  Patna: Patna,
+  Gurugram: Gurugram,
 };
 const propertiesByCity = {
   Mumbai: [
@@ -2040,6 +2044,8 @@ const PropertyManagement = () => {
     'Kolkata',
     'Mumbai',
     'Pune',
+    'Patna',
+    'Gurugram'
   ];
 
   const budgetOptions = [

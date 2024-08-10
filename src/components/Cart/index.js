@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar';
-import CashFree from '../CashFree';
+import PaymentPopup from '../PaymentPopup';
 import './index.css'; 
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -24,7 +25,7 @@ const Cart = () => {
     <>
       <Navbar />
       <div className="cart-container">
-        <h1>Cart</h1>
+        <h1> Services Cart</h1>
         {cart.length > 0 ? (
           <>
             <ul className="cart-list">
@@ -38,18 +39,19 @@ const Cart = () => {
               ))}
             </ul>
             <h2 className='indus-heading'>Total: ₹{total}</h2>
-            <CashFree />
+            <button onClick={() => setShowPopup(true)}>Pay now</button>
           </>
         ) : (
           <div className='empty-container'>
             <div>
-          <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-empty-cart-img.png"/> 
-          <p>Your cart is empty</p> 
-          <Link to="/legalservices"><button>Add Services</button></Link>
-          </div>
+              <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-empty-cart-img.png" alt="Empty Cart" /> 
+              <p>Your cart is empty</p> 
+              <Link to="/legalservices"><button>Add Services</button></Link>
+            </div>
           </div>
         )}
       </div>
+      {showPopup && <PaymentPopup amount={total} onClose={() => setShowPopup(false)} />}
     </>
   );
 };

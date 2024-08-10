@@ -87,7 +87,7 @@ function Navbottom() {
             </li> 
            
           </ul>
-          <h3>connect@proptelligence.net</h3>
+          <h3>info@proptelligence.net</h3>
         </div>
 
       </div>

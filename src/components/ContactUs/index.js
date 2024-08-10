@@ -83,7 +83,7 @@ const ContactUs = () => {
           <div className="address-details">
             <h2>Address </h2>
             <p>We Work, Roshini Tech Hub, Anand Nagar, Aswath Nagar, Chinnapanna Halli, Bengaluru, Karnataka 560037</p> 
-            <p>connect@proptelligence.net</p>
+            <p>info@proptelligence.net</p>
           </div>
           <p>
             Feel free to get in touch with us. We are here to assist you with

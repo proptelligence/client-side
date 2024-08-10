@@ -1,4 +1,4 @@
-
+/* Base styles */
 .contact-us-container {
   display: flex;
   justify-content: space-between;
@@ -209,7 +209,7 @@ button[type='submit']:hover {
   background-color: #2980b9;
 }
 
-.list-el{
+.list-el {
   text-decoration: none;
 }
 
@@ -231,11 +231,73 @@ button[type='submit']:hover {
   font-size: 1em;
   margin-bottom: 5px;
 }
-.address-img{
+
+.address-img {
   width: 100px;
   height: 100px;
 }
-.ajay{
+
+.ajay {
   background-color: black;
   padding: 10px;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 350px) {
+  .contact-us-container {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 15px;
+    width: 100%; /* Full width */
+  }
+
+  .contact-info, .contact-form {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .contact-info h2 {
+    font-size: 1.8rem; /* Smaller font size */
+  }
+
+  .contact-info p {
+    font-size: 1rem; /* Smaller font size */
+  }
+
+  .contact-form h3 {
+    font-size: 1.5rem; /* Smaller font size */
+  }
+
+  input[type='text'],
+  input[type='email'],
+  textarea {
+    font-size: 0.9rem; /* Smaller font size */
+    padding: 8px; /* Smaller padding */
+  }
+
+  textarea {
+    min-height: 100px; /* Adjust minimum height */
+  }
+
+  button[type='submit'] {
+    font-size: 0.9rem; /* Smaller font size */
+    padding: 8px 16px; /* Smaller padding */
+  }
+
+  .address-details {
+    padding: 15px; /* Smaller padding */
+  }
+
+  .address-details h2 {
+    font-size: 1.5em; /* Smaller font size */
+  }
+
+  .address-details p {
+    font-size: 0.9em; /* Smaller font size */
+  }
+
+  .social-media-buttons a {
+    width: 40px; /* Smaller icon size */
+    height: 40px;
+  }
 }

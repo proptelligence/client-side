@@ -75,7 +75,7 @@ const LegalServices = () => {
               <li>IP protection</li>
             </ul>
             <button onClick={() => addToCart({ name: 'Advocates consultation', price: 500 })}>
-              Add Service 
+              Get Expert Consult Now 
             </button>
           </div>
         </div>
@@ -113,8 +113,7 @@ const LegalServices = () => {
               Our team specializes in creating legally binding documents tailored to your needs.
             </p>
           </div>
-
-          <div className="service-1" onClick={() => handleServiceSelect('affidavits')}>
+          <div className="service-1" >
             <img
               className="img1"
               src="https://res.cloudinary.com/ajaymedidhi7/image/upload/v1703223055/legal-best_jxmw5i.png"
@@ -124,6 +123,9 @@ const LegalServices = () => {
             <p className='slide-des'>
               An affidavit is a sworn statement made voluntarily under oath or affirmation before a qualified authority.
             </p>
+            <button onClick={() => addToCart({ name: 'Affidavits', price: 2399 })}>
+              Add Service 
+            </button>
           </div>
 
           <div className="service-1" onClick={() => handleServiceSelect('registrationSupport')}>
@@ -137,7 +139,8 @@ const LegalServices = () => {
               Our legal services provide comprehensive registration support to
               ensure that all our clients are properly registered with the
               relevant authorities.
-            </p>
+            </p> 
+            <button>Get The legal Support Now</button>
           </div>
         </div>
 

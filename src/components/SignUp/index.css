@@ -1,40 +1,65 @@
-/* index.css */
+body {
+  font-family: 'PT Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+}
 
 .register {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #007bff;
+  background-image: url('../../components/Assets/coverimage.jpeg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 }
 
 .register__container {
-  width: 90%;
+  width: 100%;
   max-width: 400px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.5); 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.signup-heading {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .register__textBox {
   width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.register__textBox:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 .register__btn {
   width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
+  padding: 15px;
   border: none;
   border-radius: 5px;
   background-color: #007bff;
-  color: #fff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .register__btn:hover {
@@ -42,46 +67,79 @@
 }
 
 .social-buttons {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .google-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
   background-color: #db4437;
-  color: #fff;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 .google-button:hover {
   background-color: #c13505;
+  transform: translateY(-2px);
+}
+
+.google-button img {
+  width: 20px;
+  margin-right: 10px;
 }
 
 .row-lines {
   display: flex;
-  justify-content: center;
-  padding-top: 5px;
-  margin-right: 10px;
   align-items: center;
-  gap: 10px; /* Adjust as needed for spacing */
+  justify-content: center;
+  margin: 20px 0;
 }
 
-.signup-heading {
-  font-size: 2em; /* Adjust the font size as needed */
-  font-weight: bold; /* Make the text bold */
-  color: #333; /* Set the text color */
-  margin-bottom: 20px;  
-  text-align: center;/* Add some margin to the bottom */
-  /* Add any additional styling you want */
+.row-lines hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid #ddd;
 }
 
+.row-lines p {
+  margin: 0 15px;
+  color: #888;
+}
 
+.register a {
+  color: #007bff;
+  text-decoration: none;
+}
 
+.register a:hover {
+  text-decoration: underline;
+}
 
+@media (max-width: 768px) {
+  .register__container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register__textBox {
+    font-size: 14px;
+  }
+
+  .register__btn {
+    font-size: 14px;
+  }
+
+  .google-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

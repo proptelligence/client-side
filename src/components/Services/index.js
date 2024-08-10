@@ -105,7 +105,7 @@ const Services = () => {
           <h2 className="service-details-title-home">Agreement Drafting</h2>
           <p className="service-content">Our team creates clear and concise agreements tailored to your specific requirements.</p>
         
-      </div>  
+      </div> 
     </Slider>
   );
 };
