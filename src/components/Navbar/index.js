@@ -14,6 +14,9 @@ import { query, collection, getDocs, where } from "firebase/firestore";
 import axios from 'axios'; // Import Axios for making HTTP requests
 import Cart from "../Cart"; // Import Cart component
 import Logo from '../../components/Assets/logo.jpg'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
   const [userName, setUserName] = useState('');
@@ -27,6 +30,19 @@ function Navbar() {
   const [cartCount, setCartCount] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileCompanyDropdownOpen, setMobileCompanyDropdownOpen] = useState(false); // New state for mobile Company dropdown
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const whatsappNumber = '+918062181169'; // Replace with the company WhatsApp number
+
+  const toggleChat = () => {
+    setIsChatOpen(!isChatOpen);
+  };
+
+  const sendMessage = () => {
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
 
   useEffect(() => {
     const fetchUserName = async () => {
@@ -82,6 +98,7 @@ function Navbar() {
       <nav className='navbar'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           <img src={Logo} alt="logo" className='website-logo' />
+          <span className='company-name'>Proptelligence</span>
         </Link>
         <ul className="nav-menu">
           <li className='nav-item'>
@@ -89,7 +106,7 @@ function Navbar() {
               Home
             </Link>
           </li>
-          <li className="menus">
+          {/* <li className="menus">
             {menuItems.map((menu, index) => {
               const depthLevel = 0;
               return (
@@ -100,8 +117,11 @@ function Navbar() {
                 />
               );
             })}
+          </li> */}
+          <li className="service-menu">
+            <a href="#services-container" className="products-link">Services</a>
           </li>
-          <li className="menus">
+          {/* <li className="menus">
             {menuItems1.map((menu, index) => {
               const depthLevel = 0;
               return (
@@ -112,7 +132,11 @@ function Navbar() {
                 />
               );
             })}
+          </li> */}
+          <li className="product-menu">
+            <a href="#product-section" className="products-link">Products</a>
           </li>
+
           <li
             className='nav-item'
             onMouseEnter={handleCompanyHover}
@@ -127,13 +151,31 @@ function Navbar() {
             </Link>
             {companyDropdown && <DropdownC />}
           </li>
-          <li className='nav-item-3'>
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-              <div className='phone-container'>
-                <span className='phone-icon'>&#128222;</span>
-                <span className='phone-text'>8062181169</span>
+          <li className='whatsapp'>
+            <div className="whatsapp-icon" onClick={toggleChat}>
+              <FontAwesomeIcon icon={faWhatsapp}  color="#25D366" />
+            </div>
+            {isChatOpen && (
+              <div className="whatsapp-chatbox">
+                <div className="chatbox-header">
+                  <span>Chat with Us</span>
+                  <button onClick={toggleChat} className="close-chatbox">&times;</button>
+                </div>
+                <div className="chatbox-body">
+                  <textarea
+                    rows="3"
+                    placeholder="Type your message..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  ></textarea>
+                </div>
+                <div className="chatbox-footer">
+                  <button onClick={sendMessage} className="send-button">
+                    <FontAwesomeIcon icon={faPaperPlane} /> Send
+                  </button>
+                </div>
               </div>
-            </Link>
+           )}
           </li>
         </ul>
 
@@ -175,28 +217,44 @@ function Navbar() {
                   Home
                 </Link>
               </li>
-              {/* {menuItems.map((menu, index) => (
-                <li key={index} className='mobile-menu-link'>
-                  <Menu items={menu} depthLevel={0} />
-                </li>
-              ))} */}
-              {menuItems1.map((menu, index) => (
-                <li key={index} className='mobile-menu-link'>
-                  <Menu items={menu} depthLevel={0} />
-                </li>
-              ))}
+              <li className="product-menu">
+                <a href="#product-section" className="products-link">Products</a>
+              </li>
+              <li className="service-menu">
+                <a href="#services-container" className="products-link">Services</a>
+              </li>
               <li className='mobile-menu-link' onClick={toggleMobileCompanyDropdown}>
                 <div className='nav-links'>
                   Company <i className='fas fa-caret-down' />
                 </div>
                 {mobileCompanyDropdownOpen && <DropdownC />}
               </li>
-              <li className='nav-item'>
-                <div className='phone-container'>
-                  <span className='phone-icon'>&#128222;</span>
-                  <span className='phone-text'>8062181169</span>
+              <li className='whatsapp'>
+            <div className="whatsapp-icon" onClick={toggleChat}>
+              <FontAwesomeIcon icon={faWhatsapp} size='2x'  color="#25D366" />
+            </div>
+            {isChatOpen && (
+              <div className="whatsapp-chatbox">
+                <div className="chatbox-header">
+                  <span>Chat with Us</span>
+                  <button onClick={toggleChat} className="close-chatbox">&times;</button>
                 </div>
-              </li>
+                <div className="chatbox-body">
+                  <textarea
+                    rows="3"
+                    placeholder="Type your message..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  ></textarea>
+                </div>
+                <div className="chatbox-footer">
+                  <button onClick={sendMessage} className="send-button">
+                    <FontAwesomeIcon icon={faPaperPlane} /> Send
+                  </button>
+                </div>
+              </div>
+           )}
+          </li>
             </ul>
           </div>
         )}

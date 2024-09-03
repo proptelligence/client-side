@@ -1,69 +1,96 @@
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
+/* index.css */
 
-.industries-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px; 
-    padding-top: 20px;
-    background-color: white; 
-    border-radius: 5px;
+/* Main container styles */
+.main-cont {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(90deg, #0a1b3a, #1f3c5d); /* Dark blue to blue gradient */
   }
   
-  .industries-container h2 {
-    font-size: 24px;
-    margin-bottom: 15px; 
-    text-align: center;
+  
+  /* Industries container styles */
+  .industries-container {
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border to enhance the mirror effect */
   }
   
-  .industries-container p {
-    margin-bottom: 15px; 
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #1962ff;
-    font-weight: 500;
-    margin-bottom: 15px;
-  }
-  
-  .industries-row-tech {
-    display: flex; 
-    flex-direction: row;
-    
-  }
-  
-  .industry-item {
-    width: calc(48% - 10px); 
+  /* Industries heading styles */
+  .indus-heading {
+    font-size: 35px;
+    color: #002147;
     margin-bottom: 20px;
-    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
   }
   
+  /* Paragraph styles */
+  .industries-container p {
+    font-size: 16px;
+    color: #bbd8e8;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Industry row styles */
+  .industries-row-tech {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+  }
+  
+  /* Individual industry item styles */
+  .industry-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Image styling with no background on hover */
   .industry-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    width: 121px;
+    height: 121px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .industry-item p {
-    text-align: left;
-    font-weight: bold; 
-    color: black;
-    
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
   }
   
+  /* Hover effects */
+  .industry-item:hover {
+    transform: translateY(-10px);
+    box-shadow: none; /* Remove any shadow or background effect */
+  }
   
-  @media screen and (max-width: 765px) {
+  .industry-item:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Apply only shadow on the image, not the background */
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .industries-row-tech {
+      flex-direction: column;
+      align-items: center;
+    }
+  
     .industry-item {
-      width: calc(100% - 10px); 
+      margin-bottom: 20px;
     }
   }
   
-   
-  .main-cont {
-    background-color: #02797f;
-    height: 100vh;
-    padding: 10px;
-  }
-  .indus-heading{
-    color: #666;
-  }

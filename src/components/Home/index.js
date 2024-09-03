@@ -13,11 +13,46 @@ import Navbar from '../Navbar';
 import { Helmet } from 'react-helmet';
 import { registerWithEmailAndPassword, signInWithGoogle } from "../../firebase";
 import './index.css';
-import Popup from 'reactjs-popup';
 import popup from '../../components/Assets/popup.jpg'
+import AI from "../../components/Assets/ai.jpg";
+import ARVR from '../../components/Assets/arandvr.jpg';
+import IOT from '../../components/Assets/iot.jpg';
+import TECH from '../../components/Assets/tech.jpg'
+import Popup from 'reactjs-popup';
+import Legalservice from '../../components/Assets/legalservices.png'
+import Propertyservice from '../../components/Assets/propertyservice.png'
+import Propvaluation from '../../components/Assets/propvaluation.png'
+import Propbot from '../../components/Assets/propbot.png';
+import PropAutomatedPropertyManagement from '../../components/Assets/PropAutomatedpropertyManagement.png'
+import PropLegal from '../../components/Assets/proplegal.png';
+import PropLytics from '../../components/Assets/proplytics.png'
+import Propvirtualtour from '../../components/Assets/propvirtualtour.png';
+import Propvirtualdesign from '../../components/Assets/propvirtualdesign.png';
+import Smart from '../../components/Assets/smart.png';
+import Smarthome from '../../components/Assets/smarthome.png';
+import Energyefficiency from '../../components/Assets/energyefficiency.png';
+
+
 
 const Home = () => {
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup,] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [message, setMessage] = useState('');
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [popupOptions, setPopupOptions] = useState([]);
+  const [isOptionsPopupOpen, setIsOptionsPopupOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const whatsappNumber = '+918062181169'; // Replace with the company WhatsApp number
+
+  const toggleChat = () => {
+    setIsChatOpen(!isChatOpen);
+  };
+
+  const sendMessage = () => {
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
 
   useEffect(() => {
     const hasSeenPopup = sessionStorage.getItem('hasSeenPopup');
@@ -32,6 +67,76 @@ const Home = () => {
     setShowPopup(false);
   };
 
+  const handleProductClick = (product) => {
+    if (!user && !jwtToken) {
+      alert('Please login to access products');
+      navigate('/login');
+    } else {
+      setSelectedProduct(product);
+      switch (product) {
+        case 'AI':
+          setPopupOptions([
+            { imageUrl: Propvaluation, heading: 'PropValuation' },
+            { imageUrl: Propbot, heading: 'PropBot' },
+            { imageUrl: PropAutomatedPropertyManagement, heading: 'PropAutomated PropertyManagement' },
+            { imageUrl: PropLegal, heading: 'PropLegal' },
+            { imageUrl: PropLytics, heading: 'PropLytics' }
+          ]);
+          break;
+        case 'AR & VR':
+          setPopupOptions([
+            { imageUrl: Propvirtualtour, heading: 'Prop360 Virtual Tour' },
+            { imageUrl: Propvirtualdesign, heading: 'Prop Virtual Design' }
+          ]);
+          break;
+        case 'IOT':
+          setPopupOptions([
+            { imageUrl: Smart, heading: 'PropSmart Building Management' },
+            { imageUrl: Smarthome, heading: 'Prop SmartHome' },
+            { imageUrl: Energyefficiency, heading: 'Prop EnergyEfficeny' }
+          ]);
+          break;
+        case 'TECH':
+          navigate('/tech');
+          break;
+        default:
+          setPopupOptions([]);
+      }
+      setIsOptionsPopupOpen(true);
+    }
+  };
+  
+
+  const handleOptionClick = (option) => {
+    console.log(`Option clicked: ${option}`);
+    switch (option) {
+      case 'PropValuation':
+      case 'PropBot':
+      case 'PropAutomatedPropertyManagement':
+      case 'PropLytics':
+        navigate('/new'); // Navigate to the page for AI
+        break;
+      case 'PropLegal':
+        window.location.href = 'https://ntadvocates.in/';
+        break;
+      case 'Prop360 Virtual Tour':
+        navigate('/virtualtour'); // Navigate to the page for AR & VR
+        break;
+      case 'Prop Virtual Design':
+        navigate('/virtualdesign'); // Navigate to the page for AR & VR
+        break;
+      case 'PropSmart Building Management':
+      case 'Prop SmartHome':
+      case 'Prop EnergyEfficeny':
+        navigate('/iot'); // Navigate to the page for IoT
+        break;
+      default:
+        break;
+    }
+    setSelectedOption(null); // Close the popup after navigation
+  };
+
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -43,7 +148,9 @@ const Home = () => {
     navigate('/contact'); // Navigate to the contact page
   };
   
-
+  
+    
+  
   const [user] = useAuthState(auth);
 
   const cityImages = {
@@ -167,6 +274,7 @@ const Home = () => {
     console.log('User:', user);         // Debug: Check user state
   console.log('JWT Token:', jwtToken);
     if (!user && !jwtToken) {
+      alert('Please login to access services')
       navigate('/login');
     } else{
       navigate(path)
@@ -193,6 +301,7 @@ const Home = () => {
 
   return (
     <>
+    
       <Helmet> 
         <title>Proptelligence | PropTech Company in India | Online Legal Services</title>
         <meta name="Legal Services" content="Proptelligence is an AI-powered real estate and legal platform that helps agents, attorneys, and other real estate professionals find and procure properties." /> 
@@ -213,6 +322,10 @@ const Home = () => {
           </div>
         </Popup>
       )}
+      {/* WhatsApp Icon */}
+      
+
+      
       <div className="home-container">
         <div className="home-content">
           <h1 className="home-heading">Unlock Our Free Property Service</h1>
@@ -220,44 +333,93 @@ const Home = () => {
             Experience effortless property management with Proptelligence.
             With our free services, managing your properties has never been easier.
           </p>
-          <button className="home-button" onClick={handleClick}>
+          <button className="home-button" onClick={() => checkAuthAndNavigate('/select')}>
       Click Here
     </button>
         </div>
       </div>
- 
-      <div className='service-heading-container'>
-        <h1 className="service-heading">Trending Services</h1>
-      </div>  
-      
-      <div className='services-container'>
-        <div className="service-info-home">
-            <img
-              src="https://img.freepik.com/premium-vector/security-infests-house-agrees-isometric-illustration_18660-608.jpg"
+        {/* <div className='service-heading-container'>
+          <h1 className="service-heading">Trending Services</h1>
+        </div>   */}
+        <div id='services-container'>
+          <h1 className="service-heading">Trending Services</h1>
+          <div className="service-info-home">
+              <img
+              src={Propertyservice}
               alt="Property Services"
               className="service-image"
-              onClick={() => checkAuthAndNavigate('/prop')}
-            />
-            <h1 className="service-details-title-home">Property Services</h1>
-            <p className="service-content">At Proptelligence, we recognize the challenges faced by property owners and strive to provide innovative solutions tailored to their needs.</p>
-          </div> 
-          <div className="service-info-home">
-            <img
-              src="https://img.freepik.com/free-vector/lawyer-consultation-client-office-concept_74855-11616.jpg"
+              onClick={() => checkAuthAndNavigate('/select')}
+              />
+              <h1 className="service-details-title-home">Property Services</h1>
+              <p className="service-content">At Proptelligence, we recognize the challenges faced by property owners and strive to provide innovative solutions tailored to their needs.</p>
+            </div> 
+            <div className="service-info-home">
+              <img
+              src={Legalservice}
               alt="Legal Services"
               className="service-image"
               onClick={() => checkAuthAndNavigate('/legalservices')}
-            />
-            <h1 className="service-details-title-home">Legal Services</h1>
-            <p className="service-content">Navigating the legal complexities of real estate transactions can be daunting. Proptelligence simplifies this process by offering tailored legal services to meet your needs.</p>
-          </div> 
+              />
+              <h1 className="service-details-title-home">Legal Services</h1>
+              <p className="service-content">Navigating the legal complexities of real estate transactions can be daunting. Proptelligence simplifies this process by offering tailored legal services to meet your needs.</p>
+            </div> 
+        </div>
+      <div className="content-section">
+        <div className="column">
+          <p className="highlight">Free property services</p>
+          <p className="details">7+ cities</p>
+          <p className="details">31 states</p>
+        </div>
+        <div className="column">
+          <p className="highlight">Products</p>
+          <p className="details">15+</p>
+        </div>
+        <div className="column">
+          <p className="highlight">Online legal services</p>
+          <p className="details">10+</p>
+        </div>
       </div>
-      <div className='content-section'>
-        <h1>Get Free Real Estate Guidance & Secure Legal Support</h1> 
-        <p>Get expert guidance throughout your real estate journey, with a FREE consultation and access to our optional legal support. Don't let legal worries slow you down.  Proptelligence empowers you with the resources
-           and expertise you need to make informed decisions and navigate the real estate market with confidence.</p>
+
+
+      <div id="product-section">
+        <h2 className="products-heading">Products</h2>
+        <div className="products-row">
+          <div className="product-column" onClick={() => handleProductClick('AI')}>
+            <h3>AI</h3>
+            <img src={AI} alt="AI" />
+          </div>
+          <div className="product-column" onClick={() => handleProductClick('AR & VR')}>
+            <h3>AR & VR</h3>
+            <img src={ARVR} alt="AR & VR" />
+          </div>
+          <div className="product-column" onClick={() => handleProductClick('IOT')}>
+            <h3>IoT</h3>
+            <img src={IOT} alt="IOT" />
+          </div>
+          {/* <div className="product-column" onClick={() => handleProductClick('TECH')}>
+            <h3>TECH</h3>
+            <img src={TECH} alt="TECH" />
+          </div> */}
+        </div>
       </div>
-      <h2 className="service-heading">Blogs</h2>
+      {isOptionsPopupOpen && (
+  <Popup open={isOptionsPopupOpen} closeOnDocumentClick onClose={() => setIsOptionsPopupOpen(false)}>
+    <div className="options-popup">
+      <h3>{selectedProduct}</h3>
+      <ul>
+        {popupOptions.map((option, index) => (
+          <li key={index} onClick={() => handleOptionClick(option.heading)} className="popup-option-item">
+            <img src={option.imageUrl} alt={option.heading} className="popup-option-image" />
+            <span className="popup-option-heading">{option.heading}</span>
+          </li>
+        ))}
+      </ul>
+      <button onClick={() => setIsOptionsPopupOpen(false)} className="close-options-popup">&times;</button>
+    </div>
+  </Popup>
+)}
+
+      <h2 className="blog-heading">Blogs</h2>
       <Slider {...settings} className='blog-section-home'>
         {blogData.map((blog, index) => (
           <div key={index} className='blogs-card-home'>
@@ -272,9 +434,11 @@ const Home = () => {
           </div>
         ))}
       </Slider> 
+      
       <footer>
         <Navbottom />
       </footer>
+      
     </>
   );
 };

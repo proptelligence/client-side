@@ -128,7 +128,7 @@ const LegalServices = () => {
             </button>
           </div>
 
-          <div className="service-1" onClick={() => handleServiceSelect('registrationSupport')}>
+          <div className="service-1" >
             <img
               className="img1"
               src="https://img.freepik.com/premium-photo/real-estate-loan-home-agent-sale-agreement-insurance-finance-contract-signing-are-explaining-customers-office-property-manager-woman-use-computer_36325-3828.jpg"
@@ -140,7 +140,7 @@ const LegalServices = () => {
               ensure that all our clients are properly registered with the
               relevant authorities.
             </p> 
-            <button>Get The legal Support Now</button>
+            <button onClick={() => addToCart({ name: 'Registration Support', price: 4999 })}>Get The legal Support Now</button>
           </div>
         </div>
 

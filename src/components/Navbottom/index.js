@@ -8,7 +8,7 @@ function Navbottom() {
   return (
     <div className='navbottom-container'> 
       <div className='footer-container'> 
-      <div className='footer-section contact'>
+      <div className='footer-section'>
           <ul className='ui'>
           <h3>Company</h3>
           <li className='li-item'>
@@ -47,12 +47,12 @@ function Navbottom() {
         <div className='footer-section follow'>
         <div>
           <h3>Our Presence </h3>
-            <p>We Work, Roshini Tech Hub, Anand Nagar, Aswath Nagar, Chinnapanna Halli, Bengaluru, Karnataka 560037</p> 
+            <p>We Work, Roshini Tech Hub, Mahadevapura ORR, Bengaluru, Karnataka 560037</p> 
           </div>
-          <h3 className='follow-heading'>Follow Us</h3>
+          <h3 className='follow-heading'>Social connect</h3>
           <ul className="social-media-cont">
             <li>
-              <a href='https://www.facebook.com/proptelligence' >
+              <a href='https://www.facebook.com/profile.php?id=61558728524611' >
               <img
                 src="https://img.freepik.com/premium-vector/blue-social-media-logo_197792-1759.jpg" // Replace with the actual image URL
                 alt="Facebook" className='social-img'
@@ -89,6 +89,14 @@ function Navbottom() {
           </ul>
           <h3>info@proptelligence.net</h3>
         </div>
+        <div className='app-download'>
+            <h3>Download Our App</h3>
+            <p>Find our app on the Indus App Store.</p>
+            <p>Search for "Proptelligence" to download the app.</p>
+            <a href='https://indusapp.store/3dn1n2ag' className='app-link'><img alt='Get it on Indus Appstore' 
+            width={140} src='https://docstore.indusappstore.com/public/external/developerdashboard-static/badge-black-background-english.png'/>
+            </a>
+          </div>
 
       </div>
       <div className="copyright1">

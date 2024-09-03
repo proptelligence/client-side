@@ -13,6 +13,7 @@
     font-size: 18px; 
     font-weight: 500;
     font-family: 'PT Sans', sans-serif;
+    margin-left: 20px;
   }
   
   .menu-items a {
@@ -46,7 +47,7 @@
   
   .menu-items a:hover,
   .menu-items button:hover {
-    background-color: #5cabff;
+    background-color: #000000;
   }
   
   .arrow::after {

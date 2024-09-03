@@ -1,12 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import DropProp from '../DropProp';
 import { Link } from 'react-router-dom'; 
-import './index.css'
+import './index.css';
 
 const Menu = ({ items, depthLevel }) => {
   const [dropdown, setDropdown] = useState(false);
-
-  let ref = useRef();
+  const ref = useRef();
 
   useEffect(() => {
     const handler = (event) => {
@@ -21,22 +20,27 @@ const Menu = ({ items, depthLevel }) => {
     document.addEventListener('mousedown', handler);
     document.addEventListener('touchstart', handler);
     return () => {
-      // Cleanup the event listener
       document.removeEventListener('mousedown', handler);
       document.removeEventListener('touchstart', handler);
     };
   }, [dropdown]);
 
   const onMouseEnter = () => {
-    window.innerWidth > 960 && setDropdown(true);
+    if (window.innerWidth > 960) {
+      setDropdown(true);
+    }
   };
 
   const onMouseLeave = () => {
-    window.innerWidth > 960 && setDropdown(false);
+    if (window.innerWidth > 960) {
+      setDropdown(false);
+    }
   };
 
-  const closeDropdown = () => {
-    dropdown && setDropdown(false);
+  const toggleDropdown = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(prev => !prev);
+    }
   };
 
   return (
@@ -45,7 +49,6 @@ const Menu = ({ items, depthLevel }) => {
       ref={ref}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      onClick={closeDropdown}
     >
       {items.url && items.submenu ? (
         <>
@@ -53,19 +56,14 @@ const Menu = ({ items, depthLevel }) => {
             type="button"
             aria-haspopup="menu"
             aria-expanded={dropdown ? 'true' : 'false'}
-            onClick={() => setDropdown((prev) => !prev)}
+            onClick={toggleDropdown}
           >
             {window.innerWidth < 960 && depthLevel === 0 ? (
               items.title
             ) : (
               <Link to={items.url}>{items.title}</Link>
             )}
-
-            {depthLevel > 0 &&
-            window.innerWidth < 960 ? null : depthLevel > 0 &&
-              window.innerWidth > 960 ? (
-              <span>&raquo;</span>
-            ) : (
+            {depthLevel > 0 && window.innerWidth < 960 ? null : (
               <span className="arrow" />
             )}
           </button>
@@ -81,9 +79,9 @@ const Menu = ({ items, depthLevel }) => {
             type="button"
             aria-haspopup="menu"
             aria-expanded={dropdown ? 'true' : 'false'}
-            onClick={() => setDropdown((prev) => !prev)}
+            onClick={toggleDropdown}
           >
-            {items.title}{' '}
+            {items.title}
             {depthLevel > 0 ? (
               <span>&raquo;</span>
             ) : (

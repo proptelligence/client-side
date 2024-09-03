@@ -29,6 +29,11 @@ const MenuItems = [
       path: '/careers',
       cName: 'dropdown-link'
     },
+    {
+      title: 'Industries',
+      path: '/industries',
+      cName: 'dropdown-link'
+    },
   
   ];
 

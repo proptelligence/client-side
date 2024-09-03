@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Navbottom from '../Navbottom';
 import Navbar from '../Navbar';
 import './index.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -86,8 +88,10 @@ const ContactUs = () => {
             <p>info@proptelligence.net</p>
           </div>
           <p>
-            Feel free to get in touch with us. We are here to assist you with
-            any inquiries or concerns you may have.
+            For any assistance, feel free to contact us at
+          </p>
+          <p>
+            <FontAwesomeIcon icon={faPhone} /> +91 80 6218 1169
           </p>
         </div>
         <div className="contact-form">

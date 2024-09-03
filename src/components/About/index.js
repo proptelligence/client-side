@@ -36,6 +36,31 @@ const About = () => (
           that is developing AI for the legal and real estate sectors.
         </p>
       </div>
+      <div className='mission-vision-container'>
+        <div className='mission-vision'>
+          <h2>Mission</h2>
+          <p>
+            At Proptelligence Technology, our mission is to revolutionize the real 
+            estate industry by leveraging cutting-edge technology and data-driven insights. 
+            We aim to empower real estate professionals and consumers alike with innovative 
+            solutions that enhance decision-making, streamline processes, and foster transparency. 
+            Our commitment is to deliver exceptional value, drive growth, and build lasting relationships 
+            with our clients and partners.
+          </p>
+        </div>
+
+        {/* Vision Section */}
+        <div className='mission-vision'>
+          <h2>Vision</h2>
+          <p>
+            Our vision is to be the leading provider of intelligent real estate technology solutions globally.
+            We strive to set the standard for innovation, reliability, and excellence in the industry. By continuously 
+            evolving and adapting to the ever-changing landscape, we envision a future where our technology transforms 
+            the way people buy, sell, and manage properties, making real estate transactions more efficient, accessible,
+            and enjoyable for everyone involved.
+          </p>
+        </div>
+      </div>
     </div> 
     <Navbottom/>
   </>

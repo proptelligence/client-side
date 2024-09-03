@@ -33,8 +33,15 @@ import Cart from './components/Cart';
 import HouseDetailsForm from './components/HouseDetailsForm';
 import Services from './components/Services';
 import NotFound from './components/NotFound';
+import Select from './components/selectcityandstate';
+import Navbar from './components/Navbar';
 import { Helmet } from 'react-helmet';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Properties from './components/Properties';
+import CityStateSelection from './components/selectcityandstate';
+import ARVRVT from './components/Ar&vrVT';
+import ARVRVD from './components/Ar&vrVD';
+import IOT from './components/IOTsolutions';
 
 function App() {
   useEffect(() => {
@@ -143,6 +150,7 @@ function App() {
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/aboutus" element={<About />} />
         <Route exact path="/s" element={<Services />} />
+        <Route exact path="/select" element={<Select />} />
         <Route exact path="/contact" element={<ContactUs />} />
         <Route exact path="/tech" element={<Technology />} />
         <Route exact path="/industries" element={<Industries />} />
@@ -171,9 +179,14 @@ function App() {
         <Route exact path="/team" element={<Team />} />
         <Route exact path="/cart" element={<Cart />} />
         <Route exact path="/new" element={<HouseDetailsForm />} /> 
-        <Route exact path="/prop/:city" element={<CityPropertyList />} />
+        {/* <Route exact path="/prop/:city" element={<CityPropertyList />} /> */}
+        <Route path="/prop/:location" element={<Properties />} />
+        <Route path="/" element={<CityStateSelection />} />
         <Route path="*" element={<Navigate to="/not-found" />} />
         <Route path="/not-found" element={<NotFound />} />
+        <Route exact path="/virtualtour" element={<ARVRVT />} />
+        <Route exact path="/virtualdesign" element={<ARVRVD />} />
+        <Route exact path="/iot" element={<IOT />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,160 @@
+/* index.css */
+
+/* General styles */
+.arvr-property-design-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .arvr-header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #0c1c2d;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .arvr-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .arvr-header p {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  
+  .design-overview {
+    margin-bottom: 20px;
+  }
+  
+  .design-overview h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #007bff;
+  }
+  
+  .design-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .design-step {
+    flex: 1 1 300px; /* Flex basis for responsiveness */
+    max-width: 300px;
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .design-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .design-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .benefits-section {
+    margin-bottom: 20px;
+  }
+  
+  .benefits-section h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #007bff;
+  }
+  
+  .benefits-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 1.1em;
+  }
+  
+  .cta-section {
+    text-align: center;
+    background-color: #0c1c2d;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .cta-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .cta-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 370px) {
+    .arvr-header h1 {
+      font-size: 1.8em;
+    }
+  
+    .arvr-header p {
+      font-size: 1em;
+    }
+  
+    .design-overview h2 {
+      font-size: 1.5em;
+    }
+  
+    .design-step {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  
+    .benefits-section h2 {
+      font-size: 1.5em;
+    }
+  
+    .benefits-list {
+      font-size: 1em;
+    }
+  
+    .cta-section h2 {
+      font-size: 1.5em;
+    }
+  
+    .cta-section p {
+      font-size: 1em;
+    }
+  
+    .cta-button {
+      font-size: 1em;
+      padding: 8px 16px;
+    }
+  }
+  
