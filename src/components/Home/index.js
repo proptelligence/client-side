@@ -16,7 +16,7 @@ import './index.css';
 import popup from '../../components/Assets/popup.jpg'
 import AI from "../../components/Assets/ai.jpg";
 import ARVR from '../../components/Assets/arandvr.jpg';
-import IOT from '../../components/Assets/iot.jpg';
+import IoT from '../../components/Assets/iot.jpg';
 import TECH from '../../components/Assets/tech.jpg'
 import Popup from 'reactjs-popup';
 import Legalservice from '../../components/Assets/legalservices.png'
@@ -78,9 +78,9 @@ const Home = () => {
           setPopupOptions([
             { imageUrl: Propvaluation, heading: 'PropValuation' },
             { imageUrl: Propbot, heading: 'PropBot' },
-            { imageUrl: PropAutomatedPropertyManagement, heading: 'PropAutomated PropertyManagement' },
+            { imageUrl: PropAutomatedPropertyManagement, heading: 'PropAutomatedPropertyManagement' },
             { imageUrl: PropLegal, heading: 'PropLegal' },
-            { imageUrl: PropLytics, heading: 'PropLytics' }
+            { imageUrl: PropLytics, heading: 'Propanalytics' }
           ]);
           break;
         case 'AR & VR':
@@ -89,7 +89,7 @@ const Home = () => {
             { imageUrl: Propvirtualdesign, heading: 'Prop Virtual Design' }
           ]);
           break;
-        case 'IOT':
+        case 'IoT':
           setPopupOptions([
             { imageUrl: Smart, heading: 'PropSmart Building Management' },
             { imageUrl: Smarthome, heading: 'Prop SmartHome' },
@@ -111,10 +111,16 @@ const Home = () => {
     console.log(`Option clicked: ${option}`);
     switch (option) {
       case 'PropValuation':
+        navigate('/Propvaluation');
+        break;
       case 'PropBot':
+        navigate('/Propbot');
+        break;
       case 'PropAutomatedPropertyManagement':
-      case 'PropLytics':
-        navigate('/new'); // Navigate to the page for AI
+        navigate('/PropAutomatedPropertyManagement');
+        break;
+      case 'Propanalytics':
+        navigate('/propanalytics'); // Navigate to the page for AI
         break;
       case 'PropLegal':
         window.location.href = 'https://ntadvocates.in/';
@@ -128,7 +134,7 @@ const Home = () => {
       case 'PropSmart Building Management':
       case 'Prop SmartHome':
       case 'Prop EnergyEfficeny':
-        navigate('/iot'); // Navigate to the page for IoT
+        navigate('/iotsolutions'); // Navigate to the page for IoT
         break;
       default:
         break;
@@ -392,9 +398,9 @@ const Home = () => {
             <h3>AR & VR</h3>
             <img src={ARVR} alt="AR & VR" />
           </div>
-          <div className="product-column" onClick={() => handleProductClick('IOT')}>
+          <div className="product-column" onClick={() => handleProductClick('IoT')}>
             <h3>IoT</h3>
-            <img src={IOT} alt="IOT" />
+            <img src={IoT} alt="IoT" />
           </div>
           {/* <div className="product-column" onClick={() => handleProductClick('TECH')}>
             <h3>TECH</h3>

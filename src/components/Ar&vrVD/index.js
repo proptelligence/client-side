@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.css'; // Import your CSS file for styling
 import { useNavigate } from 'react-router-dom';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Import icons
+import CONCEPT from '../../components/Assets/concept.jpg';
+import INTERACTIVE from '../../components/Assets/interactive.png';
+import  CLIENT from '../../components/Assets/client.jpg';
 
 const ARVRPropertyDesign = () => {
+  const [currentStep, setCurrentStep] = useState(0); // State to manage current step
   const navigate = useNavigate(); // Initialize useNavigate
+
+  const steps = [
+    {
+      title: "Step 1: Concept Visualization",
+      img: CONCEPT // Replace with actual image paths
+    },
+    {
+      title: "Step 2: Interactive Design Adjustments",
+      img: INTERACTIVE // Replace with actual image paths
+    },
+    {
+      title: "Step 3: Client Collaboration",
+      img: CLIENT // Replace with actual image paths
+    }
+  ];
+
+  const handlePrevStep = () => {
+    setCurrentStep((prevStep) => (prevStep > 0 ? prevStep - 1 : steps.length - 1));
+  };
+
+  const handleNextStep = () => {
+    setCurrentStep((prevStep) => (prevStep < steps.length - 1 ? prevStep + 1 : 0));
+  };
 
   const handleContactClick = () => {
     navigate('/contact'); // Navigate to the contact us page
@@ -20,30 +48,17 @@ const ARVRPropertyDesign = () => {
         <h2>Transforming Property Design with AR/VR</h2>
         <div className="design-content">
           <div className="design-step">
-            {/* <img src="path-to-arvr-design1-image.jpg" alt="Step 1" className="design-image" /> */}
-            <h3>Step 1: Concept Visualization</h3>
-            <p>
-              Our AR/VR solutions allow you to visualize property designs in 3D before any physical work begins. 
-              Experience your concepts in an immersive environment.
-            </p>
+            <img src={steps[currentStep].img} alt={`Step ${currentStep + 1}`} className="design-image" />
+            <h3>{steps[currentStep].title}</h3>
           </div>
 
-          <div className="design-step">
-            {/* <img src="path-to-arvr-design2-image.jpg" alt="Step 2" className="design-image" /> */}
-            <h3>Step 2: Interactive Design Adjustments</h3>
-            <p>
-              Make real-time adjustments to your designs and see immediate changes. Our VR technology provides 
-              interactive tools to tweak layouts, colors, and materials seamlessly.
-            </p>
-          </div>
-
-          <div className="design-step">
-            {/* <img src="path-to-arvr-design3-image.jpg" alt="Step 3" className="design-image" /> */}
-            <h3>Step 3: Client Collaboration</h3>
-            <p>
-              Collaborate with clients through virtual walkthroughs, allowing them to provide feedback and approve 
-              designs before the project starts. Enhance client satisfaction with a clear, visual representation.
-            </p>
+          <div className="navigation-buttons">
+            <button className="nav-button prev" onClick={handlePrevStep}>
+              <FaArrowLeft />
+            </button>
+            <button className="nav-button next" onClick={handleNextStep}>
+              <FaArrowRight />
+            </button>
           </div>
         </div>
       </section>

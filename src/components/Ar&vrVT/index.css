@@ -1,161 +1,167 @@
 /* index.css */
 
-/* General styles */
+/* General container styling */
 .arvr-virtual-tour-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header styling */
+.arvr-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.arvr-header h1 {
+  font-size: 2.5rem;
+  color: #003d6c;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-out;
+}
+
+.arvr-header p {
+  font-size: 1.2rem;
+  color: #555;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Section styling */
+.solution-overview {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.solution-overview h2 {
+  font-size: 2rem;
+  color: #003d6c;
+  margin-bottom: 20px;
+}
+
+.solution-content {
+  position: relative;
+}
+
+/* Step content styling */
+.solution-step {
+  width: 600px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  animation: fadeInUp 1s ease-out;
+  margin-left: 40vh;
+}
+
+.solution-step img{
+  height: 300px;
+  width: 500px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.nav-button {
+  background-color: #003d6c;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #002f5d;
+  transform: scale(1.1);
+}
+
+/* Benefits Section Styling */
+.benefits-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.benefits-section h1 {
+  font-size: 2rem;
+  color: #003d6c;
+  margin-bottom: 20px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits-list li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* CTA Section Styling */
+.cta-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta-section h1 {
+  font-size: 2rem;
+  color: #003d6c;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background-color: #003d6c;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #002f5d;
+  transform: scale(1.05);
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
   }
-  
-  .arvr-header {
-    text-align: center;
-    margin-bottom: 20px;
-    background-color: #0c1c2d;
-    color: #fff;
-    padding: 20px;
-    border-radius: 8px;
+  to {
+      opacity: 1;
   }
-  
-  .arvr-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: white;
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
   }
-  
-  .arvr-header p {
-    font-size: 1.2em;
-    margin: 0;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  .solution-overview {
-    margin-bottom: 20px;
+}
+@media (max-width: 370px){
+  .solution-step{
+    margin-left: 0;
+    width: 300px; 
   }
-  
-  .solution-overview h2 {
-    font-size: 2em;
-    margin-bottom: 15px;
-    color: #007bff;
+
+  .solution-step img{
+    width: 200px;
+    height: 200px;
   }
-  
-  .solution-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .solution-step {
-    flex: 1 1 300px; /* Flex basis for responsiveness */
-    max-width: 300px;
-    text-align: center;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .solution-step:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .solution-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .benefits-section {
-    margin-bottom: 20px;
-  }
-  
-  .benefits-section h2 {
-    font-size: 2em;
-    margin-bottom: 15px;
-    color: #007bff;
-  }
-  
-  .benefits-list {
-    list-style-type: disc;
-    margin-left: 20px;
-    font-size: 1.1em;
-  }
-  
-  .cta-section {
-    text-align: center;
-    background-color: #0c1c2d;
-    color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  .cta-section h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
-  
-  .cta-section p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-  }
-  
-  .cta-button {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  .cta-button:hover {
-    background-color: #218838;
-    transform: scale(1.05);
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 370px) {
-    .arvr-header h1 {
-      font-size: 1.8em;
-    }
-  
-    .arvr-header p {
-      font-size: 1em;
-    }
-  
-    .solution-overview h2 {
-      font-size: 1.5em;
-    }
-  
-    .solution-step {
-      flex: 1 1 100%;
-      max-width: 100%;
-    }
-  
-    .benefits-section h2 {
-      font-size: 1.5em;
-    }
-  
-    .benefits-list {
-      font-size: 1em;
-    }
-  
-    .cta-section h2 {
-      font-size: 1.5em;
-    }
-  
-    .cta-section p {
-      font-size: 1em;
-    }
-  
-    .cta-button {
-      font-size: 1em;
-      padding: 8px 16px;
-    }
-  }
-  
+}

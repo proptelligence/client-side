@@ -21,7 +21,7 @@ const PaymentPopup = ({ amount, onClose }) => {
         {showQR ? (
           <div className="qr-container">
             <div className="qr-header">
-            <img src={logo} alt="Proptelligence Logo" className="logo-qr" />
+              <img src={logo} alt="Proptelligence Logo" className="logo-qr" />
               <h3>Pay with Proptelligence secure QR Scan</h3>
             </div>
             <QRCode value={`upi://pay?pa=${upiId}&pn=Proptelligence&am=${amount}&cu=INR`} />

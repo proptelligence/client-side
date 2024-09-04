@@ -42,6 +42,7 @@ import CityStateSelection from './components/selectcityandstate';
 import ARVRVT from './components/Ar&vrVT';
 import ARVRVD from './components/Ar&vrVD';
 import IOT from './components/IOTsolutions';
+import PaymentPopup from './components/PaymentPopup';
 
 function App() {
   useEffect(() => {
@@ -179,6 +180,10 @@ function App() {
         <Route exact path="/team" element={<Team />} />
         <Route exact path="/cart" element={<Cart />} />
         <Route exact path="/new" element={<HouseDetailsForm />} /> 
+        <Route exact path="/Propvaluation" element={<HouseDetailsForm />} />
+        <Route exact path="/Propbot" element={<HouseDetailsForm />} />
+        <Route exact path="/PropAutomatedPropertyManagement" element={<HouseDetailsForm />} />
+        <Route exact path="/propanalytics" element={<HouseDetailsForm />} />
         {/* <Route exact path="/prop/:city" element={<CityPropertyList />} /> */}
         <Route path="/prop/:location" element={<Properties />} />
         <Route path="/" element={<CityStateSelection />} />
@@ -186,7 +191,8 @@ function App() {
         <Route path="/not-found" element={<NotFound />} />
         <Route exact path="/virtualtour" element={<ARVRVT />} />
         <Route exact path="/virtualdesign" element={<ARVRVD />} />
-        <Route exact path="/iot" element={<IOT />} />
+        <Route exact path="/iotsolutions" element={<IOT />} />
+        <Route exact path="/upipay" element={<PaymentPopup />} />
       </Routes>
     </BrowserRouter>
   );
