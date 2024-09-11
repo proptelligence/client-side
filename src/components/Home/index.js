@@ -309,7 +309,7 @@ const Home = () => {
     <>
     
       <Helmet> 
-        <title>Proptelligence | PropTech Company in India | Online Legal Services</title>
+        <title> Proptelligence | Free Property Post in India | AI Powered Solutions For Real Estate and Legal | Online Legal Services  in India</title>
         <meta name="Legal Services" content="Proptelligence is an AI-powered real estate and legal platform that helps agents, attorneys, and other real estate professionals find and procure properties." /> 
         <meta name="Property Services" content="Navigating the legal complexities of real estate transactions can be daunting. Proptelligence simplifies this process by offering tailored legal services to meet your needs." /> 
         <meta name="Industries" content="Property Technologies has worked with a range of industries including commercial real estate, residential real estate, hospitality, and healthcare." />

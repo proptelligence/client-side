@@ -43,6 +43,15 @@ import ARVRVT from './components/Ar&vrVT';
 import ARVRVD from './components/Ar&vrVD';
 import IOT from './components/IOTsolutions';
 import PaymentPopup from './components/PaymentPopup';
+import Blog21 from './components/Blog21';
+import Blog22 from './components/Blog22';
+import Blog23 from './components/Blog23';
+import Blog24 from './components/Blog24';
+import Blog25 from './components/Blog25';
+import Blog26 from './components/Blog26';
+import Blog27 from './components/Blog27';
+import Blog28 from './components/Blog28';
+
 
 function App() {
   useEffect(() => {
@@ -138,7 +147,7 @@ function App() {
   return (
     <BrowserRouter>
       <Helmet>
-        <title>Proptelligence | PropTech Company in India | Online Legal Services</title>
+        <title> Proptelligence | Free Property Post in India | AI Powered Solutions For Real Estate and Legal | Online Legal Services  in India</title>
         <meta name="Legal Services" content="Proptelligence is an AI-powered real estate and legal platform that helps agents, attorneys, and other real estate professionals find and procure properties." />
         <meta name="Property Services" content="Navigating the legal complexities of real estate transactions can be daunting. Proptelligence simplifies this process by offering tailored legal services to meet your needs." />
         <meta name="Industries" content="Property Technologies has worked with a range of industries including commercial real estate, residential real estate, hospitality, and healthcare." />
@@ -175,6 +184,14 @@ function App() {
         <Route exact path="/mumbai" element={<Blog5 />} />
         <Route exact path="/pune" element={<Blog6 />} />
         <Route exact path="/chennai" element={<Blog7 />} />
+        <Route exact path="/explorerealestate-blog" element={<Blog21 />} />
+        <Route exact path="/invest-blog" element={<Blog22 />} />
+        <Route exact path="/puneandbeyond-blog" element={<Blog23 />} />
+        <Route exact path="/Chennai-blog" element={<Blog24 />} />
+        <Route exact path="/propbot-blog" element={<Blog25 />} />
+        <Route exact path="/AI-blog" element={<Blog27 />} />
+        <Route exact path="/Propmanagement" element={<Blog26 />} />
+        <Route exact path="/Proplytics" element={<Blog28 />} />
         <Route exact path="/insights" element={<Insights />} />
         <Route exact path="/careers" element={<CareerPage />} />
         <Route exact path="/team" element={<Team />} />
