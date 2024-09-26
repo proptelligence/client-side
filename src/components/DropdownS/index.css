@@ -1,21 +1,13 @@
-/* Base dropdown menu styles */
 .dropdown-menu {
   background: #006ac2;
   width: 200px;
   position: absolute;
-  top: 100%; /* Adjust top to be directly below the parent */
-  left: 0; /* Align to the left of the parent */
+  top: 100%;
   list-style: none;
   text-align: start;
-  display: none; /* Hide by default */
+  z-index: 1;
 }
 
-/* Show dropdown menu when clicked */
-.dropdown-menu.clicked {
-  display: block; /* Show when clicked */
-}
-
-/* Dropdown item styles */
 .dropdown-menu li {
   background: #006ac2;
   cursor: pointer;
@@ -25,18 +17,23 @@
   background: #5cabff;
 }
 
-/* Dropdown link styles */
+.dropdown-menu.clicked {
+  display: none;
+}
+
 .dropdown-link {
   display: block;
+  height: 100%;
+  width: 100%;
   text-decoration: none;
-  color: #fff;
+  color:  #fff;
   padding: 16px;
+  padding: 0.5rem 1rem;
   font-weight: 600;
 }
 
-/* Media query adjustments */
 @media screen and (max-width: 960px) {
-  .fa-caret-down {
+  .fa-caret-down3 {
     display: none;
   }
 }

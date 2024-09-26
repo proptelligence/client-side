@@ -9,29 +9,15 @@ const MenuItems = [
       path: '/aboutus',
       cName: 'dropdown-link'
     },
-    {
-      title: 'ContactUs',
-      path: '/contact',
-      cName: 'dropdown-link'
-    },
-    {
-      title: 'Our Team',
-      path: '/team',
-      cName: 'dropdown-link'
-    },
-    {
-      title: 'Insights',
-      path: '/insights',
-      cName: 'dropdown-link'
-    },
+    
     {
       title: 'Careers',
       path: '/careers',
       cName: 'dropdown-link'
     },
     {
-      title: 'Industries',
-      path: '/industries',
+      title: 'Our Team',
+      path: '/Ourteam',
       cName: 'dropdown-link'
     },
   

@@ -28,7 +28,6 @@ import Blog7 from './components/Blog7';
 import CityPropertyList from './components/CityPropertyList'
 import Insights from './components/Insights';
 import CareerPage from './components/CareerPage';
-import Team from './components/Team';
 import Cart from './components/Cart';
 import HouseDetailsForm from './components/HouseDetailsForm';
 import Services from './components/Services';
@@ -51,6 +50,8 @@ import Blog25 from './components/Blog25';
 import Blog26 from './components/Blog26';
 import Blog27 from './components/Blog27';
 import Blog28 from './components/Blog28';
+import Team from './components/Teams';
+
 
 
 function App() {
@@ -194,7 +195,7 @@ function App() {
         <Route exact path="/Proplytics" element={<Blog28 />} />
         <Route exact path="/insights" element={<Insights />} />
         <Route exact path="/careers" element={<CareerPage />} />
-        <Route exact path="/team" element={<Team />} />
+        <Route exact path="/Ourteam" element={<Team />} />
         <Route exact path="/cart" element={<Cart />} />
         <Route exact path="/new" element={<HouseDetailsForm />} /> 
         <Route exact path="/Propvaluation" element={<HouseDetailsForm />} />

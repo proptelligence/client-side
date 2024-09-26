@@ -4,6 +4,8 @@ import Navbar from '../Navbar';
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +18,9 @@ const ContactUs = () => {
   const [submitStatus, setSubmitStatus] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const whatsappNumber = '+918062181169'; // Replace with your WhatsApp number
+  const predefinedMessage = encodeURIComponent('Hello! I need assistance.');
+  
 
   const handleChange = (e) => {
     setFormData({
@@ -28,7 +33,7 @@ const ContactUs = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://property-backend-1.onrender.com/contact/send-email', {
+      const response = await fetch('https://contactform7.onrender.com/contact/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,24 +42,15 @@ const ContactUs = () => {
       });
 
       if (response.ok) {
-        setSubmitStatus('success');
         setShowSuccessMessage(true);
-        console.log('Email sent successfully!');
-        setFormData({
-          name: '',
-          mobileNumber: '',
-          email: '',
-          message: '',
-        });
+        alert('Message sent successfully!');
+        setFormData({ name: '', mobileNumber: '', email: '', message: '' });
       } else {
-        setSubmitStatus('error');
         setShowErrorMessage(true);
-        console.error('Failed to send email');
       }
     } catch (error) {
-      setSubmitStatus('error');
-      setShowErrorMessage(true);
       console.error('Error sending email:', error);
+      setShowErrorMessage(true);
     }
   };
 
@@ -65,6 +61,8 @@ const ContactUs = () => {
   const handleCloseErrorMessage = () => {
     setShowErrorMessage(false);
   };
+
+
 
   return (
     <> 
@@ -93,6 +91,9 @@ const ContactUs = () => {
           <p>
             <FontAwesomeIcon icon={faPhone} /> +91 80 6218 1169
           </p>
+          <div className="whatsapp-icon" onClick={() => window.open(`https://wa.me/${whatsappNumber}?text=${predefinedMessage}`, '_blank')}>
+        <FontAwesomeIcon icon={faWhatsapp} color="#25D366" />
+      </div>
         </div>
         <div className="contact-form">
           <h3>Send us a message</h3>

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Dropdown from '../Dropdown';
 import DropdownS from '../DropdownS';
 import DropdownC from '../DropdownC';
+import DropdownA from '../DropdownA';
+import Dropdown from '../Dropdown';
 import { menuItems } from '../../menuItems';
 import { menuItems1 } from '../../menuItems1';
 import Menu from '../Menu';
@@ -23,6 +24,8 @@ function Navbar() {
   const [servicesDropdown, setServicesDropdown] = useState(false);
   const [techDropdown, setTechDropdown] = useState(false);
   const [companyDropdown, setCompanyDropdown] = useState(false);
+  const [solutionsDropdown, setSolutionsDropdown] = useState(false);
+  const [aboutDropdown, setAboutDropdown] = useState(false);
   const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState(localStorage.getItem('userName') || "");
   const navigate = useNavigate();
@@ -30,8 +33,11 @@ function Navbar() {
   const [cartCount, setCartCount] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileCompanyDropdownOpen, setMobileCompanyDropdownOpen] = useState(false); // New state for mobile Company dropdown
+  const [mobileSolutionsDropdownOpen, setMobileSolutionsDropdownOpen] = useState(false);
+  const [mobileAboutDropdownOpen, setMobileAboutDropdownOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [message, setMessage] = useState('');
+  const [dropdown, setDropdown] = useState(false);
 
   const whatsappNumber = '+918062181169'; // Replace with the company WhatsApp number
 
@@ -92,6 +98,59 @@ function Navbar() {
     }
   };
 
+  const toggleMobileSolutionsDropdown = () => {
+    setMobileSolutionsDropdownOpen(!mobileSolutionsDropdownOpen);
+  };
+
+  const handleSolutionsHover = () => {
+    if (window.innerWidth >= 960) {
+      setServicesDropdown(false);
+      setTechDropdown(false);
+      setSolutionsDropdown(true);
+    }
+  };
+  const handleSolutionsLeave = () => {
+    if (window.innerWidth >= 960) {
+      setServicesDropdown(false);
+      setTechDropdown(false);
+      setSolutionsDropdown(false);
+    }
+  };
+
+  const toggleMobileAboutDropdown = () => {
+    setMobileAboutDropdownOpen(!mobileAboutDropdownOpen);
+  };
+
+  const handleAboutHover = () => {
+    if (window.innerWidth >= 960) {
+      setServicesDropdown(false);
+      setTechDropdown(false);
+      setAboutDropdown(true);
+    }
+  };
+  const handleAboutLeave = () => {
+    if (window.innerWidth >= 960) {
+      setServicesDropdown(false);
+      setTechDropdown(false);
+      setAboutDropdown(false);
+    }
+  };
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
 
   return (
     <>
@@ -106,36 +165,21 @@ function Navbar() {
               Home
             </Link>
           </li>
-          {/* <li className="menus">
-            {menuItems.map((menu, index) => {
-              const depthLevel = 0;
-              return (
-                <Menu
-                  items={menu}
-                  key={index}
-                  depthLevel={depthLevel}
-                />
-              );
-            })}
-          </li> */}
-          <li className="service-menu">
-            <a href="#services-container" className="products-link">Services</a>
+          <li
+            className='nav-item'
+            onMouseEnter={handleSolutionsHover}
+            onMouseLeave={handleSolutionsLeave}
+          >
+            <Link
+              to='/'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Solutions <i className='fas fa-caret-down' />
+            </Link>
+            {solutionsDropdown && <DropdownS />}
           </li>
-          {/* <li className="menus">
-            {menuItems1.map((menu, index) => {
-              const depthLevel = 0;
-              return (
-                <Menu
-                  items={menu}
-                  key={index}
-                  depthLevel={depthLevel}
-                />
-              );
-            })}
-          </li> */}
-          <li className="product-menu">
-            <a href="#product-section" className="products-link">Products</a>
-          </li>
+
 
           <li
             className='nav-item'
@@ -147,11 +191,25 @@ function Navbar() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Company <i className='fas fa-caret-down' />
+              Who we are  <i className='fas fa-caret-down' />
             </Link>
             {companyDropdown && <DropdownC />}
           </li>
-          <li className='whatsapp'>
+          <li
+            className='nav-item'
+            onMouseEnter={handleAboutHover}
+            onMouseLeave={handleAboutLeave}
+          >
+            <Link
+              to='/'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              What we do  <i className='fas fa-caret-down' />
+            </Link>
+            {aboutDropdown && <DropdownA />}
+          </li>
+          {/* <li className='whatsapp'>
             <div className="whatsapp-icon" onClick={toggleChat}>
               <FontAwesomeIcon icon={faWhatsapp}  color="#25D366" />
             </div>
@@ -176,7 +234,20 @@ function Navbar() {
                 </div>
               </div>
            )}
-          </li>
+          </li> */}
+          <li
+        className='nav-item'
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        {/* Contact Us link */}
+        <Link to='/contact' className='nav-links' onClick={closeMobileMenu}>
+          Contact Us <i className='fas fa-caret-down' /> {/* Dropdown icon */}
+        </Link>
+
+        {/* Show dropdown when hovered */}
+        {dropdown && <Dropdown />}
+      </li>
         </ul>
 
         <div className='navbar-right'>
@@ -188,15 +259,15 @@ function Navbar() {
               {loading ? (
                 <p>Loading...</p>
               ) : user ? (
-                <>
-                  <p>Welcome {name} 👋</p>
-                  <Link to='/cart'>
-                    <p>My Services <i className='fas fa-shopping-cart' /><span className='cart-count'>{cartCount}</span></p>
-                  </Link>
-                  <button type="button" className="logout-desktop-btn" onClick={logout}>
-                    Logout
-                  </button>
-                </>
+                <div className='userinfo'>
+          <p>Welcome {name} 👋</p>
+          <Link to='/cart'>
+            <p>My Services <i className='fas fa-shopping-cart' /><span className='cart-count'>{cartCount}</span></p>
+          </Link>
+          <button type="button" className="logout-desktop-btn" onClick={logout}>
+            Logout
+          </button>
+        </div>
               ) : (
                 <Link to="/login">
                   <button>Login</button>
@@ -217,19 +288,25 @@ function Navbar() {
                   Home
                 </Link>
               </li>
-              <li className="product-menu">
-                <a href="#product-section" className="products-link">Products</a>
-              </li>
-              <li className="service-menu">
-                <a href="#services-container" className="products-link">Services</a>
+              <li className='mobile-menu-link' onClick={toggleMobileSolutionsDropdown}>
+                <div className='nav-links'>
+                  Solutions 
+                </div>
+                {mobileSolutionsDropdownOpen && <DropdownS />}
               </li>
               <li className='mobile-menu-link' onClick={toggleMobileCompanyDropdown}>
                 <div className='nav-links'>
-                  Company <i className='fas fa-caret-down' />
+                  Who we are  
                 </div>
                 {mobileCompanyDropdownOpen && <DropdownC />}
               </li>
-              <li className='whatsapp'>
+              <li className='mobile-menu-link' onClick={toggleMobileAboutDropdown}>
+                <div className='nav-links'>
+                  What we do  
+                </div>
+                {mobileAboutDropdownOpen && <DropdownA />}
+              </li>
+              {/* <li className='whatsapp'>
             <div className="whatsapp-icon" onClick={toggleChat}>
               <FontAwesomeIcon icon={faWhatsapp} size='2x'  color="#25D366" />
             </div>
@@ -254,6 +331,11 @@ function Navbar() {
                 </div>
               </div>
            )}
+          </li> */}
+          <li className='nav-item'>
+            <Link to='/contact' className='nav-links' onClick={closeMobileMenu}>
+              Contact Us
+            </Link>
           </li>
             </ul>
           </div>

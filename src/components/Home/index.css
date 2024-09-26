@@ -873,7 +873,7 @@ font-weight: bold;
   padding-top: 15px;
   color: #302e33;
   font-size: 32px;
-  margin-left: 1vh;
+  margin-left: 50%;
 }
 @media (max-width: 768px) {
   .blog-section-home {
@@ -1044,7 +1044,7 @@ font-weight: bold;
     padding-top: 15px;
     color: #302e33;
     font-size: 32px;
-    margin-left: 2vh;
+    margin-left: 40%;
   }
   .service-info-home{
     width: 300px;

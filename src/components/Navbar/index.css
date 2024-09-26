@@ -9,6 +9,7 @@
   z-index: 1000;
 }
 
+
 .mobile-menu-icon {
   display: none;
 }
@@ -32,6 +33,7 @@
   margin-top: 30px;
 }
 .company-name{
+  color: white;
   margin-left: 10px;
   font-size: 1.5rem;
   font-weight: bold;
@@ -54,7 +56,7 @@
   grid-gap: 10px;
   list-style: none;
   text-align: center;
-  width: 70vw;
+  width: 45vw;
   justify-content: center;
   margin-right: 10rem; 
   padding-top: 10px;
@@ -133,7 +135,7 @@
     padding: 2rem;
     width: 100%;
     display: table;
-    margin-left: 5vh;
+    margin-left: 2vh;
   }
 
   .nav-links:hover {
@@ -252,36 +254,8 @@
   }
 }
 
-/* Centering the menu icon */
-.menu-icon-nav i {
-  color: #fff; 
-  font-size: 1.8rem; 
-  transition: transform 0.3s ease; 
-}
 
-.menu-icon-nav:hover {
-  background-color: #0a2d6e; /* Change background color on hover */
-}
 
-.menu-icon-nav:hover i {
-  transform: scale(1.1); /* Increase icon size on hover */
-}
-
-.menu-icon-nav {
-  position: absolute;
-  left: 90%; /* Center horizontally */
-  top: 50%;
-  transform: translate(-50%, -50%); /* Center both horizontally and vertically */
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #0a2d6e;
-  transition: background-color 0.3s ease;
-}
 
 /* Mobile view adjustments */
 @media screen and (max-width: 370px) {
@@ -307,11 +281,6 @@
     top: 50%;
     transform: translateY(-50%);
   }
-
-  .menu-icon-nav {
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-  }
   .phone-container{
     margin-left: 30px;
   }
@@ -323,8 +292,7 @@
     display: block;
     cursor: pointer;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    left: 50%;
     margin-top: 13px;
   }
   .menus{
@@ -333,6 +301,7 @@
 
   /* Mobile dropdown menu */
   .mobile-menu-dropdown {
+    width: 100%;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -357,7 +326,6 @@
   .mobile-menu-link {
     padding: 10px;
     text-align: center;
-    border-bottom: 1px solid #444;
     position: relative;
     margin-right: 120px;
   }
@@ -369,7 +337,6 @@
   /* Mobile dropdown inside the mobile menu */
   .mobile-menu-link .dropdown-menu {
     display: none; /* Hide by default */
-    background-color: #444;
     margin-top: 5px;
     padding: 10px;
     border-radius: 4px;
@@ -400,16 +367,11 @@
     width: 70px;
     margin-left: 12vh;
   }
+  
 }
 
 
-/* General Dropdown Styles */
-.dropdown-menu {
-  background-color: #444;
-  margin-top: 5px;
-  padding: 10px;
-  border-radius: 4px;
-}
+
 
 /* Desktop Dropdown */
 .nav-item .dropdown-menu {
@@ -432,6 +394,7 @@
 
 
 .mobile-menu-link {
+  width: 100%;
   padding: 10px;
   text-align: center;
   border-bottom: 1px solid #444;
@@ -588,5 +551,86 @@
     font-size: 1.5rem;
   }
 }
+
+.navbar-right {
+  position: relative; /* Make the container relative for positioning the dropdown */
+}
+
+.menu-icon-nav {
+  display: flex;
+  cursor: pointer;
+  color: white;
+  margin-right: 50px;
+}
+
+.menu-icon-nav i{
+  font-size: 30px;
+}
+
+
+.dropdown-menu-ham {
+  position: absolute;
+  top: 50px; /* Position directly below the user icon */
+  right: 0;  /* Align to the right of the parent */
+  background-color: #ffffff; /* White background */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  z-index: 999; /* Ensure it appears on top of other elements */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.userinfo {
+  padding: 10px;
+  background-color: #f9f9f9; /* Light background for the user info */
+  border-radius: 8px;
+}
+
+.logout-desktop-btn {
+  background-color: #d32f2f; /* Red background for the logout button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.logout-desktop-btn:hover {
+  background-color: #c62828; /* Darker red on hover */
+}
+
+/* Styling for the login button */
+.login-btn {
+  background-color: #0d47a1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+}
+
+.login-btn:hover {
+  background-color: #1565c0;
+}
+
+@media (max-width: 768px){
+  .menu-icon-nav i {
+    position: absolute;
+    right: 10px; /* Pushes the user icon to the far right */
+    font-size: 30px; /* Adjust the size of the icon */
+    color: white; /* Icon color */
+    cursor: pointer;
+  }
+}
+
+
+
+
+
+
 
 

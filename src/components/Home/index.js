@@ -347,7 +347,43 @@ const Home = () => {
         {/* <div className='service-heading-container'>
           <h1 className="service-heading">Trending Services</h1>
         </div>   */}
-        <div id='services-container'>
+      <div id="product-section">
+        <h2 className="products-heading">Products</h2>
+        <div className="products-row">
+          <div className="product-column" onClick={() => handleProductClick('AI')}>
+            <h3>AI</h3>
+            <img src={AI} alt="AI" />
+          </div>
+          <div className="product-column" onClick={() => handleProductClick('AR & VR')}>
+            <h3>AR & VR</h3>
+            <img src={ARVR} alt="AR & VR" />
+          </div>
+          <div className="product-column" onClick={() => handleProductClick('IoT')}>
+            <h3>IoT</h3>
+            <img src={IoT} alt="IoT" />
+          </div>
+          {/* <div className="product-column" onClick={() => handleProductClick('TECH')}>
+            <h3>TECH</h3>
+            <img src={TECH} alt="TECH" />
+          </div> */}
+        </div>
+      </div> 
+      <div className="content-section">
+        <div className="column">
+          <p className="highlight">Free property services</p>
+          <p className="details">7+ cities</p>
+          <p className="details">31 states</p>
+        </div>
+        <div className="column">
+          <p className="highlight">Products</p>
+          <p className="details">15+</p>
+        </div>
+        <div className="column">
+          <p className="highlight">Online legal services</p>
+          <p className="details">10+</p>
+        </div>
+      </div>
+      <div id='services-container'>
           <h1 className="service-heading">Trending Services</h1>
           <div className="service-info-home">
               <img
@@ -370,44 +406,8 @@ const Home = () => {
               <p className="service-content">Navigating the legal complexities of real estate transactions can be daunting. Proptelligence simplifies this process by offering tailored legal services to meet your needs.</p>
             </div> 
         </div>
-      <div className="content-section">
-        <div className="column">
-          <p className="highlight">Free property services</p>
-          <p className="details">7+ cities</p>
-          <p className="details">31 states</p>
-        </div>
-        <div className="column">
-          <p className="highlight">Products</p>
-          <p className="details">15+</p>
-        </div>
-        <div className="column">
-          <p className="highlight">Online legal services</p>
-          <p className="details">10+</p>
-        </div>
-      </div>
 
-
-      <div id="product-section">
-        <h2 className="products-heading">Products</h2>
-        <div className="products-row">
-          <div className="product-column" onClick={() => handleProductClick('AI')}>
-            <h3>AI</h3>
-            <img src={AI} alt="AI" />
-          </div>
-          <div className="product-column" onClick={() => handleProductClick('AR & VR')}>
-            <h3>AR & VR</h3>
-            <img src={ARVR} alt="AR & VR" />
-          </div>
-          <div className="product-column" onClick={() => handleProductClick('IoT')}>
-            <h3>IoT</h3>
-            <img src={IoT} alt="IoT" />
-          </div>
-          {/* <div className="product-column" onClick={() => handleProductClick('TECH')}>
-            <h3>TECH</h3>
-            <img src={TECH} alt="TECH" />
-          </div> */}
-        </div>
-      </div>
+      
       {isOptionsPopupOpen && (
   <Popup open={isOptionsPopupOpen} closeOnDocumentClick onClose={() => setIsOptionsPopupOpen(false)}>
     <div className="options-popup">

@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
+
 import './index.css';
+import { Link } from 'react-router-dom';
 
 const MenuItems = [
-  {
-    title: 'Products',
-    path: 'product-section',
-    cName: 'dropdown-link'
-  },
-  {
-    title: 'Services',
-    path: 'services-container',
-    cName: 'dropdown-link'
-  },
-];
+    {
+      title: 'Industries',
+      path: '/industries',
+      cName: 'dropdown-link'
+    },
+    
+    {
+      title: 'Technologies',
+      path: '/tech',
+      cName: 'dropdown-link'
+    },
+    {
+      title: 'Insights',
+      path: '/insights',
+      cName: 'dropdown-link'
+    },
+  ];
 
-function DropdownS() {
+function DropdownA() {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -24,20 +31,18 @@ function DropdownS() {
     <>
       <ul
         onClick={handleClick}
-        className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}
+        className={click ? 'dropdown-menu4 clicked' : 'dropdown-menu4'}
       >
         {MenuItems.map((item, index) => {
           return (
             <li key={index}>
-              <ScrollLink
+              <Link
                 className={item.cName}
                 to={item.path}
-                smooth={true} // Enables smooth scrolling
-                duration={500} // Scroll duration
                 onClick={() => setClick(false)}
               >
                 {item.title}
-              </ScrollLink>
+              </Link>
             </li>
           );
         })}
@@ -46,4 +51,4 @@ function DropdownS() {
   );
 }
 
-export default DropdownS;
+export default DropdownA;
