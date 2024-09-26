@@ -77,7 +77,7 @@ const Home = () => {
         case 'AI':
           setPopupOptions([
             { imageUrl: Propvaluation, heading: 'PropValuation' },
-            { imageUrl: Propbot, heading: 'PropBot' },
+            { imageUrl: Propbot, heading: 'PropGpt' },
             { imageUrl: PropAutomatedPropertyManagement, heading: 'PropAutomatedPropertyManagement' },
             { imageUrl: PropLegal, heading: 'PropLegal' },
             { imageUrl: PropLytics, heading: 'Propanalytics' }
@@ -113,7 +113,7 @@ const Home = () => {
       case 'PropValuation':
         navigate('/Propvaluation');
         break;
-      case 'PropBot':
+      case 'PropGpt':
         navigate('/Propbot');
         break;
       case 'PropAutomatedPropertyManagement':
@@ -328,22 +328,23 @@ const Home = () => {
           </div>
         </Popup>
       )}
-      {/* WhatsApp Icon */}
-      
-
-      
       <div className="home-container">
-        <div className="home-content">
-          <h1 className="home-heading">Unlock Our Free Property Service</h1>
-          <p className="home-description">
-            Experience effortless property management with Proptelligence.
-            With our free services, managing your properties has never been easier.
-          </p>
-          <button className="home-button" onClick={() => checkAuthAndNavigate('/select')}>
-      Click Here
-    </button>
-        </div>
-      </div>
+  <div className="home-content">
+    <h1 className="home-heading">Unlock Our Free Property Service</h1>
+    <p className="home-description">
+      Experience effortless property management with Proptelligence. With our free services, managing your properties has never been easier.
+    </p>
+    <div className="home-buttons">
+      <button className="home-button buy-button" onClick={() => checkAuthAndNavigate('/select')}>
+        Buy/Rent/Sell a Property
+      </button>
+      <button className="home-button list-button" onClick={() => checkAuthAndNavigate('/post')}>
+        List Your Property for Free
+      </button>
+    </div>
+  </div>
+</div>
+
         {/* <div className='service-heading-container'>
           <h1 className="service-heading">Trending Services</h1>
         </div>   */}
@@ -372,7 +373,7 @@ const Home = () => {
         <div className="column">
           <p className="highlight">Free property services</p>
           <p className="details">7+ cities</p>
-          <p className="details">31 states</p>
+          <p className="details">31+ states</p>
         </div>
         <div className="column">
           <p className="highlight">Products</p>
