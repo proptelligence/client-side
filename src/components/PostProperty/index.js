@@ -26,26 +26,33 @@ const PostProperty = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    for (const key in property) {
+      if (key === 'images') {
+        property.images.forEach((file) => {
+          formData.append('images', file);
+        });
+      } else {
+        formData.append(key, property[key]);
+      }
+    }
     try {
       const response = await fetch('https://prop-backend.onrender.com/api/post-property', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(property),
+        body: formData,  // Let browser handle content-type
       });
   
       if (response.ok) {
-        console.log('Property submitted successfully!');
-        alert("Thank you for submitting your property details. Your submission is currently under review, and our team will reach out to you for further information or confirmation shortly. We appreciate your patience and look forward to assisting you.");
-        // You can add further logic to reset the form or show a success message
+        alert('Thank you for submitting your property details. Your submission is currently under review, and our team will reach out to you for further information or confirmation shortly. We appreciate your patience and look forward to assisting you.');
       } else {
-        console.error('Failed to submit property');
+        const errorData = await response.json();
+        console.error('Failed to submit property:', errorData);
       }
     } catch (error) {
       console.error('Error:', error);
     }
   };
+  
   
 
   return (

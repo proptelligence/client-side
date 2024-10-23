@@ -21,26 +21,37 @@
 }
 
 .navbar-logo {
+  display: flex;
   cursor: pointer;
   text-decoration: none;
   z-index: 1001;
   position: relative;
-  margin-left: 15px; /* Position the logo towards the left */
+  margin-left: 15px;
 }
 
 .navbar-logo img {
-  width: 70px;
-  margin-top: 30px;
+  width: 60px;
 }
-.company-name{
-  color: white;
+
+.company-info {
+  display: flex;
+  flex-direction: column; /* Stack name and slogan vertically */
+  justify-content: center; /* Center the text vertically */
   margin-left: 10px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 50px; /* Adjust the value as needed */
-  display: inline-block; /* Ensures the margin works */
-  vertical-align: middle;
 }
+
+.company-name {
+  color: white; /* Text color for the company name */
+  font-size: 1.5rem; /* Font size for the company name */
+  font-weight: bold; /* Make the company name bold */
+  margin-top: 10px;
+}
+
+.slogan {
+  font-size: 0.5rem; /* Font size for the slogan */
+  color: #ffffff; /* Color for the slogan text */
+}
+
 .fa-firstdraft {
   margin-left: 0.5rem;
   font-size: 1.6rem;
@@ -58,7 +69,7 @@
   text-align: center;
   width: 45vw;
   justify-content: center;
-  margin-right: 10rem; 
+  margin-right: 5rem; 
   padding-top: 10px;
 }
 
@@ -628,9 +639,9 @@
 }
 
 
-
-
-
-
-
-
+.website-logo {
+  display: inline-block;
+  animation: cube-rotate 4s infinite;
+  width: 50px; /* Set your desired width */
+  height: auto;
+}

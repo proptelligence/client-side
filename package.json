@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@cashfreepayments/cashfree-js": "^1.0.4",
+    "@cashfreepayments/cashfree-js": "^1.0.5",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
@@ -13,7 +13,8 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.6.8",
+    "axios": "^1.7.7",
+    "cashfree-dropjs": "^1.1.5",
     "firebase": "^10.8.0",
     "js-cookie": "^3.0.5",
     "qrcode": "^1.5.3",

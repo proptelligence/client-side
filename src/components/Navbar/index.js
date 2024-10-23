@@ -14,10 +14,12 @@ import { auth, db, logout } from "../../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import axios from 'axios'; // Import Axios for making HTTP requests
 import Cart from "../Cart"; // Import Cart component
-import Logo from '../../components/Assets/logo.jpg'
+import Logo from '../../components/Assets/logo.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import Logo1 from "../../components/Assets/image.jpg"
+import LogoWebm from '../Assets/logo.webm'
 
 function Navbar() {
   const [userName, setUserName] = useState('');
@@ -155,10 +157,17 @@ function Navbar() {
   return (
     <>
       <nav className='navbar'>
-        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-          <img src={Logo} alt="logo" className='website-logo' />
-          <span className='company-name'>Proptelligence</span>
-        </Link>
+      <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+      <video className='website-logo' autoPlay muted loop>
+            <source src={LogoWebm} type="video/webm" />
+            Your browser does not support the video tag.
+        </video>
+    <div className='company-info'>
+        <span className='company-name'>Proptelligence</span>
+        <span className='slogan'>The Power of Data in Real World Intelligence</span>
+    </div>
+</Link>
+
         <ul className="nav-menu">
           <li className='nav-item'>
             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
@@ -209,32 +218,6 @@ function Navbar() {
             </Link>
             {aboutDropdown && <DropdownA />}
           </li>
-          {/* <li className='whatsapp'>
-            <div className="whatsapp-icon" onClick={toggleChat}>
-              <FontAwesomeIcon icon={faWhatsapp}  color="#25D366" />
-            </div>
-            {isChatOpen && (
-              <div className="whatsapp-chatbox">
-                <div className="chatbox-header">
-                  <span>Chat with Us</span>
-                  <button onClick={toggleChat} className="close-chatbox">&times;</button>
-                </div>
-                <div className="chatbox-body">
-                  <textarea
-                    rows="3"
-                    placeholder="Type your message..."
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                  ></textarea>
-                </div>
-                <div className="chatbox-footer">
-                  <button onClick={sendMessage} className="send-button">
-                    <FontAwesomeIcon icon={faPaperPlane} /> Send
-                  </button>
-                </div>
-              </div>
-           )}
-          </li> */}
           <li
         className='nav-item'
         onMouseEnter={onMouseEnter}

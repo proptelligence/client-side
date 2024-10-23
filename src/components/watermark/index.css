@@ -1,0 +1,15 @@
+.watermark {
+    position: fixed; /* Fixed position to stay at the bottom left */
+    bottom: 10px; /* Distance from the bottom */
+    left: 20px; /* Distance from the left */
+    z-index: 1; /* Ensure it's behind other content */
+  }
+  
+  .watermark-logo {
+    background-color: transparent;
+    width: 50px; /* Adjust the size of the logo */
+    height: auto; /* Maintain aspect ratio */
+    opacity: 1; /* Adjust opacity for watermark effect */
+    pointer-events: none; /* Prevent interaction with the watermark */
+  }
+  

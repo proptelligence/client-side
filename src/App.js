@@ -51,6 +51,7 @@ import Blog26 from './components/Blog26';
 import Blog27 from './components/Blog27';
 import Blog28 from './components/Blog28';
 import Team from './components/Teams';
+import Watermark from './components/watermark';
 
 
 
@@ -212,6 +213,7 @@ function App() {
         <Route exact path="/iotsolutions" element={<IOT />} />
         <Route exact path="/upipay" element={<PaymentPopup />} />
       </Routes>
+      <Watermark />
     </BrowserRouter>
   );
 }

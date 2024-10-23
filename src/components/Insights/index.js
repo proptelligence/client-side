@@ -61,6 +61,21 @@ const Insights = () => {
               Our Reports & Insights section provides tailored analysis and actionable intelligence for property stakeholders.....<Link to="/blogdetails"><span>Read More</span></Link>
             </p>
           </div>
+          <div className="service-1">
+            <Link to="/">
+              <img
+                className="img1"
+                src="https://img.freepik.com/premium-photo/busy-analyst-team-office-analyzing-financial-data-analysis-by-tablet-entity_31965-151090.jpg"
+                alt="Service 1"
+              />
+            </Link>
+            <h2 className='sub'>
+              News & Gallery
+            </h2>
+            <p className='slide-des'>
+            Stay updated with the latest news and trends in the industry through our News & Gallery. Explore a collection of photos, videos, and events from our activities.....<Link to="/"><span>Read More</span></Link>
+            </p>
+          </div>
    
         </div>
       </div>
