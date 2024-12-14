@@ -135,46 +135,6 @@ const Cart = () => {
           </div>
         )}
       </div>
-
-      {/* Form for user details */}
-      {showForm && (
-        <div className="payment-form-container">
-          <h2>Enter your details</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label>Name:</label>
-              <input
-                type="text"
-                name="name"
-                value={userDetails.name}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div>
-              <label>Email:</label>
-              <input
-                type="email"
-                name="email"
-                value={userDetails.email}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div>
-              <label>Phone Number:</label>
-              <input
-                type="tel"
-                name="phone"
-                value={userDetails.phone}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <button type="submit">Proceed to Pay</button>
-          </form>
-        </div>
-      )}
     </>
   );
 };

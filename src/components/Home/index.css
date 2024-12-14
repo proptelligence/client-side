@@ -1,4 +1,4 @@
-/* Popup container styling */
+Popup container styling
 .popup-content {
   background-color: #ffffff;
   padding: 30px;
@@ -65,8 +65,8 @@
   padding: 20px;
   background: rgba(0, 0, 0, 0.5); 
   border-radius: 10px;
-  max-width: 60vh;
-  margin-left: 75vh;
+  max-width: 100vh;
+  margin-left: 60vh;
   margin-bottom: 20vh;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .home-heading {
-  font-size: 2.5rem;
+  font-size: 1rem;
   margin-bottom: 20px;
   font-size: 1.25rem;
 }
@@ -222,11 +222,6 @@
   transition: text-shadow 0.3s ease; /* Smooth transition for glow effect */
 }
 
-.blogs-card-home:hover .blog-details-title-home,
-.blogs-card-home:hover .blog-content {
-  text-shadow: 0 0 10px rgba(180, 202, 13, 0.8); /* Glowing effect */
-}
-
 .blog-details-title-home {
   font-size: 1.5em;
   font-weight: 600;
@@ -292,7 +287,7 @@
   font-family: 'PT Sans', sans-serif;
   font-weight: bold;
   margin-top: 0px;
-  font-size: 30px;
+  font-size: 20px;
   color: #1e293b;
   text-align: center; 
   
@@ -384,38 +379,6 @@
   }
 }
 
-.home-heading1 {
-  font-family: 'Roboto';
-  font-weight: bold;
-  margin-top: 0px;
-  font-size: 30px;
-  color: #1e293b;
-  text-align: right;
-}
-
-@media screen and (min-width: 768px) {
-
-  .home-heading1 {
-    font-size: 43px;
-    text-align: right;
-  }
-
-  @keyframes slideInFromBottom {
-    0% {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  .home-content {
-    animation: slideInFromBottom 0.5s ease-in-out forwards; /* Apply animation */
-  }
-
-}
 
 .home-description1 {
   font-family: 'Roboto';
@@ -1312,7 +1275,161 @@ font-weight: bold;
 }
 
 
+.home-heading{
+  font-size: 40px; 
+  color: white;
+}
 
 
 
+.landing-page-screen-7-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 85vh;
+  padding: 40px 6%;
+}
 
+.landing-page-s7-heading {
+  font-weight: 700;
+  color: #1D2434;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.landing-page-s7-accordion-consultation-con {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.landing-page-s7-accordion-con {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-page-s7-accordion-item {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 10px 0px #0000001a;
+  cursor: pointer;
+}
+
+.landing-page-s7-accordion-item-label-icon-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.landing-page-s7-accordion-label {
+  font-family: "Poppins", Sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+}
+
+.landing-page-s7-accordion-icon {
+  color: #1e293b;
+  font-size: 22px;
+  transition: transform 0.5s ease-out;
+}
+
+.landing-page-s7-accordion-icon.active {
+  transform: rotate(180deg);
+}
+
+.landing-page-s7-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out, padding 0.25s ease-out;
+  padding: 0 10px;
+  cursor: auto;
+}
+
+.landing-page-s7-accordion-content-text {
+  color: #000000;
+  font-family: "Poppins", Sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 0 20px;
+}
+
+.active-accordion {
+  max-height: 1000px;
+  padding: 10px;
+}
+
+.landing-page-s7-consultation-con {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-page-s7-consultation-form {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #EB6A4D;
+  border-radius: 8px;
+  padding: 30px;
+  background-color: white;
+}
+
+
+@media screen and (max-width: 768px) {
+  .landing-page-container {
+      margin-top: 10vh;
+      min-height: 90vh;
+  }
+
+  .landing-page-s7-heading {
+      font-size: 28px;
+      line-height: 40px;
+      margin-bottom: 24px;
+      align-self: center;
+  }
+
+  .landing-page-s7-accordion-consultation-con {
+      flex-direction: column;
+  }
+
+  .landing-page-s7-accordion-con {
+      width: 100%;
+  }
+
+  .landing-page-s7-accordion-item-label-icon-con {
+      padding: 0px;
+  }
+
+  .landing-page-s7-accordion-label {
+      width: 90%;
+  }
+
+  .landing-page-s7-consultation-con {
+      width: 100%;
+      margin-top: 20px;
+  }
+
+  .landing-page-s7-consultation-form {
+      width: 100%;
+      max-width: 350px;
+      padding: 20px;
+  }
+
+ 
+
+  
+}

@@ -14,12 +14,6 @@
   display: none;
 }
 
-.logo-heading {
-  font-family: 'PT Sans', sans-serif;
-  font-size: 30px;
-  font-weight: 700;
-}
-
 .navbar-logo {
   display: flex;
   cursor: pointer;
@@ -35,21 +29,22 @@
 
 .company-info {
   display: flex;
-  flex-direction: column; /* Stack name and slogan vertically */
-  justify-content: center; /* Center the text vertically */
-  margin-left: 10px;
+  flex-direction: column; 
+  justify-content: center; 
+  margin-left: 10px; 
+  text-decoration: none;
 }
 
 .company-name {
-  color: white; /* Text color for the company name */
-  font-size: 1.5rem; /* Font size for the company name */
-  font-weight: bold; /* Make the company name bold */
+  color: white; 
+  font-size: 1.5rem; 
+  font-weight: bold; 
   margin-top: 10px;
 }
 
 .slogan {
-  font-size: 0.5rem; /* Font size for the slogan */
-  color: #ffffff; /* Color for the slogan text */
+  font-size: 0.5rem; 
+  color: #ffffff; 
 }
 
 .fa-firstdraft {
@@ -96,6 +91,7 @@
   background-color: #fff0f5;
   color: #242222;
   border-radius: 4px;
+  text-decoration: none;
   transition: all 0.2s ease-out;
 }
 
@@ -147,6 +143,7 @@
     width: 100%;
     display: table;
     margin-left: 2vh;
+    text-decoration: none;
   }
 
   .nav-links:hover {
@@ -310,7 +307,7 @@
     margin-left: 10px;
   }
 
-  /* Mobile dropdown menu */
+
   .mobile-menu-dropdown {
     width: 100%;
     display: flex;
@@ -345,9 +342,9 @@
     text-decoration: none;
   }
 
-  /* Mobile dropdown inside the mobile menu */
+ 
   .mobile-menu-link .dropdown-menu {
-    display: none; /* Hide by default */
+    display: none; 
     margin-top: 5px;
     padding: 10px;
     border-radius: 4px;
@@ -384,7 +381,6 @@
 
 
 
-/* Desktop Dropdown */
 .nav-item .dropdown-menu {
   display: none;
   position: absolute;
@@ -394,7 +390,7 @@
   display: block;
 }
 
-/* Mobile Dropdown */
+
 .mobile-menu-link .dropdown-menu {
   display: none;
   background-color: #444;
@@ -644,4 +640,17 @@
   animation: cube-rotate 4s infinite;
   width: 50px; /* Set your desired width */
   height: auto;
+  text-decoration: none;
 }
+
+
+
+.nav-links:hover {
+  background-color: #fff0f5;
+  color: #242222;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+}
+
+

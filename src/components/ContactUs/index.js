@@ -71,15 +71,15 @@ const ContactUs = () => {
     <div className="cont1"> 
       <div className="contact-us-container">
         <div className="contact-info"> 
-          <iframe
-            title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.133122814258!2d77.699657!3d12.963731299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13ab1884f719%3A0xd72102ad7e3b3947!2sWeWork!5e0!3m2!1sen!2sin!4v1648895132407!5m2!1sen!2sin"
-            width="450"
-            height="300"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-          ></iframe>  
+        <div class="iframe-container">
+  <iframe
+    title="Google Map"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.133122814258!2d77.699657!3d12.963731299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13ab1884f719%3A0xd72102ad7e3b3947!2sWeWork!5e0!3m2!1sen!2sin!4v1648895132407!5m2!1sen!2sin"
+    allowfullscreen=""
+    loading="lazy"
+  ></iframe>
+</div>
+ 
           <div className="address-details">
             <h2>Address </h2>
             <p>We Work, Roshini Tech Hub, Anand Nagar, Aswath Nagar, Chinnapanna Halli, Bengaluru, Karnataka 560037</p> 

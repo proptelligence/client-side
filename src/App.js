@@ -51,7 +51,8 @@ import Blog26 from './components/Blog26';
 import Blog27 from './components/Blog27';
 import Blog28 from './components/Blog28';
 import Team from './components/Teams';
-import Watermark from './components/watermark';
+import Watermark from './components/watermark'; 
+import PropValuation from './components/PropValuation'
 
 
 
@@ -95,25 +96,66 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    // Zoho SalesIQ Code
-    const salesIQScript = document.createElement('script');
-    salesIQScript.innerHTML = `
-      var $zoho = $zoho || {};
-      $zoho.salesiq = $zoho.salesiq || { widgetcode: "siqd5bd0a10a571c016e2a14372615b56e66c995d9492c328369d402248eef93ef2", values: {}, ready: function(){} };
-      var d = document;
-      var s = d.createElement("script");
-      s.type = "text/javascript";
-      s.id = "zsiqscript";
-      s.defer = true;
-      s.src = "https://salesiq.zohopublic.in/widget";
-      var t = d.getElementsByTagName("script")[0];
-      t.parentNode.insertBefore(s, t);
-      "<div id='zsiqwidget'></div>";
-    `;
-    document.head.appendChild(salesIQScript);
+  // useEffect(() => {
+  //   // Zoho SalesIQ Code
+  //   const salesIQScript = document.createElement('script');
+  //   salesIQScript.innerHTML = `
+  //     var $zoho = $zoho || {};
+  //     $zoho.salesiq = $zoho.salesiq || { widgetcode: "siqd5bd0a10a571c016e2a14372615b56e66c995d9492c328369d402248eef93ef2", values: {}, ready: function(){} };
+  //     var d = document;
+  //     var s = d.createElement("script");
+  //     s.type = "text/javascript";
+  //     s.id = "zsiqscript";
+  //     s.defer = true;
+  //     s.src = "https://salesiq.zohopublic.in/widget";
+  //     var t = d.getElementsByTagName("script")[0];
+  //     t.parentNode.insertBefore(s, t);
+  //     "<div id='zsiqwidget'></div>";
+  //   `;
+  //   document.head.appendChild(salesIQScript);
 
-    // Zoho SalesIQ Style (positioning at bottom right)
+  //   // Zoho SalesIQ Style (positioning at bottom right)
+  //   const style = document.createElement('style');
+  //   style.innerHTML = `
+  //     #zsiq_float {
+  //       bottom: 20px;
+  //       right: 20px;
+  //     }
+  //   `;
+  //   document.head.appendChild(style);
+
+  //   // Cleanup function
+  //   return () => {
+  //     // Remove Zoho SalesIQ script
+  //     document.head.removeChild(salesIQScript);
+  //     // Remove Zoho SalesIQ style
+  //     document.head.removeChild(style);
+  //   };
+  // }, []);
+ 
+  
+  useEffect(() => {
+    // Create and load the Voiceflow script
+    const voiceflowScript = document.createElement('script'); 
+    voiceflowScript.type = 'text/javascript';
+    voiceflowScript.innerHTML = `
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '673c4428ce1460abddd75137' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production'
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    `;
+  
+    // Append the script to the head of the document
+    document.head.appendChild(voiceflowScript);
+  
+    // Create and load the style
     const style = document.createElement('style');
     style.innerHTML = `
       #zsiq_float {
@@ -122,15 +164,14 @@ function App() {
       }
     `;
     document.head.appendChild(style);
-
-    // Cleanup function
+  
+    // Cleanup function to remove the script and style when the component unmounts
     return () => {
-      // Remove Zoho SalesIQ script
-      document.head.removeChild(salesIQScript);
-      // Remove Zoho SalesIQ style
+      document.head.removeChild(voiceflowScript);
       document.head.removeChild(style);
     };
   }, []);
+
 
   useEffect(() => {
     // QR Code integration
@@ -199,7 +240,7 @@ function App() {
         <Route exact path="/Ourteam" element={<Team />} />
         <Route exact path="/cart" element={<Cart />} />
         <Route exact path="/new" element={<HouseDetailsForm />} /> 
-        <Route exact path="/Propvaluation" element={<HouseDetailsForm />} />
+        <Route exact path="/Propvaluation" element={<PropValuation />} />
         <Route exact path="/Propbot" element={<HouseDetailsForm />} />
         <Route exact path="/PropAutomatedPropertyManagement" element={<HouseDetailsForm />} />
         <Route exact path="/propanalytics" element={<HouseDetailsForm />} />

@@ -180,7 +180,7 @@ function App() {
         <Route exact path="/privacypolicy" element={<PrivacyPolicy />} />
         <Route exact path="/proptelligence-terms&conditions" element={<TermsAndConditions />} />
         <Route exact path="/proptelligence-refund-policy" element={<RefundPolicy />} />
-        <Route exact path="/freepropertylist" element={<Blog />} />    //*  change name of the blog and change the file*/
+        <Route exact path="/freepropertylist" element={<Blog />} />  
         <Route exact path="/indiarealstate2023" element={<Blog2 />} />
         <Route exact path="/buyahome" element={<Blog3 />} />
         <Route exact path="/legaladvice" element={<Blog4 />} />

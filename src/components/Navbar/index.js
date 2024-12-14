@@ -223,12 +223,9 @@ function Navbar() {
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
-        {/* Contact Us link */}
         <Link to='/contact' className='nav-links' onClick={closeMobileMenu}>
-          Contact Us <i className='fas fa-caret-down' /> {/* Dropdown icon */}
-        </Link>
-
-        {/* Show dropdown when hovered */}
+          Contact Us <i className='fas fa-caret-down' /> 
+        </Link> 
         {dropdown && <Dropdown />}
       </li>
         </ul>
@@ -260,9 +257,6 @@ function Navbar() {
           )}
         </div>
 
-        <div className='mobile-menu-icon' onClick={toggleMobileMenu}>
-          <i className={mobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'} />
-        </div>
         {mobileMenuOpen && (
           <div className='mobile-menu-dropdown'>
             <ul className='mobile-menu-items'>
@@ -288,7 +282,7 @@ function Navbar() {
                   What we do  
                 </div>
                 {mobileAboutDropdownOpen && <DropdownA />}
-              </li>
+              </li> 
               {/* <li className='whatsapp'>
             <div className="whatsapp-icon" onClick={toggleChat}>
               <FontAwesomeIcon icon={faWhatsapp} size='2x'  color="#25D366" />
@@ -319,7 +313,7 @@ function Navbar() {
             <Link to='/contact' className='nav-links' onClick={closeMobileMenu}>
               Contact Us
             </Link>
-          </li>
+          </li>           
             </ul>
           </div>
         )}
@@ -329,4 +323,3 @@ function Navbar() {
 }
 
 export default Navbar;
-

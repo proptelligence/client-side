@@ -1,5 +1,6 @@
 import React from 'react';
-import Navbar from '../Navbar';
+import Navbar from '../Navbar'; 
+import Navbottom from '../Navbottom'
 import './index.css';
 
 const Team = () => {
@@ -53,12 +54,13 @@ const Team = () => {
           {renderTeam(leadershipTeam, "Leadership Team")}
           
           {/* Engineering Team */}
-          {renderTeam(engineeringTeam, "Engineering Team")}
+          {/* {renderTeam(engineeringTeam, "Engineering Team")} */}
           
           {/* Marketing Team */}
-          {renderTeam(marketingTeam, "Marketing Team")}
+          {/* {renderTeam(marketingTeam, "Marketing Team")} */}
         </div>
-      </div>
+      </div> 
+      <Navbottom/>
     </>
   );
 };

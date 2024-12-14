@@ -11,7 +11,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Navbar from '../Navbar';
 import { Helmet } from 'react-helmet';
-import { registerWithEmailAndPassword, signInWithGoogle } from "../../firebase";
+import { registerWithEmailAndPassword, signInWithGoogle } from "../../firebase"; 
+import { IoIosArrowDown } from "react-icons/io";
+import { IoFlashOutline } from "react-icons/io5";
 import './index.css';
 import popup from '../../components/Assets/popup.jpg'
 import AI from "../../components/Assets/ai.jpg";
@@ -42,6 +44,35 @@ const Home = () => {
   const [popupOptions, setPopupOptions] = useState([]);
   const [isOptionsPopupOpen, setIsOptionsPopupOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
+  const accordionData = [
+    {
+        label: 'What is AI in PropTech?',
+        content: 'AI in PropTech refers to the use of artificial intelligence technologies to enhance real estate services, from property management and development to investment analysis and client services. AI algorithms can automate tasks, analyze large datasets, predict market trends, and improve operational efficiencies within the real estate sector.'
+    },
+    {
+        label: 'How can AI improve property management?',
+        content: 'AI can streamline property management by automating routine tasks such as rent collection, tenant inquiries, and maintenance scheduling. It can also help in predicting maintenance needs using predictive analytics, ensuring that properties are well-maintained, and preventing costly repairs. Chatbots and virtual assistants can be deployed for customer service, enhancing tenant experiences.'
+    },
+    {
+        label: 'Can AI help with property valuation?',
+        content: 'Yes! AI can improve property valuation accuracy by analyzing vast amounts of data, including historical property prices, local market trends, economic indicators, and even neighborhood factors. Machine learning models can provide real-time, data-driven estimates of property value, making valuations faster and more precise than traditional methods.'
+    },
+    {
+        label: 'How does AI impact real estate investment decisions?',
+        content: 'AI tools can assist investors by analyzing large volumes of data from different sources (e.g., market trends, property performance, demographic data, etc.) to identify lucrative investment opportunities. AI can also forecast future trends and help investors make more informed decisions about potential returns on investment (ROI).'
+    },
+    {
+        label: 'Can AI help in improving the home buying or renting experience?',
+        content: 'Absolutely! AI can enhance the home buying and renting experience by offering personalized recommendations to clients based on their preferences. Chatbots can assist customers in real-time, and AI-powered platforms can match buyers or tenants with properties that suit their needs, budgets, and lifestyle. Virtual tours, powered by AI, can also provide immersive home-viewing experiences.'
+    },
+];
+
+const [activeAccordion, setActiveAccordion] = useState(0);
+
+useEffect(() => {
+    window.scrollTo(0, 0)
+    document.title = "Earlyjobs-India's No.1 Portal for remote HR recruiters | Victaman Enterprises"
+}, [])
 
   const whatsappNumber = '+918062181169'; // Replace with the company WhatsApp number
 
@@ -187,58 +218,58 @@ const Home = () => {
     //   });
   }; 
 
-  const blogData = [
+  const blogData = [ 
     {
       title: "Free Property Listing Sites in India",
       imageUrl: "https://res.cloudinary.com/ajaymedidhi7/image/upload/v1708941784/property-img_y0gn4h.png",
-      content: "The real estate landscape in India is rapidly evolving, and with it, the way properties are bought and sold.",
+      content: "The real estate market in India is evolving fast, changing how properties are listed, bought, and sold.",
       path: "/freepropertylist",
       datetime: "Feb 26, 2024",
     },
     {
-      title: "India's Real State Sector in 2030",
+      title: "India's Real Estate Sector in 2030",
       imageUrl: "https://res.cloudinary.com/ajaymedidhi7/image/upload/v1709380034/real_oa2n5a.png",
-      content: "India's real estate sector is experiencing a remarkable transformation, poised for significant growth and contributing substantially to the nation's economic engine.",
+      content: "India's real estate sector is growing fast, transforming into a key driver of economic growth nationwide.",
       path: "/indiarealstate2023",
       datetime: "Feb 28, 2024",
     },
     {
-      title: "The Ultimate Guide to Buying a Home Online: Tips and Tricks",
+      title: "The Ultimate Guide to Buying",
       imageUrl: "https://res.cloudinary.com/ajaymedidhi7/image/upload/v1709471502/blog-3_hrjz3x.png",
-      content: "Owning a home is a dream for many, but navigating the traditional buying process can feel complex and overwhelming.",
+      content: "Buying a home is a dream for many, but the traditional process can be complicated without proper guidance.",
       path: "/buyahome",
       datetime: "March 03, 2024",
     },
     {
-      title: "Get Legal Advice Easily with Proptelligence",
+      title: "Get Legal Advice Easily ",
       imageUrl: "https://res.cloudinary.com/ajaymedidhi7/image/upload/v1710069093/blog-4_hkn9cf.png",
-      content: "In today's fast-paced world, navigating the intricacies of the legal system can be a daunting task, especially when challenges arise outside of traditional business hours.",
+      content: "Navigating legal challenges can be hard, especially outside business hours, but Proptelligence makes it easy.",
       path: "/legaladvice",
       datetime: "March 09, 2024",
     },
     {
       title: "Investing in Mumbai Real Estate",
       imageUrl: "https://res.cloudinary.com/dfbjizje6/image/upload/v1712567734/Picture1_nd0kxi.png",
-      content: "Mumbai, India's bustling financial capital, has captivated investors for generations. Mumbai real estate offers a dynamic and diverse landscape, brimming with potential for those seeking lucrative investment opportunities.",
+      content: "Mumbai, India's financial hub, offers diverse real estate options with significant potential for investors.",
       path: "/mumbai",
       datetime: "March 30, 2024",
     },
     {
-      title: "Exploring the Real Estate Market: Pune Properties and Beyond",
+      title: "Exploring the Real Estate Market",
       imageUrl: "https://res.cloudinary.com/dfbjizje6/image/upload/v1712592800/pune_hqifc2.png",
-      content: "The local real estate market of Pune beats with energy and is thus characterised by a gorgeous and warm scenery for the potential investors and homeowners.",
+      content: "Pune's real estate market is dynamic, featuring beautiful properties that attract both investors and homeowners.",
       path: "/pune",
       datetime: "March 30, 2024",
     },
     {
-      title: "Discovering Hidden Gems: Real Estate in Chennai",
+      title: "Discovering Hidden Gems",
       imageUrl: "https://res.cloudinary.com/dfbjizje6/image/upload/v1712592797/chennai_q05imq.png",
-      content: "Chennai's real estate market offers a path to unexplored opportunities. The city centre is the main hub, but picturesque districts, each with its own peculiar demeanour and eventful history.",
+      content: "Chennai's real estate scene offers unique opportunities in vibrant districts, each rich in culture and history.",
       path: "/chennai",
       datetime: "March 30, 2024",
     }
   ];
-
+  
   const settings = {
     dots: false,
     infinite: true,
@@ -318,7 +349,7 @@ const Home = () => {
         <meta name="google-site-verification" content="google154aa1c8bf93db82.html" />
       </Helmet>
       <Navbar />
-      {showPopup && (
+      {/* {showPopup && (
         <Popup open={showPopup} closeOnDocumentClick onClose={closePopup}>
           <div className="popup-content">
             <button className="close" onClick={closePopup}>&times;</button>
@@ -327,21 +358,32 @@ const Home = () => {
             <p>Get expert guidance and secure legal support throughout your real estate journey.</p>
           </div>
         </Popup>
-      )}
+      )} */}
       <div className="home-container">
   <div className="home-content">
-    <h1 className="home-heading">Unlock Our Free Property Service</h1>
-    <p className="home-description">
-      Experience effortless property management with Proptelligence. With our free services, managing your properties has never been easier.
-    </p>
+    <h1 className="home-heading">The Complete Intelligence Platform on Infradevelopers, Agents & Individuals</h1> 
     <div className="home-buttons">
+        <button className="home-button" onClick={() => alert("Infradevelopers clicked!")}>
+          Infradevelopers
+        </button>
+        <button className="home-button" onClick={() => alert("Agents clicked!")}>
+          Agents
+        </button>
+        <button className="home-button" onClick={() => alert("Individuals clicked!")}>
+          Individuals
+        </button>
+      </div>
+    {/* <p className="home-description">
+      Experience effortless property management with Proptelligence. With our free services, managing your properties has never been easier.
+    </p> */}
+    {/* <div className="home-buttons">
       <button className="home-button buy-button" onClick={() => checkAuthAndNavigate('/select')}>
         Buy/Rent/Sell a Property
       </button>
       <button className="home-button list-button" onClick={() => checkAuthAndNavigate('/post')}>
         List Your Property for Free
       </button>
-    </div>
+    </div> */}
   </div>
 </div>
 
@@ -440,7 +482,26 @@ const Home = () => {
             </div>
           </div>
         ))}
-      </Slider> 
+      </Slider>  
+
+      <div className="landing-page-screen-7-container">
+                <h1 className="landing-page-s7-heading">FAQs</h1>
+                <div className="landing-page-s7-accordion-consultation-con">
+                    <div className="landing-page-s7-accordion-con">
+                        { accordionData.map((accordion, index) => (
+                            <div className="landing-page-s7-accordion-item" key={index}>
+                                <div className="landing-page-s7-accordion-item-label-icon-con" onClick={() => setActiveAccordion(activeAccordion === index ? null : index)}>
+                                    <h3 className="landing-page-s7-accordion-label">{accordion.label}</h3>
+                                    <IoIosArrowDown className={`landing-page-s7-accordion-icon ${activeAccordion === index ? "active" : ""}`} />
+                                </div>
+                                <div className={`landing-page-s7-accordion-content ${activeAccordion === index ? "active-accordion" : ""}`}>
+                                    <p className="landing-page-s7-accordion-content-text">{accordion.content}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>       
+                </div>
+            </div>
       
       <footer>
         <Navbottom />
